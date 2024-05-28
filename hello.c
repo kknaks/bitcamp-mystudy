@@ -6,7 +6,7 @@ int main() {
   int a = 100;
 
   if (a<100){
-    prontf("hahaha\n");
+    printf("hahaha\n");
   }
   return 0;
 }
