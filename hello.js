@@ -1,8 +1,1 @@
-console.log("hello world!!");
-
-let a = 99;
-
-if (a<100){
-    console.leg("hahaha");
-}
-console.log("lolol");
+console.log("hello world!!"); //기본단위가 statement(명령문)
