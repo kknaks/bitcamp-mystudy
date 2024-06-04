@@ -5,6 +5,20 @@
  * For more details on building Java & JVM projects, please refer to https://docs.gradle.org/8.7/userguide/building_java_projects.html in the Gradle documentation.
  */
 
+
+plugins {
+    // 자바 소스를 컴파일할 때 사용할 도구를 추가한다.
+    // 뿐만 아니라 eclipse 플러그인과 결합해서
+    // eclipse IDE의 자바 관련 설정 파일을 생성할 때도 사용한다.
+    // 예) .classpath, .settings/*
+    id 'java'  
+
+
+    // 이클립스 관련 파일을 다룰 때 사용할 도구를 추가한다.
+    // 예) .project
+    id 'eclipse' 
+}
+
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
@@ -40,4 +54,16 @@ application {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+// Eclipse 프로젝트 이름을 설정하기
+eclipse {
+    project {
+        name = "eomcs-java-lang" // 프로젝트 이름을 지정하지 않으면 ㅗㄹ더 이름(예 : app)을 사용한다.
+    }
+    jdt {
+      sourceCompatibility = 21
+      targetCompatibility = 21
+      javaRuntimeName = "JavaSE-21"
+    }
 }
