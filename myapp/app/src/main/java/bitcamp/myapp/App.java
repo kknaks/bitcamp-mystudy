@@ -14,7 +14,7 @@ public class App {
     String command;
     while (true) {
       try {
-        command = Prompt.prompt("메인>");
+        command = Prompt.input("메인>");
 
         if (command.equals("menu")) {
           printMenu();
@@ -85,7 +85,7 @@ public class App {
   static void processMenu(String menuTitle, String[] menus) {
     printSubMenu(menuTitle, menus);
     while (true) {
-      String command = Prompt.prompt(String.format("메인/%s>", menuTitle));
+      String command = Prompt.input(String.format("메인/%s>", menuTitle));
       if (command.equals("menu")) {
         printSubMenu(menuTitle, menus);
         continue;
