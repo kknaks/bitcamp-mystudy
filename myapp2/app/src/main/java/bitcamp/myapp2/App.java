@@ -7,6 +7,13 @@ public class App {
       new String[][] {{"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"},
           {"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"}};
 
+  static final int MAX_SIZE = 10;
+  static String[] teams = new String[MAX_SIZE];
+  static String[][] teamMember = new String[MAX_SIZE][MAX_SIZE];
+
+  static int teamLength = 0;
+  static int teamMemberLength = 0;
+
   public static void main(String[] args) {
     String command;
     printMainMenu();
@@ -109,9 +116,46 @@ public class App {
     }
   }
 
-
   static void excuteTeamCommand(String command) {
+    System.out.printf("[%s]\n", command);
+    switch (command) {
+      case "등록":
+        addTeam();
+        break;
+      case "목록":
+        listTeam();
+        break;
+      case "조회":
+        viewTeam();
+        break;
+      case "변경":
+        updateTeam();
+        break;
+      case "삭제":
+        deleteTeam();
+        break;
+    }
   }
+
+  static void addTeam(){
+    teams[teamLength] = prompt.input("팀명? ");
+    int teamMemberNo = Integer.parseInt(prompt.input("추가할 팀원 번호?(종료 : 0) "));
+    if(teamMemberNo < 1 || teamMemberNo > UserCommand.userLength){
+      System.out.println("없는 팀원입니다.");
+      return;
+    }
+
+    if (){
+      System.out.printf("'%s'은 현재팀원입니다.",UserCommand.users[teamMemberNo - 1]);}
+    }else{teamMember[teamLength][teamMemberNo] = UserCommand.users[teamMemberNo - 1];
+    System.out.printf("'%s'을 추가했습니다.");}
+  };
+  static void listTeam(){};
+  static void viewTeam(){};
+  static void updateTeam(){};
+  static void deleteTeam(){};
+
+
 
   static void excuteProjectCommand(String command) {
   }
