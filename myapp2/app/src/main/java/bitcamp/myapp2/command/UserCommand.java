@@ -1,5 +1,8 @@
 package bitcamp.myapp2;
 
+import bitcamp.myapp2.util.Prompt;
+import bitcamp.myapp2.vo.User;
+
 public class UserCommand {
   static final int MAX_SIZE = 10;
   static User[] users = new User[MAX_SIZE];
@@ -28,10 +31,10 @@ public class UserCommand {
 
   static void addUser() {
     User user = new User();
-    user.name = prompt.input("이름?");
-    user.email = prompt.input("이메일?");
-    user.password = prompt.input("암호?");
-    user.tel = prompt.input("연락처?");
+    user.name = Prompt.input("이름?");
+    user.email = Prompt.input("이메일?");
+    user.password = Prompt.input("암호?");
+    user.tel = Prompt.input("연락처?");
     users[userLength++] = user;
   }
 
@@ -44,7 +47,7 @@ public class UserCommand {
   }
 
   static void viewUser() {
-    int userNo = Integer.parseInt(prompt.input("회원번호?"));
+    int userNo = Integer.parseInt(Prompt.input("회원번호?"));
     if (userNo < 1 || userNo > userLength) {
       System.out.println("없는 회원입니다.");
       return;
@@ -56,21 +59,21 @@ public class UserCommand {
   }
 
   static void updateUser() {
-    int userNo = Integer.parseInt(prompt.input("회원번호?"));
+    int userNo = Integer.parseInt(Prompt.input("회원번호?"));
     if (userNo < 1 || userNo > userLength) {
       System.out.println("없는 회원입니다.");
       return;
     }
     User user = users[userNo - 1];
-    user.name = prompt.input(String.format("이름(%s):", user.name));
-    user.email = prompt.input(String.format("이메일(%s):", user.email));
-    user.password = prompt.input(String.format("비밀번호(%s):", user.password));
-    user.tel = prompt.input(String.format("연락처(%s):", user.tel));
+    user.name = Prompt.input(String.format("이름(%s):", user.name));
+    user.email = Prompt.input(String.format("이메일(%s):", user.email));
+    user.password = Prompt.input(String.format("비밀번호(%s):", user.password));
+    user.tel = Prompt.input(String.format("연락처(%s):", user.tel));
     System.out.println("변경했습니다.");
   }
 
   static void deleteUser() {
-    int userNo = Integer.parseInt(prompt.input("회원번호?"));
+    int userNo = Integer.parseInt(Prompt.input("회원번호?"));
     if (userNo < 1 || userNo > userLength) {
       System.out.println("없는 회원입니다.");
       return;

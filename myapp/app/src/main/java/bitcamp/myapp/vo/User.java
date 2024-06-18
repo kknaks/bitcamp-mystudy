@@ -1,4 +1,4 @@
-package bitcamp.myapp;
+package bitcamp.myapp.command;
 
 public class User {
 

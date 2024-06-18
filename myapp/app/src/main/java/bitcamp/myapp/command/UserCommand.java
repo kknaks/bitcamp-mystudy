@@ -1,5 +1,7 @@
 package bitcamp.myapp;
 
+import bitcamp.myapp.util.Prompt;
+
 public class UserCommand {
   static final int MAX_SIZE = 100;
   static User[] users = new User[MAX_SIZE];
