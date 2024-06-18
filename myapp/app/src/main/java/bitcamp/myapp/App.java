@@ -1,8 +1,13 @@
 package bitcamp.myapp;
 
+import bitcamp.myapp.command.BoardCommand;
+import bitcamp.myapp.command.ProjectCommand;
+import bitcamp.myapp.command.UserCommand;
+import bitcamp.myapp.util.Prompt;
+
 public class App {
 
-  static String[] mainMenus = new String[] {"회원", "팀", "프로젝트", "게시판", "도움말", "종료"};
+  static String[] mainMenus = new String[] {"회원", "프로젝트", "게시판", "도움말", "종료"};
   static String[][] subMenus = {{"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"},
       {"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"}};
 
@@ -27,7 +32,7 @@ public class App {
           } else if (menuTitle.equals("종료")) {
             break;
           } else {
-            if (menuNo >= 1 && menuNo <= 4) {
+            if (menuNo >= 1 && menuNo <= 3) {
               processMenu(menuTitle, subMenus[menuNo - 1]);
             } else {
               System.out.println(menuTitle);
@@ -49,7 +54,7 @@ public class App {
     String redAnsi = "\033[31m";
     String resetAnsi = "\033[0m";
 
-    String appTitle = "[팀 프로젝트 관리 시스템]";
+    String appTitle = "[프로젝트 관리 시스템]";
     String line = "----------------------------------";
 
     System.out.println(boldAnsi + line + resetAnsi);
@@ -101,16 +106,13 @@ public class App {
         } else {
           switch (menuTitle) {
             case "회원":
-              UserCommand.excuteUserCommand(subMenuTitle);
-              break;
-            case "팀":
-              excuteTeamCommand(subMenuTitle);
+              UserCommand.executeUserCommand(subMenuTitle);
               break;
             case "프로젝트":
-              excuteProjectCommand(subMenuTitle);
+              ProjectCommand.excuteProjectCommand(subMenuTitle);
               break;
             case "게시판":
-              excuteBoardCommand(subMenuTitle);
+              BoardCommand.excuteBoardCommand(subMenuTitle);
               break;
             default:
               System.out.printf("%s 메뉴에 명령을 처리할 수 없습니다.\n", menuTitle);
@@ -120,26 +122,5 @@ public class App {
         System.out.println("숫자로 메뉴 번호를 입력하세요.");
       }
     }
-  }
-
-
-
-  static void excuteTeamCommand(String command) {
-    System.out.printf("팀 %s\n", command);
-  }
-
-  static void excuteProjectCommand(String command) {
-    System.out.printf("프로젝트 %s\n", command);
-  }
-
-  static void excuteBoardCommand(String command) {
-    System.out.printf("게시판 %s\n", command);
-  }
-
-  static class user {
-    String name;
-    String email;
-    String password;
-    String tel;
   }
 }

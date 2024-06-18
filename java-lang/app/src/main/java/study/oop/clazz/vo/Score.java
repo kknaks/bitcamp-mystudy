@@ -1,6 +1,6 @@
 package study.oop.clazz.vo;
 
-public class Score2 {
+public class Score {
   private String name;
   private int kor;
   private int eng;
@@ -8,24 +8,22 @@ public class Score2 {
   private int sum;
   private float aver;
 
-  public Score2() {
+  // 기본생성자
+  public Score() {
     this.name = null;
     this.kor = 0;
     this.eng = 0;
     this.math = 0;
+
   }
 
-  public Score2(String name, int kor, int eng, int math) {
+  // 생성자 오버로딩
+  public Score(String name, int kor, int eng, int math) {
     this.name = name;
     this.kor = kor;
     this.eng = eng;
     this.math = math;
     this.compute();
-  }
-
-  private void compute() {
-    this.sum = this.kor + this.eng + this.math;
-    this.aver = (float) this.sum / 3;
   }
 
   public void setName(String name) {
@@ -34,14 +32,17 @@ public class Score2 {
 
   public void setKor(int kor) {
     this.kor = kor;
+    this.compute();
   }
 
   public void setEng(int eng) {
     this.eng = eng;
+    this.compute();
   }
 
   public void setMath(int math) {
     this.math = math;
+    this.compute();
   }
 
   public String getName() {
@@ -66,5 +67,10 @@ public class Score2 {
 
   public float getAver() {
     return this.aver;
+  }
+
+  public void compute() {
+    this.sum = this.kor + this.eng + this.math;
+    this.aver = (float) this.sum / 3;
   }
 }

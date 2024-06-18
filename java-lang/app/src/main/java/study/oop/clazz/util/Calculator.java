@@ -1,30 +1,31 @@
-package study.oop.clazz;
+package study.oop.clazz.util;
 
 public class Calculator {
-  // static int result = 0;
-  int result = 0;
 
-  void plus(int a) {
+  private int result = 0;
+
+  public void plus(int a) {
     this.result += a;
   }
 
-  void minus(int a) {
+  public void minus(int a) {
     this.result -= a;
   }
 
-  void multiple(int a) {
+  public void multiple(int a) {
     this.result *= a;
   }
 
-  void divide(int a) {
+  public void divide(int a) {
     this.result /= a;
   }
 
-  int getResult() {
+  public int getResult() {
     return this.result;
   }
 
-  void clear() {
+  public void clear() {
     this.result = 0;
   }
+
 }

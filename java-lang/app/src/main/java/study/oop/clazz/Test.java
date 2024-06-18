@@ -1,21 +1,11 @@
 package study.oop.clazz;
 
+import java.time.LocalDate;
+
 public class Test {
-  static void m1(int a) {
-    int b = 200;
-  }
-
-  void m2(int a) {
-    int b = 300;
-  }
-}
-
-
-class TestOk {
   public static void main(String[] args) {
-    Test.m1(100);
-    Test obj = new Test();
-    obj.m2(100);
+    LocalDate currentDate = LocalDate.now();
+    System.out.println(currentDate);
   }
 }
 
