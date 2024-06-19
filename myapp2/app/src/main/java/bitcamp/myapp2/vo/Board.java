@@ -1,4 +1,4 @@
-package bitcamp.myapp.vo;
+package bitcamp.myapp2.vo;
 
 import java.util.Date;
 
@@ -28,8 +28,8 @@ public class Board {
     return createdDate;
   }
 
-  public void setCreatedDate(Date wirtingDate) {
-    this.createdDate = wirtingDate;
+  public void setCreatedDate(Date createdDate) {
+    this.createdDate = createdDate;
   }
 
   public int getViewCount() {

@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3ec23e9-19d1-42b4-b72b-db95561817a0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/command/BoardCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/command/ProjectCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/util/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/Test01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/Test01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/Test02.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/Test02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/vo/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/oop/clazz/vo/Score2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/Prompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/util/Prompt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/UserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/command/UserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/command/BoardCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/command/BoardCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/vo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/UserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/command/UserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/prompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp2/util/Prompt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +196,7 @@
       <workItem from="1718255684822" duration="3755000" />
       <workItem from="1718265839251" duration="31240000" />
       <workItem from="1718697551205" duration="10141000" />
+      <workItem from="1718792926352" duration="3918000" />
     </task>
     <servers />
   </component>
