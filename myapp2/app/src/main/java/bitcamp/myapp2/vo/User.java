@@ -1,10 +1,24 @@
 package bitcamp.myapp2.vo;
 
 public class User {
+  private static int seqNo;
+  private int no;
   private String name;
   private String email;
   private String password;
   private String tel;
+
+  public static int getSeqNo() {
+    return ++seqNo;
+  }
+
+  public int getNo() {
+    return no;
+  }
+
+  public void setNo(int no) {
+    this.no = no;
+  }
 
   public String getName() {
     return name;
