@@ -1,15 +1,18 @@
 package bitcamp.myapp2.vo;
 
+import bitcamp.myapp2.command.ArrayList;
+
 public class Project {
   private static int seqNo;
-  private final User[] users = new User[10];
+  private ArrayList members = new ArrayList();
   private int no;
   private String title;
   private String description;
   private String startDate;
   private String endDate;
-  private int memberSize;
 
+  //  private final User[] users = new User[10];
+  //  private int memberSize;
 
   public static int getSeqNo() {
     return ++seqNo;
@@ -55,40 +58,22 @@ public class Project {
     this.endDate = endDate;
   }
 
-  public int getMemberSize() {
-    return memberSize;
+  public ArrayList getMembers() {
+    return members;
   }
-
-  public void setMemberSize(int memberSize) {
-    this.memberSize = memberSize;
-  }
-
-  public User[] getUsers() {
-    return users;
-  }
-
-  public User getMember(int index) {
-    return users[index];
-  }
-
-  public boolean contain(User user) {
-    for (int i = 0; i < memberSize; i++) {
-      User member = users[i];
-      if (user.getName().equals(member.getName())) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public void addMember(User user) {
-    users[memberSize++] = user;
-  }
-
-  public void deleteMember(int index) {
-    for (int i = index + 1; i < memberSize; i++) {
-      users[i - 1] = users[i];
-    }
-    users[--memberSize] = null;
-  }
+  //  public int getMemberSize() {
+  //    return members.size();
+  //  }
+  //
+  //  public Object getMember(int index) {
+  //    return members.get(index);
+  //  }
+  //
+  //  public void addMember(User user) {
+  //    members.add(user);
+  //  }
+  //
+  //  public void deleteMember(int index) {
+  //    members.remove(index);
+  //  }
 }

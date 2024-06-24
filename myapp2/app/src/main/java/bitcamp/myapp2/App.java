@@ -1,51 +1,24 @@
 package bitcamp.myapp2;
 
+import bitcamp.myapp2.command.BoardCommand;
 import bitcamp.myapp2.command.ProjectCommand;
 import bitcamp.myapp2.command.UserCommand;
 import bitcamp.myapp2.util.Prompt;
 
 public class App {
-  static final int MAX_SIZE = 10;
+  static String[] mainMenus = new String[] {"회원", "프로젝트", "공지사항", "게시판", "도움말", "종료"};
+  static String[][] subMenus = {{"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"},
+      {"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"}, {}};
 
-  static String[] mainMenus = new String[] {"회원", "프로젝트", "게시판", "도움말", "종료"};
-  static String[][] subMenus =
-      new String[][] {{"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"},
-          {"등록", "목록", "조회", "변경", "삭제"}, {"등록", "목록", "조회", "변경", "삭제"}};
-  static String[] teams = new String[MAX_SIZE];
-  static String[][] teamMember = new String[MAX_SIZE][MAX_SIZE];
+  UserCommand userCommand = new UserCommand();
+  BoardCommand noticeCommand = new BoardCommand();
+  BoardCommand boardCommand = new BoardCommand();
+  ProjectCommand projectCommand = new ProjectCommand(userCommand.getUserList());
 
-  static int teamLength = 0;
-  static int teamMemberLength = 0;
 
   public static void main(String[] args) {
-    String command;
-    printMainMenu();
-    while (true) {
-      try {
-        command = Prompt.input("메인> ");
-        if (command.equals("menu")) {
-          printMainMenu();
-          continue;
-        }
-        int menuNo = Integer.parseInt(command);
-        String menuTitle = getMenuTitle(menuNo, mainMenus);
-        if (menuTitle == null) {
-          System.out.println("유효한 메뉴 번호가 아닙니다.");
-        } else if (menuTitle.equals("종료")) {
-          break;
-        } else {
-          if (menuNo >= 1 && menuNo <= 3) {
-            processSubMenu(menuTitle, subMenus[menuNo - 1]);
-          } else {
-            System.out.println(mainMenus[menuNo - 1]);
-          }
-        }
-      } catch (NumberFormatException ex) {
-        System.out.println("숫자로 메뉴 번호를 입력하세요.");
-      }
-    }
-    System.out.println("종료합니다.");
-    Prompt.close();
+    App app = new App();
+    app.excute();
   }
 
   static void printMainMenu() {
@@ -82,7 +55,38 @@ public class App {
     return isValidateMenu(menuNo, menus) ? menus[menuNo - 1] : null;
   }
 
-  static void processSubMenu(String menuTitle, String[] menus) {
+  void excute() {
+    String command;
+    printMainMenu();
+    while (true) {
+      try {
+        command = Prompt.input("메인> ");
+        if (command.equals("menu")) {
+          printMainMenu();
+          continue;
+        }
+        int menuNo = Integer.parseInt(command);
+        String menuTitle = getMenuTitle(menuNo, mainMenus);
+        if (menuTitle == null) {
+          System.out.println("유효한 메뉴 번호가 아닙니다.");
+        } else if (menuTitle.equals("종료")) {
+          break;
+        } else {
+          processSubMenu(menuTitle, subMenus[menuNo - 1]);
+        }
+      } catch (NumberFormatException ex) {
+        System.out.println("숫자로 메뉴 번호를 입력하세요.");
+      }
+    }
+    System.out.println("종료합니다.");
+    Prompt.close();
+  }
+
+  void processSubMenu(String menuTitle, String[] menus) {
+    if (menuTitle.equals("도움말")) {
+      System.out.println("도움말입니다.");
+      return;
+    }
     printSubMenu(menuTitle, menus);
     while (true) {
       String command = Prompt.input(String.format("메인/%s> ", menuTitle));
@@ -100,13 +104,16 @@ public class App {
         } else {
           switch (menuTitle) {
             case "회원":
-              UserCommand.excuteUserCommand(subMenuTitle);
+              userCommand.excuteUserCommand(subMenuTitle);
               break;
             case "프로젝트":
-              ProjectCommand.excuteProjectCommand(subMenuTitle);
+              projectCommand.executeProjectCommand(subMenuTitle);
+              break;
+            case "공지사항":
+              noticeCommand.excuteBoardCommand(subMenuTitle);
               break;
             case "게시판":
-              excuteBoardCommand(subMenuTitle);
+              boardCommand.excuteBoardCommand(subMenuTitle);
               break;
           }
         }
@@ -114,9 +121,6 @@ public class App {
         System.out.println("숫자로 메뉴 번호를 입력하세요.");
       }
     }
-  }
-
-  static void excuteBoardCommand(String command) {
   }
 
 }

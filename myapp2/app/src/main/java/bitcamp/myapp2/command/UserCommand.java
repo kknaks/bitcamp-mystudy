@@ -4,8 +4,9 @@ import bitcamp.myapp2.util.Prompt;
 import bitcamp.myapp2.vo.User;
 
 public class UserCommand {
+  UserList userList = new UserList();
 
-  public static void excuteUserCommand(String command) {
+  public void excuteUserCommand(String command) {
     System.out.printf("[%s]\n", command);
     switch (command) {
       case "등록":
@@ -26,26 +27,27 @@ public class UserCommand {
     }
   }
 
-  private static void addUser() {
+  private void addUser() {
     User user = new User();
     user.setNo(User.getSeqNo());
     user.setName(Prompt.input("이름?"));
     user.setEmail(Prompt.input("이메일?"));
     user.setPassword(Prompt.input("암호?"));
     user.setTel(Prompt.input("연락처?"));
-    UserList.add(user);
+    userList.add(user);
   }
 
-  private static void listUser() {
+  private void listUser() {
     System.out.println("번호 이름 이메일");
-    for (User user : UserList.toArray()) {
+    for (Object obj : userList.toArray()) {
+      User user = (User) obj;
       System.out.printf("%d %s %s\n", user.getNo(), user.getName(), user.getEmail());
     }
   }
 
-  private static void viewUser() {
+  private void viewUser() {
     int userNo = Prompt.inputInt("회원번호?");
-    User user = UserList.findByNo(userNo);
+    User user = userList.findByNo(userNo);
     if (user == null) {
       System.out.println("없는 회원입니다.");
       return;
@@ -55,9 +57,9 @@ public class UserCommand {
     System.out.printf("연락처 : %s\n", user.getTel());
   }
 
-  private static void updateUser() {
+  private void updateUser() {
     int userNo = Prompt.inputInt("회원번호?");
-    User user = UserList.findByNo(userNo);
+    User user = userList.findByNo(userNo);
     if (user == null) {
       System.out.println("없는 회원입니다.");
       return;
@@ -69,14 +71,18 @@ public class UserCommand {
     System.out.println("변경했습니다.");
   }
 
-  private static void deleteUser() {
+  private void deleteUser() {
     int userNo = Prompt.inputInt("회원번호?");
-    User deleteUser = UserList.delete(userNo);
+    User deleteUser = userList.findByNo(userNo);
     if (deleteUser != null) {
+      userList.remove(userList.indexOf(deleteUser));
       System.out.printf("'%s'회원을 삭제했습니다.\n", deleteUser.getName());
     } else {
       System.out.println("없는 회원입니다.");
     }
   }
 
+  public UserList getUserList() {
+    return userList;
+  }
 }
