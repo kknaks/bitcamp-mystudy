@@ -2,13 +2,29 @@ package bitcamp.myapp2.command;
 
 import bitcamp.myapp2.vo.User;
 
+import java.util.Arrays;
+
 public class ArrayList {
   private static final int MAX_SIZE = 100;
 
-  private final Object[] list = new Object[MAX_SIZE];
+  private Object[] list = new Object[MAX_SIZE];
   private int size;
 
+  private void grow() {
+    int oldSize = list.length;
+    int newSize = oldSize + (oldSize >> 1);
+    Object[] arr = new Object[newSize];
+    System.arraycopy(list, 0, arr, 0, oldSize);
+    list = arr;
+  }
+
   public void add(Object obj) {
+    if (size == list.length) {
+      int oldSize = list.length;
+      int newSize = oldSize + (oldSize >> 1);
+      list = Arrays.copyOf(list, newSize);
+      grow();
+    }
     list[size++] = obj;
   }
 
