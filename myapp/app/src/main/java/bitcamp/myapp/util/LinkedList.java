@@ -1,32 +1,29 @@
-package bitcamp.myapp2.command;
+package bitcamp.myapp.command;
 
-public class LinkedList {
+public class LinkedList implements List {
+
   Node first;
   Node last;
   int size;
 
-  public static void main(String[] args) {
-    LinkedList list = new LinkedList();
-    list.append("v1");
-    list.append("v2");
-    list.printAll();
-  }
-
-  public void append(Object value) {
-    size++;
+  @Override
+  public void add(Object value) {
     Node newNode = new Node(value);
     if (first == null) {
-      first = last = newNode;
-      return;
+      last = first = newNode;
+    } else {
+      last.next = newNode;
+      last = newNode;
     }
-    last.next = newNode;
-    last = newNode;
+    size++;
   }
 
-  public Object getValue(int index) {
+  @Override
+  public Object get(int index) {
     if (index < 0 || index >= size) {
-      return null;
+      throw null;
     }
+
     Node cursor = first;
     int currentIndex = 0;
 
@@ -40,24 +37,27 @@ public class LinkedList {
     return null;
   }
 
+  @Override
   public Object remove(int index) {
     if (index < 0 || index >= size) {
       return null;
     }
+
     size--;
-    Node cursor = first;
     Node deletedNode = null;
+
+    Node cursor = first;
     int currentIndex = 0;
 
     if (index == 0) {
-      deletedNode = cursor;
+      deletedNode = first;
       first = first.next;
       if (first == null) {
         last = null;
       }
       return deletedNode.value;
-
     }
+
     while (cursor != null) {
       if (currentIndex == index - 1) {
         break;
@@ -76,6 +76,7 @@ public class LinkedList {
   public int index(Object value) {
     Node cursor = first;
     int currentIndex = 0;
+
     while (cursor != null) {
       if (cursor.value == value) {
         return currentIndex;
@@ -86,25 +87,20 @@ public class LinkedList {
     return -1;
   }
 
-  public Object[] getArray(int index) {
+  @Override
+  public Object[] toArray() {
     Object[] arr = new Object[size];
+
     Node cursor = first;
-    for (int i = 0; i < arr.length; i++) {
+    for (int i = 0; i < size; i++) {
       arr[i] = cursor.value;
       cursor = cursor.next;
     }
     return arr;
   }
 
+  @Override
   public int size() {
     return size;
-  }
-
-  public void printAll() {
-    Node current = first;
-    while (current != null) {
-      System.out.println(current.value);
-      current = current.next;
-    }
   }
 }
