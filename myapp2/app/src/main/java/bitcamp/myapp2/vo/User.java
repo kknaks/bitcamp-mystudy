@@ -1,5 +1,7 @@
 package bitcamp.myapp2.vo;
 
+import java.util.Objects;
+
 public class User {
   private static int seqNo;
   private int no;
@@ -8,8 +10,30 @@ public class User {
   private String password;
   private String tel;
 
+  public User() {
+  }
+
+  public User(int no) {
+    this.no = no;
+  }
+
   public static int getSeqNo() {
     return ++seqNo;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    User user = (User) o;
+    return no == user.no;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(no);
   }
 
   public int getNo() {

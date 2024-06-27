@@ -1,4 +1,4 @@
-package bitcamp.myapp.command;
+package bitcamp.myapp.util;
 
 
 //데이터 목록을 다루는 일을 할 객체의 사용법
@@ -19,4 +19,8 @@ public interface List {
 
   int size();
 
+
+  public static class Node {
+
+  }
 }

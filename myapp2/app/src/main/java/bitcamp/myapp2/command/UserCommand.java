@@ -1,10 +1,11 @@
 package bitcamp.myapp2.command;
 
+import bitcamp.myapp2.util.LinkedList;
 import bitcamp.myapp2.util.Prompt;
 import bitcamp.myapp2.vo.User;
 
 public class UserCommand {
-  UserList userList = new UserList();
+  LinkedList userList = new LinkedList();
 
   public void excuteUserCommand(String command) {
     System.out.printf("[%s]\n", command);
@@ -47,7 +48,7 @@ public class UserCommand {
 
   private void viewUser() {
     int userNo = Prompt.inputInt("회원번호?");
-    User user = userList.findByNo(userNo);
+    User user = (User) userList.get((userList.indexOf(new User(userNo))));
     if (user == null) {
       System.out.println("없는 회원입니다.");
       return;
@@ -59,7 +60,7 @@ public class UserCommand {
 
   private void updateUser() {
     int userNo = Prompt.inputInt("회원번호?");
-    User user = userList.findByNo(userNo);
+    User user = (User) userList.get((userList.indexOf(new User(userNo))));
     if (user == null) {
       System.out.println("없는 회원입니다.");
       return;
@@ -73,7 +74,7 @@ public class UserCommand {
 
   private void deleteUser() {
     int userNo = Prompt.inputInt("회원번호?");
-    User deleteUser = userList.findByNo(userNo);
+    User deleteUser = (User) userList.get((userList.indexOf(new User(userNo))));
     if (deleteUser != null) {
       userList.remove(userList.indexOf(deleteUser));
       System.out.printf("'%s'회원을 삭제했습니다.\n", deleteUser.getName());
@@ -82,7 +83,7 @@ public class UserCommand {
     }
   }
 
-  public UserList getUserList() {
+  public LinkedList getUserList() {
     return userList;
   }
 }

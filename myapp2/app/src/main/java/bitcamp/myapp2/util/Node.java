@@ -1,4 +1,4 @@
-package bitcamp.myapp2.command;
+package bitcamp.myapp2.util;
 
 public class Node {
   Object value;

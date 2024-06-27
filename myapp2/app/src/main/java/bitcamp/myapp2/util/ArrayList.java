@@ -1,14 +1,12 @@
-package bitcamp.myapp2.command;
+package bitcamp.myapp2.util;
 
 import bitcamp.myapp2.vo.User;
 
 import java.util.Arrays;
 
-public class ArrayList implements List {
+public class ArrayList extends AbstractList {
   private static final int MAX_SIZE = 100;
-
   private Object[] list = new Object[MAX_SIZE];
-  private int size;
 
   private void grow() {
     int oldSize = list.length;
@@ -65,11 +63,6 @@ public class ArrayList implements List {
       }
     }
     return -1;
-  }
-
-  @Override
-  public int size() {
-    return size;
   }
 
   public boolean contain(User user) {

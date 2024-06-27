@@ -1,14 +1,15 @@
 package bitcamp.myapp2.command;
 
+import bitcamp.myapp2.util.LinkedList;
 import bitcamp.myapp2.util.Prompt;
 import bitcamp.myapp2.vo.Project;
 import bitcamp.myapp2.vo.User;
 
 public class ProjectCommand {
-  ProjectList projectList = new ProjectList();
-  UserList userList;
+  LinkedList projectList = new LinkedList();
+  LinkedList userList;
 
-  public ProjectCommand(UserList userList) {
+  public ProjectCommand(LinkedList userList) {
     this.userList = userList;
   }
 
@@ -55,7 +56,7 @@ public class ProjectCommand {
 
   private void viewProject() {
     int projectNo = Prompt.inputInt("프로젝트번호?");
-    Project project = projectList.findByNo(projectNo);
+    Project project = (Project) projectList.get(projectList.indexOf(new Project(projectNo)));
     if (project == null) {
       System.out.println("없는 프로젝트번호 입니다.");
       return;
@@ -72,7 +73,7 @@ public class ProjectCommand {
 
   private void updateProject() {
     int projectNo = Prompt.inputInt("프로젝트번호?");
-    Project project = projectList.findByNo(projectNo);
+    Project project = (Project) projectList.get(projectList.indexOf(new Project(projectNo)));
     if (project == null) {
       System.out.println("없는 프로젝트번호 입니다.");
       return;
@@ -88,7 +89,7 @@ public class ProjectCommand {
 
   private void deleteProject() {
     int projectNo = Prompt.inputInt("프로젝트번호?");
-    Project deleteProject = projectList.findByNo(projectNo);
+    Project deleteProject = (Project) projectList.get(projectList.indexOf(new Project(projectNo)));
     if (deleteProject != null) {
       projectList.remove(projectList.indexOf(deleteProject));
       System.out.printf("%d번 프로젝트를 삭제 했습니다.\n", deleteProject.getNo());
@@ -103,7 +104,7 @@ public class ProjectCommand {
       if (userNo == 0) {
         break;
       }
-      User user = userList.findByNo(userNo);
+      User user = (User) userList.get((userList.indexOf(new User(userNo))));
       if (user == null) {
         System.out.println("없는 팀원입니다.");
         continue;
@@ -118,14 +119,15 @@ public class ProjectCommand {
   }
 
   private void deleteMembers(Project project) {
-    for (int i = project.getMembers().size() - 1; i >= 0; i--) {
-      User user = (User) project.getMembers().get(i);
-      String str = Prompt.input("팀원(%s) 삭제?", user.getName());
+    Object[] members = project.getMembers().toArray();
+    for (Object obj : members) {
+      User member = (User) obj;
+      String str = Prompt.input("팀원(%s) 삭제?", member.getName());
       if (str.equalsIgnoreCase("y")) {
-        project.getMembers().remove(i);
-        System.out.printf("'%s' 팀원을 삭제합니다.", user.getName());
+        project.getMembers().remove(project.getMembers().indexOf(member));
+        System.out.printf("'%s' 팀원을 삭제합니다.", member.getName());
       } else {
-        System.out.printf("'%s' 팀원을 유지합니다.", user.getName());
+        System.out.printf("'%s' 팀원을 유지합니다.", member.getName());
       }
     }
   }

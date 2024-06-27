@@ -1,12 +1,13 @@
 package bitcamp.myapp2.command;
 
+import bitcamp.myapp2.util.LinkedList;
 import bitcamp.myapp2.util.Prompt;
 import bitcamp.myapp2.vo.Board;
 
 import java.util.Date;
 
 public class BoardCommand {
-  public BoardList boardList = new BoardList();
+  public LinkedList boardList = new LinkedList();
 
   public void excuteBoardCommand(String command) {
     System.out.printf("[%s]\n", command);
@@ -49,7 +50,7 @@ public class BoardCommand {
 
   private void viewBoard() {
     int boardNo = Prompt.inputInt("게시글 번호?");
-    Board board = boardList.findByNo(boardNo);
+    Board board = (Board) boardList.get(boardList.indexOf(new Board(boardNo)));
     if (board == null) {
       System.out.println("없는 게시글입니다.");
       return;
@@ -63,7 +64,7 @@ public class BoardCommand {
 
   private void updateBoard() {
     int boardNo = Prompt.inputInt("게시글 번호?");
-    Board board = boardList.findByNo(boardNo);
+    Board board = (Board) boardList.get(boardList.indexOf(new Board(boardNo)));
     if (board == null) {
       System.out.println("없는 게시글입니다.");
       return;
@@ -76,7 +77,7 @@ public class BoardCommand {
 
   private void deleteBoard() {
     int boardNo = Prompt.inputInt("게시글 번호?");
-    Board deleteBoard = boardList.findByNo(boardNo);
+    Board deleteBoard = (Board) boardList.get(boardList.indexOf(new Board(boardNo)));
     if (deleteBoard != null) {
       boardList.remove(boardList.indexOf(deleteBoard));
       System.out.printf("'%d'번 게시글을 삭제하였습니다.\n", deleteBoard.getNo());

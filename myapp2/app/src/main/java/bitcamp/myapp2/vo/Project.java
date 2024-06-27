@@ -1,21 +1,42 @@
 package bitcamp.myapp2.vo;
 
-import bitcamp.myapp2.command.ArrayList;
+import bitcamp.myapp2.util.ArrayList;
+
+import java.util.Objects;
 
 public class Project {
   private static int seqNo;
-  private ArrayList members = new ArrayList();
+  private final ArrayList members = new ArrayList();
   private int no;
   private String title;
   private String description;
   private String startDate;
   private String endDate;
 
-  //  private final User[] users = new User[10];
-  //  private int memberSize;
+  public Project() {
+  }
+
+  public Project(int no) {
+    this.no = no;
+  }
 
   public static int getSeqNo() {
     return ++seqNo;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    Project project = (Project) o;
+    return no == project.no;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(no);
   }
 
   public int getNo() {

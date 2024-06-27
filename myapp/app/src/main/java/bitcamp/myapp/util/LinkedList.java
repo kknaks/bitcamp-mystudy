@@ -1,10 +1,9 @@
-package bitcamp.myapp.command;
+package bitcamp.myapp.util;
 
-public class LinkedList implements List {
+public class LinkedList extends AbstractList {
 
-  Node first;
-  Node last;
-  int size;
+  private Node first;
+  private Node last;
 
   @Override
   public void add(Object value) {
@@ -21,7 +20,7 @@ public class LinkedList implements List {
   @Override
   public Object get(int index) {
     if (index < 0 || index >= size) {
-      throw null;
+      return null;
     }
 
     Node cursor = first;
@@ -88,6 +87,21 @@ public class LinkedList implements List {
   }
 
   @Override
+  public int indexOf(Object value) {
+    Node cursor = first;
+    int currentIndex = 0;
+
+    while (cursor != null) {
+      if (cursor.value.equals(value)) {
+        return currentIndex;
+      }
+      cursor = cursor.next;
+      currentIndex++;
+    }
+    return -1;
+  }
+
+  @Override
   public Object[] toArray() {
     Object[] arr = new Object[size];
 
@@ -99,8 +113,15 @@ public class LinkedList implements List {
     return arr;
   }
 
-  @Override
-  public int size() {
-    return size;
+  //static nested class
+  private static class Node {
+    Object value;
+    Node next;
+
+    public Node(Object value) {
+      this.value = value;
+    }
   }
+
 }
+
