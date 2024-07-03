@@ -1,13 +1,14 @@
-package study.patterns.ex01.step1;
+package study.pattern.ex01_re.step1;
 
 public class Car {
-  public String maker;
-  public String model;
-  public int cc;
+  String maker;
+  String model;
+  int cc;
 
   @Override
   public String toString() {
     return "Car [maker=" + maker + ", model=" + model + ", cc=" + cc + "]";
   }
+
 
 }
