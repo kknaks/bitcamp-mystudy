@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c3ec23e9-19d1-42b4-b72b-db95561817a0" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/../class/Day30.md" beforeDir="false" afterPath="$PROJECT_DIR$/../class/Day30.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/command/BoardCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/command/BoardCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/command/UserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/command/UserCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +209,7 @@
       <workItem from="1720419542879" duration="6000" />
       <workItem from="1720420710535" duration="811000" />
       <workItem from="1720421879527" duration="413000" />
-      <workItem from="1720422345011" duration="8480000" />
+      <workItem from="1720422345011" duration="12587000" />
     </task>
     <servers />
   </component>
