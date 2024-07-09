@@ -1,6 +1,7 @@
 package bitcamp.myapp.command;
 
 import bitcamp.myapp.util.Prompt;
+import bitcamp.myapp.util.Stack;
 
 public abstract class AbstractCommand implements Command {
   protected String menuTitle;
@@ -10,10 +11,11 @@ public abstract class AbstractCommand implements Command {
   }
 
   @Override
-  public void execute() {
+  public void execute(Stack menuPath) {
+    menuPath.push(menuTitle);
     printMenus();
     while (true) {
-      String command = Prompt.input(String.format("메인/%s>", menuTitle));
+      String command = Prompt.input("%s>", getMenuTitle(menuPath));
       if (command.equals("menu")) {
         printMenus();
         continue;
@@ -32,6 +34,18 @@ public abstract class AbstractCommand implements Command {
         System.out.println("숫자로 메뉴 번호를 입력하세요.");
       }
     }
+    menuPath.pop();
+  }
+
+  private String getMenuTitle(Stack menuPath) {
+    StringBuilder strBuilder = new StringBuilder();
+    for (int i = 0; i < menuPath.size(); i++) {
+      if (strBuilder.length() > 0) {
+        strBuilder.append("/");
+      }
+      strBuilder.append(menuPath.get(i));
+    }
+    return strBuilder.toString();
   }
 
   private void printMenus() {

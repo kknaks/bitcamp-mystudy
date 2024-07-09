@@ -1,31 +1,41 @@
 package bitcamp.myapp;
 
-import bitcamp.myapp.command.BoardCommand;
-import bitcamp.myapp.command.HelpCommand;
-import bitcamp.myapp.command.ProjectCommand;
-import bitcamp.myapp.command.UserCommand;
+import bitcamp.myapp.command.*;
+import bitcamp.myapp.util.ArrayList;
+import bitcamp.myapp.util.LinkedList;
 import bitcamp.myapp.util.Prompt;
+import bitcamp.myapp.util.Stack;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class App {
+  Map<String, Command> commandMap = new HashMap<>();
+  Stack menuPath = new Stack();
+  String[] mainMenus = new String[] {"회원", "프로젝트", "게시판", "도움말", "종료"};
+  ArrayList userList = new ArrayList();
+  LinkedList projectList = new LinkedList();
+  ArrayList boardList = new ArrayList();
 
-  String[] mainMenus = new String[] {"회원", "프로젝트", "게시판", "공지사항", "도움말", "종료"};
-  UserCommand userCommand = new UserCommand("회원");
-  BoardCommand boardCommand = new BoardCommand("게시판");
-  BoardCommand noticeCommand = new BoardCommand("공지사항");
-  ProjectCommand projectCommand = new ProjectCommand("프로젝트", userCommand.getUserList());
-  HelpCommand helpCommand = new HelpCommand();
+  public App() {
+    commandMap.put("회원", new UserCommand("회원", userList));
+    commandMap.put("게시판", new BoardCommand("게시판", boardList));
+    commandMap.put("프로젝트", new ProjectCommand("회원", projectList, userList));
+    commandMap.put("도움말", new HelpCommand());
+  }
 
   public static void main(String[] args) {
     new App().execute();
   }
 
   void execute() {
+    menuPath.push("메인");
     printMenu();
 
     String command;
     while (true) {
       try {
-        command = Prompt.input("메인>");
+        command = Prompt.input("%s>", getMenuTitle(menuPath));
         if (command.equals("menu")) {
           printMenu();
         } else {
@@ -49,26 +59,24 @@ public class App {
     Prompt.close();
   }
 
-  void processMenu(String menuTitle) {
-    switch (menuTitle) {
-      case "회원":
-        userCommand.execute();
-        break;
-      case "프로젝트":
-        projectCommand.execute();
-        break;
-      case "게시판":
-        boardCommand.execute();
-        break;
-      case "공지사항":
-        noticeCommand.execute();
-        break;
-      case "도움말":
-        helpCommand.execute();
-        break;
-      default:
-        System.out.printf("%s 메뉴의 명령을 처리할 수 없습니다.\n", menuTitle);
+  private String getMenuTitle(Stack menuPath) {
+    StringBuilder strBuilder = new StringBuilder();
+    for (int i = 0; i < menuPath.size(); i++) {
+      if (strBuilder.length() > 0) {
+        strBuilder.append("/");
+      }
+      strBuilder.append(menuPath.get(i));
     }
+    return strBuilder.toString();
+  }
+
+  void processMenu(String menuTitle) {
+    Command command = commandMap.get(menuTitle);
+    if (command == null) {
+      System.out.printf("%s 메뉴의 명령을 처리할 수 없습니다.\n", menuTitle);
+      return;
+    }
+    command.execute(menuPath);
   }
 
   void printMenu() {
