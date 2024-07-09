@@ -265,8 +265,6 @@
     public class App {
         Stack menuPath = new Stack();
         // 이하 필드 생략 // 
-        
-
         public App() { /* 생략 */  }
 
         public static void main(String[] args) {
@@ -360,3 +358,51 @@
     }
     ```
     </details>
+
+    ### 
+    
+- Queue 적용하기
+    ### 1. 전체흐름도
+    - Prompt.input()을 호출시에 Queue에 offer을 실행한다.
+    - Queue를 차례대로 출력하는 메소드를 만든다.
+    - 검색기록 출력 Command에 출력메소드를 넘긴다.
+    ![alt text](image-14.png)
+
+    ### 2. input메서드 수정
+    - 기존 input메서드를 넘겨받은 매개변수와 키보드 입력변수 합쳐서 Queue에 offer
+    - 검색기록이 20개를 넘기면, 기존 앞에서 부터 삭제
+    ```java
+        public static String input(String format, Object... args) {
+            String promptTitle = String.format(format + " ", args);
+            System.out.print(promptTitle);
+            String input = keyboardScanner.nextLine();
+            if (promptTitle.endsWith(">")) {
+                inputQueue.offer(promptTitle + input);
+            }
+            if (inputQueue.size() > 20) {
+                inputQueue.poll();
+            }
+            return input;
+        }
+    ```
+    ### 3. 출력 메서드 작성
+    - Queue를 돌면서 들어온 순서대로 출력
+    ```java
+        public static void printHistory() {
+            System.out.println("[명령내역]-----------------------------");
+            for (int i = 0; i < inputQueue.size(); i++) {
+                System.out.println(inputQueue.get(i));
+                }
+            System.out.println("-------------------------------------끝");
+        }
+    ```
+    ### 4. 호출 클래스 작성
+    - HistoryCommand 클래스 생성
+    ```java
+    public class HistoryCommand implements Command{
+        @Override
+        public void execute(Stack menuTitle){
+            Prompt.printHistory();
+        }
+    }
+    ```
