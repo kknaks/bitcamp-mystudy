@@ -29,32 +29,33 @@
 ## SOLID 적용하기
 - 예제로 DIP 개념 파악하기
     ### 1. 기존 클래스 UML
-    ![alt text](image-6.png)
+    ![image-6](https://github.com/kknaks/bitcamp-mystudy/assets/118641096/156e4a66-8444-4eb4-823d-a9ddead4ee91)
     - 기존 Switch클래스는 FluoLamp클래스만 객체로 사용 가능하다.
     - <u>고수준 모듈이 저수준 모듈에 의존적이다. 
     - 구체적인 구현이 아니라 추상화된 인터페이스나 상위클래스에 의존해야한다.</u>
     ### 2. 상위클래스로 같은 타입 만들기
-    ![alt text](image-7.png)
+    ![image-7](https://github.com/kknaks/bitcamp-mystudy/assets/118641096/bd4eb971-3b31-42dc-ba88-491e0e6f1836)
     - Lamp의 공통적 속성을 활용(Generic)하여 부모클래스를 생성한다.
     - Lamp의 다형성을 활용하여 모두 제어 가능하다.
     - Swtich는 lamp의 스위치 역할만 가능하다.
     - <u>Switch의 새로운 기능 추가 시, Open/Closed Principle을 충족시키지 못한다.</u>
     ### 3. 고수준의 상위클래스 만들기
-    ![alt text](image-8.png)
+    ![image-8](https://github.com/kknaks/bitcamp-mystudy/assets/118641096/c9461207-7bba-4d71-8a56-875db82b7fe2)
+
     - 더 높은 수준의 상위클래스로 상속받으면 Switch로 제어가능
     - 상속의 클래스가 복잡해진다.
     - Switch로 제어안해도 되는 코드도 강제로 사용해야한다.
     - <u>Interface Segregation Principle을 충족시키지 못한다.</u>
 
     ### 4. ICP(Interface Segregation Principle) 전환
-    ![alt text](image-9.png)
+    ![image-9](https://github.com/kknaks/bitcamp-mystudy/assets/118641096/3fa5d7ec-c502-4320-ba61-fc31edbfde4d)
     - Switch클래스에서 사용할 Interface를 생성한다. 
     - 제품군(Lamp, Fan)별 세부기능 가진 자식클래스를 생성하고 인터페이스를 구현한다.
     - 새로운 제품군이 들어오면 Switch클래스 내부에서 코드 수정이 필요하다. 
     - <u>Dependency Inversion Principle을 충족시키지 못한다.</u>
 
     ### DIP(Dependency Inversion Principle) 수정
-    ![alt text](image-10.png)
+    ![image-10](https://github.com/kknaks/bitcamp-mystudy/assets/118641096/16607853-31de-41e4-a01b-187afd7e7f08)
     - ICP를 충족하는 인터페이스를 생성한다.
     - 인터페이스를 직접적으로 생성하지 않는다( = 의존객체를 만들지 않는다.)
     - 외부에서 객체를 생성해서 대입을 받는다.
@@ -208,9 +209,9 @@
 ## Stack과 Queue의 개념
 - 스택과 큐는 컴퓨터 사이언스에서 사용되는 데이터 구조이다.
 - Stack : 스택은 LIFO(Last In, First Out) 구조를 따르며 마지막에 삽입된 요소가 가장 먼저 삭제되는 방식이다. 스택은 마치 한쪽 끝에서만 요소를 넣거나 뺄 수 있다.
-![alt text](image-11.png)
+<img width="1250" alt="image-11" src="https://github.com/kknaks/bitcamp-mystudy/assets/118641096/474ccc08-ec92-489d-8108-55853e8f638d">
 - Queue : 큐는 FIFO(First In, First Out) 구조를 따르며 처음에 삽입된 요소가 가장 먼저 삭제되는 방식이다. 큐는 마치 줄을 서서 기다리는 형태이다.
-![alt text](image-12.png)
+<img width="870" alt="image-12" src="https://github.com/kknaks/bitcamp-mystudy/assets/118641096/54dbc068-afdc-4d09-a15e-fe448a45f9a8">
 
 ## LinkedList로 Stack과 Queue구현하기 
 - Stack 구현하기
@@ -252,7 +253,7 @@
 - Stack 적용하기
     ### 1. 전체 흐름도
     - Stack은 Prompt에서 menuPath를 설정
-    ![alt text](image-13.png)
+    ![image-13](https://github.com/kknaks/bitcamp-mystudy/assets/118641096/ef047dcc-37a7-433c-8b3b-0315aae71003)
 
     ### 2. App() 수정하기
     - 필드에 Stack menuPath를 설정한다.
@@ -366,7 +367,7 @@
     - Prompt.input()을 호출시에 Queue에 offer을 실행한다.
     - Queue를 차례대로 출력하는 메소드를 만든다.
     - 검색기록 출력 Command에 출력메소드를 넘긴다.
-    ![alt text](image-14.png)
+    ![image-14](https://github.com/kknaks/bitcamp-mystudy/assets/118641096/7744afad-bd32-4f1c-a3d4-9c61ab8b3606)
 
     ### 2. input메서드 수정
     - 기존 input메서드를 넘겨받은 매개변수와 키보드 입력변수 합쳐서 Queue에 offer
