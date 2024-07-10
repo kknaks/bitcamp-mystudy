@@ -1,13 +1,9 @@
 package bitcamp.myapp;
 
 import bitcamp.myapp.command.*;
-import bitcamp.myapp.util.ArrayList;
-import bitcamp.myapp.util.LinkedList;
 import bitcamp.myapp.util.Prompt;
-import bitcamp.myapp.util.Stack;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class App {
   Map<String, Command> commandMap = new HashMap<>();

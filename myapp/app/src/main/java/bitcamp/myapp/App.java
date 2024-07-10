@@ -1,10 +1,9 @@
 package bitcamp.myapp;
 
 import bitcamp.myapp.command.*;
-import bitcamp.myapp.util.*;
+import bitcamp.myapp.util.Prompt;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class App {
 
