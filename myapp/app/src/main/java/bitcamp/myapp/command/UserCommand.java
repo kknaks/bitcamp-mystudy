@@ -3,15 +3,14 @@ package bitcamp.myapp.command;
 import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.User;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class UserCommand extends AbstractCommand {
 
-  private List userList;
+  private List<User> userList;
   private String[] menus = {"등록", "목록", "조회", "변경", "삭제"};
 
-  public UserCommand(String menuTitle, List list) {
+  public UserCommand(String menuTitle, List<User> list) {
     super(menuTitle);
     this.userList = list;
   }
@@ -55,9 +54,7 @@ public class UserCommand extends AbstractCommand {
 
   private void listUser() {
     System.out.println("번호 이름 이메일");
-    Iterator iterator = userList.iterator();
-    while (iterator.hasNext()) {
-      User user = (User) iterator.next();
+    for (User user : userList) {
       System.out.printf("%d %s %s\n", user.getNo(), user.getName(), user.getEmail());
     }
   }
@@ -69,7 +66,9 @@ public class UserCommand extends AbstractCommand {
       System.out.println("없는 회원입니다.");
       return;
     }
-    User user = (User) userList.get(userList.indexOf(new User(userNo)));
+
+    User user = userList.get(index);
+
     System.out.printf("이름: %s\n", user.getName());
     System.out.printf("이메일: %s\n", user.getEmail());
     System.out.printf("연락처: %s\n", user.getTel());
@@ -82,7 +81,9 @@ public class UserCommand extends AbstractCommand {
       System.out.println("없는 회원입니다.");
       return;
     }
-    User user = (User) userList.get(userList.indexOf(new User(userNo)));
+
+    User user = userList.get(index);
+
     user.setName(Prompt.input("이름(%s)?", user.getName()));
     user.setEmail(Prompt.input("이메일(%s)?", user.getEmail()));
     user.setPassword(Prompt.input("암호?"));
@@ -97,7 +98,8 @@ public class UserCommand extends AbstractCommand {
       System.out.println("없는 회원입니다.");
       return;
     }
-    User deletedUser = (User) userList.remove(index);
+
+    User deletedUser = userList.remove(index);
     System.out.printf("'%s' 회원을 삭제 했습니다.\n", deletedUser.getName());
   }
 }

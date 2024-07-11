@@ -1,50 +1,40 @@
 package study.oop.clazz;
 
-import java.util.Calendar;
+class A {
+  // 메소드
+  public void method1(int arg) { // final int age
+    // 로컬 변수
+    int var = 1; // final int var = 1;
 
-public class Test {
-  public static void main(String[] args) {
-    Calendar calendar = Calendar.getInstance();
-    java.util.Date currentDate = calendar.getTime();
-    System.out.println(currentDate);
-    int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-    calendar.add(Calendar.DAY_OF_MONTH, Calendar.SUNDAY - dayOfWeek);
-    System.out.println(calendar);
-    for (int i = 0; i < 7; i++) {
-      System.out
-          .println(calendar.get(Calendar.MONTH) + 1 + " " + calendar.get(Calendar.DAY_OF_MONTH));
-      calendar.add(Calendar.DAY_OF_MONTH, 1);
+    // 로컬 클래스
+    class B {
+      // 메소드
+      void method2() {
+        // 로컬 변수 읽기
+        System.out.println("arg: " + arg); // (o)
+        System.out.println("var: " + var); // (o)
 
+        // 로컬 변수 수정
+        // arg = 2; //(x)
+        // var = 2; //(x)
+      }
     }
-    // System.out.println(calendar.get(Calendar.MONTH) + " " + calendar.get(Calendar.DAY_OF_MONTH));
-    // calendar.add(Calendar.DAY_OF_MONTH, 1);
-    // System.out.println(calendar.get(Calendar.MONTH) + " " + calendar.get(Calendar.DAY_OF_MONTH));
+
+    // 로컬 객체 생성
+    B b = new B();
+    // 로컬 객체 메소드 호출
+    b.method2();
+
+    // 로컬 변수 수정
+    // arg = 3; //(x)
+    // var = 3; //(x)
   }
 }
 
 
-// java.util.GregorianCalendar[
-// time=1719910166542,
-// areFieldsSet=true,
-// areAllFieldsSet=true,
-// lenient=true,
-// zone=sun.util.calendar.ZoneInfo[id="Asia/Seoul",offset=32400000,dstSavings=0,useDaylight=false,transitions=30,lastRule=null],
-// firstDayOfWeek=1,
-// minimalDaysInFirstWeek=1,
-// ERA=1,
-// YEAR=2024,
-// MONTH=6,
-// WEEK_OF_YEAR=27,
-// WEEK_OF_MONTH=1,
-// DAY_OF_MONTH=2,
-// DAY_OF_YEAR=184,
-// DAY_OF_WEEK=3,
-// DAY_OF_WEEK_IN_MONTH=1,
-// AM_PM=1,
-// HOUR=5,
-// HOUR_OF_DAY=17,
-// MINUTE=49,
-// SECOND=26,
-// MILLISECOND=542,
-// ZONE_OFFSET=32400000,
-// DST_OFFSET=0]
+public class Test {
+  public static void main(String[] args) {
+    A a = new A();
+    a.method1(5); // method1 메서드 호출
+  }
+}

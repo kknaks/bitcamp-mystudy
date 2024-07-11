@@ -1,15 +1,12 @@
-# 19. 리팩토링: 상속의 Generalization 적용
+# 23. 특정 클래스에서만 사용되는 의존 객체는 중첩 클래스로 정의하기
 
 ## 학습목표
 
-- 상속의 Generalization을 이해하고 적용할 수 있다.
-- 추상 클래스의 역할을 이해하고 적용할 수 있다.
-- GoF의 Template Method 설계 패턴을 적용할 수 있다.
+- 중첩 클래스의 구동 원리를 이해하고 사용할 수 있다.
 
 ## 요구사항
 
-- ArrayList, LinkedList의 공통 코드를 분리하여 상속의 generalization으로 처리
-- UserCommand, ProjectCommand, BoardCommand의 공통 코드를 분리하여 상속의 generalization으로 처리
+- 특정 클래스에서만 사용되는 클래스가 있다면 중첩 클래스로 코드를 정리하기
 
 ## 실행 결과
 
@@ -17,28 +14,29 @@
 
 ## 작업
 
-### ArrayList, LinkedList 일반화 하기
+### Node 클래스를 중첩 클래스로 전환
 
-- ArrayList와 LinkedList 공통 분모를 추출한다.
-  - AbstractList 클래스 추가
-- ArrayList, LinkedList는 AbstractList를 상속한다.
-  - ArrayList, LinkedList 변경
+- LinkedList 클래스 변경
+  - Node 클래스를 LinkedList의 static nested class 로 옮긴다.
+  
+### ListIterator 클래스를 중첩 클래스로 전환
 
-### XxxCommand 일반화 하기
-
-- "도움말" 메뉴를 처리할 코드를 별도의 클래스로 분리
-  - HelpCommand 클래스 정의
-- XxxCommand의 공통 코드를 추출하여 수퍼 클래스로 정의
-  - AbstractCommand 추상 클래스 정의
-  - UserCommand, ProjectCommand, BoardCommand 클래스를 서브로 클래스로 정의
-
+- AbstractList 클래스 변경
+  - ListIterator 클래스를 이 클래스의 static nested class로 옮긴다.
+    - AbstractList01 클래스 참고
+  - ListIterator 클래스를 non-static nested class로 변경한다.
+    - AbstractList02 클래스 참고
+  - ListIterator 클래스를 local class로 변경한다.
+    - AbstractList03 클래스 참고
+  - ListIterator 클래스를 anonymous class로 변경한다.
+    - AbstractList 클래스 참고
+    
 ## 소스 파일
 
-- AbstractList.java
-- ArrayList.java
+- Node.java (삭제)
 - LinkedList.java
-- HelpCommand.java
-- UserCommand.java
-- ProjectCommand.java
-- BoardCommand.java
-- App.java
+- ListIterator.java(삭제)
+- AbstractList.java
+  - AbstractList01.java
+  - AbstractList02.java
+  - AbstractList03.java

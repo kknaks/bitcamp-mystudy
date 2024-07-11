@@ -2,21 +2,24 @@ package bitcamp.myapp;
 
 import bitcamp.myapp.command.*;
 import bitcamp.myapp.util.Prompt;
+import bitcamp.myapp.vo.Board;
+import bitcamp.myapp.vo.Project;
+import bitcamp.myapp.vo.User;
 
 import java.util.*;
 
 public class App {
 
 
-  String[] menus = {"회원", "프로젝트", "게시판", "도움말", "명령내역", "종료"};
-
-  Map<String, Command> commandMap = new HashMap<>();
+  String[] menus = new String[] {"회원", "프로젝트", "게시판", "도움말", "명령내역", "종료"};
   Stack menuPath = new Stack();
 
+  Map<String, Command> commandMap = new HashMap<>();
+
   public App() {
-    List userList = new ArrayList();
-    List projectList = new LinkedList();
-    List boardList = new LinkedList();
+    List<User> userList = new ArrayList();
+    List<Project> projectList = new LinkedList();
+    List<Board> boardList = new LinkedList();
 
     commandMap.put("회원", new UserCommand("회원", userList));
     commandMap.put("게시판", new BoardCommand("게시판", boardList));
@@ -25,13 +28,14 @@ public class App {
     commandMap.put("명령내역", new HistoryCommand());
   }
 
-  public static void main(String[] args) {
 
+  public static void main(String[] args) {
     new App().execute();
   }
 
   void execute() {
     menuPath.push("메인");
+
     printMenu();
 
     String command;
@@ -94,7 +98,6 @@ public class App {
   }
 
   void processMenu(String menuTitle) {
-
     Command command = commandMap.get(menuTitle);
     if (command == null) {
       System.out.printf("%s 메뉴의 명령을 처리할 수 없습니다.\n", menuTitle);
