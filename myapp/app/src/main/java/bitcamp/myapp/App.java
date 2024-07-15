@@ -1,10 +1,10 @@
 package bitcamp.myapp;
 
 import bitcamp.myapp.command.*;
-import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
+import bitcamp.util.Prompt;
 
 import java.util.*;
 

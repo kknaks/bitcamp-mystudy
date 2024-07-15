@@ -1,7 +1,7 @@
 package bitcamp.myapp.command;
 
-import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.User;
+import bitcamp.util.Prompt;
 
 import java.util.List;
 
