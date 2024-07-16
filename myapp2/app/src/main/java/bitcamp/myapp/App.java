@@ -1,116 +1,80 @@
 package bitcamp.myapp;
 
+import bitcamp.menu.MenuGroup;
+import bitcamp.menu.MenuItem;
 import bitcamp.myapp.command.*;
-import bitcamp.myapp.util.Prompt;
+import bitcamp.myapp.vo.Board;
+import bitcamp.myapp.vo.Project;
+import bitcamp.myapp.vo.User;
+import bitcamp.util.Prompt;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class App {
+  MenuGroup mainMenu = new MenuGroup("메인");
+  UserCommand userCommand;
+  BoardCommand boardCommand;
+  ProjectCommand projectCommand;
+  HelpCommand helpCommand;
+  HistoryCommand historyCommand;
 
-
-  String[] menus = {"회원", "프로젝트", "게시판", "도움말", "명령내역", "종료"};
-  Stack menuPath = new Stack();
-
-  Map<String, Command> commandMap = new HashMap<>();
 
   public App() {
-    List userList = new ArrayList();
-    List projectList = new LinkedList();
-    List boardList = new LinkedList();
+    List<User> userList = new ArrayList<>();
+    List<Project> projectList = new LinkedList<>();
+    List<Board> boardList = new LinkedList<>();
 
-    commandMap.put("회원", new UserCommand("회원", userList));
-    commandMap.put("게시판", new BoardCommand("게시판", boardList));
-    commandMap.put("프로젝트", new ProjectCommand("프로젝트", projectList, userList));
-    commandMap.put("도움말", new HelpCommand());
-    commandMap.put("명령내역", new HistoryCommand());
+    userCommand = new UserCommand(userList);
+    boardCommand = new BoardCommand(boardList);
+    projectCommand = new ProjectCommand(projectList, userList);
+    helpCommand = new HelpCommand();
+    historyCommand = new HistoryCommand();
+
+    MenuGroup boardMenu = new MenuGroup("게시판");
+    boardMenu.add(new MenuItem("조회", boardCommand));
+    boardMenu.add(new MenuItem("목록", boardCommand));
+    boardMenu.add(new MenuItem("조회", boardCommand));
+    boardMenu.add(new MenuItem("변경", boardCommand));
+    boardMenu.add(new MenuItem("삭제", boardCommand));
+    mainMenu.add(boardMenu);
+
+    MenuGroup projectMenu = new MenuGroup("프로젝트");
+    projectMenu.add(new MenuItem("조회", projectCommand));
+    projectMenu.add(new MenuItem("목록", projectCommand));
+    projectMenu.add(new MenuItem("조회", projectCommand));
+    projectMenu.add(new MenuItem("변경", projectCommand));
+    projectMenu.add(new MenuItem("삭제", projectCommand));
+    mainMenu.add(projectMenu);
+
+    MenuGroup userMenu = new MenuGroup("회원");
+    userMenu.add(new MenuItem("조회", userCommand));
+    userMenu.add(new MenuItem("목록", userCommand));
+    userMenu.add(new MenuItem("조회", userCommand));
+    userMenu.add(new MenuItem("변경", userCommand));
+    userMenu.add(new MenuItem("삭제", userCommand));
+    mainMenu.add(userMenu);
+
+    mainMenu.add(new MenuItem("도움말", helpCommand));
+    mainMenu.add(new MenuItem("명령내역", historyCommand));
+
+    mainMenu.setExitMenuTitle("종료");
   }
-
 
   public static void main(String[] args) {
     new App().execute();
   }
 
   void execute() {
-    menuPath.push("메인");
-
-    printMenu();
-
-    String command;
-    while (true) {
-      try {
-        command = Prompt.input("%s>", getMenuPathTitle(menuPath));
-
-        if (command.equals("menu")) {
-          printMenu();
-
-        } else {
-          int menuNo = Integer.parseInt(command);
-          String menuTitle = getMenuTitle(menuNo); // 설명하는 변수
-          if (menuTitle == null) {
-            System.out.println("유효한 메뉴 번호가 아닙니다.");
-          } else if (menuTitle.equals("종료")) {
-            break;
-          } else {
-            processMenu(menuTitle);
-          }
-        }
-      } catch (NumberFormatException ex) {
-        System.out.println("숫자로 메뉴 번호를 입력하세요.");
-      }
-    }
-
-    System.out.println("종료합니다.");
-
-    Prompt.close();
-  }
-
-  void printMenu() {
-    String boldAnsi = "\033[1m";
-    String redAnsi = "\033[31m";
-    String resetAnsi = "\033[0m";
-
     String appTitle = "[프로젝트 관리 시스템]";
     String line = "----------------------------------";
-
-    System.out.println(boldAnsi + line + resetAnsi);
-    System.out.println(boldAnsi + appTitle + resetAnsi);
-
-    for (int i = 0; i < menus.length; i++) {
-      if (menus[i].equals("종료")) {
-        System.out.printf("%s%d. %s%s\n", (boldAnsi + redAnsi), (i + 1), menus[i], resetAnsi);
-      } else {
-        System.out.printf("%d. %s\n", (i + 1), menus[i]);
-      }
+    try {
+      mainMenu.execute();
+    } catch (NumberFormatException ex) {
+      System.out.println("숫자로 메뉴 번호를 입력하세요.");
     }
-
-    System.out.println(boldAnsi + line + resetAnsi);
-  }
-
-  private boolean isValidateMenu(int menuNo) {
-    return menuNo >= 1 && menuNo <= menus.length;
-  }
-
-  private String getMenuTitle(int menuNo) {
-    return isValidateMenu(menuNo) ? menus[menuNo - 1] : null;
-  }
-
-  void processMenu(String menuTitle) {
-    Command command = commandMap.get(menuTitle);
-    if (command == null) {
-      System.out.printf("%s 메뉴의 명령을 처리할 수 없습니다.\n", menuTitle);
-      return;
-    }
-    command.execute(menuPath);
-  }
-
-  private String getMenuPathTitle(Stack menuPath) {
-    StringBuilder strBuilder = new StringBuilder();
-    for (int i = 0; i < menuPath.size(); i++) {
-      if (strBuilder.length() > 0) {
-        strBuilder.append("/");
-      }
-      strBuilder.append(menuPath.get(i));
-    }
-    return strBuilder.toString();
+    System.out.println("종료합니다.");
+    Prompt.close();
   }
 }

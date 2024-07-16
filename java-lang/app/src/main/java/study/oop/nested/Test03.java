@@ -9,11 +9,20 @@ public class Test03 {
   }
 
   public void doAction() {
-    RandomAction randomAction = (int n) -> num(10);
-    System.out.println("Random number: " + randomAction.randomDice(10));
+    RandomAction randomAction = (int n) -> randomNum(n);
+    System.out.println(randomAction.randomDice(10));
+
+    RandomAction randomAction2 = (int n) -> randomZero(n);
+    System.out.println(randomAction2.randomDice(80));
   }
 
-  public int num(int n) {
+  public int randomZero(int n) {
+    double probability = ((double) n) / 100;
+    Random random = new Random();
+    return random.nextDouble() < probability ? 0 : 1;
+  }
+
+  public int randomNum(int n) {
     Random random = new Random();
     int randomNum = random.nextInt(n);
     return randomNum;

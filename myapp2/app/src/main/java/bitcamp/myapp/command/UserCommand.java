@@ -1,28 +1,21 @@
 package bitcamp.myapp.command;
 
-import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.User;
+import bitcamp.util.Prompt;
 
-import java.util.Iterator;
 import java.util.List;
 
-public class UserCommand extends AbstractCommand {
+public class UserCommand implements Command {
 
   private List<User> userList;
   private String[] menus = {"등록", "목록", "조회", "변경", "삭제"};
 
-  public UserCommand(String menuTitle, List<User> list) {
-    super(menuTitle);
+  public UserCommand(List<User> list) {
     this.userList = list;
   }
 
   @Override
-  protected String[] getMenus() {
-    return menus;
-  }
-
-  @Override
-  protected void processMenu(String menuName) {
+  public void execute(String menuName) {
     System.out.printf("[%s]\n", menuName);
     switch (menuName) {
       case "등록":
@@ -55,9 +48,7 @@ public class UserCommand extends AbstractCommand {
 
   private void listUser() {
     System.out.println("번호 이름 이메일");
-    Iterator<User> iterator = userList.iterator();
-    while (iterator.hasNext()) {
-      User user = iterator.next();
+    for (User user : userList) {
       System.out.printf("%d %s %s\n", user.getNo(), user.getName(), user.getEmail());
     }
   }
@@ -70,7 +61,7 @@ public class UserCommand extends AbstractCommand {
       return;
     }
 
-    User user = (User) userList.get(index);
+    User user = userList.get(index);
 
     System.out.printf("이름: %s\n", user.getName());
     System.out.printf("이메일: %s\n", user.getEmail());
