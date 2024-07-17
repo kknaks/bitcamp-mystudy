@@ -1,24 +1,29 @@
 package bitcamp.myapp.command;
 
+import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
-import bitcamp.util.Prompt;
-
 import java.util.List;
 
-public class ProjectCommand implements Command {
+public class ProjectCommand extends AbstractCommand {
 
   private List<Project> projectList;
   private List<User> userList;
   private String[] menus = {"등록", "목록", "조회", "변경", "삭제"};
 
-  public ProjectCommand(List<Project> projectList, List<User> userList) {
+  public ProjectCommand(String menuTitle, List<Project> projectList, List<User> userList) {
+    super(menuTitle);
     this.projectList = projectList;
     this.userList = userList;
   }
 
   @Override
-  public void execute(String menuName) {
+  protected String[] getMenus() {
+    return menus;
+  }
+
+  @Override
+  protected void processMenu(String menuName) {
     System.out.printf("[%s]\n", menuName);
     switch (menuName) {
       case "등록":
@@ -98,8 +103,8 @@ public class ProjectCommand implements Command {
   private void listProject() {
     System.out.println("번호 프로젝트 기간");
     for (Project project : projectList) {
-      System.out.printf("%d %s %s ~ %s\n", project.getNo(), project.getTitle(),
-          project.getStartDate(), project.getEndDate());
+      System.out.printf("%d %s %s ~ %s\n",
+          project.getNo(), project.getTitle(), project.getStartDate(), project.getEndDate());
     }
   }
 
@@ -116,7 +121,7 @@ public class ProjectCommand implements Command {
     System.out.printf("프로젝트명: %s\n", project.getTitle());
     System.out.printf("설명: %s\n", project.getDescription());
     System.out.printf("기간: %s ~ %s\n", project.getStartDate(), project.getEndDate());
-
+    
     System.out.println("팀원:");
     for (User user : project.getMembers()) {
       System.out.printf("- %s\n", user.getName());

@@ -1,21 +1,26 @@
 package bitcamp.myapp.command;
 
+import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.User;
-import bitcamp.util.Prompt;
-
 import java.util.List;
 
-public class UserCommand implements Command {
+public class UserCommand extends AbstractCommand {
 
   private List<User> userList;
   private String[] menus = {"등록", "목록", "조회", "변경", "삭제"};
 
-  public UserCommand(List<User> list) {
+  public UserCommand(String menuTitle, List<User> list) {
+    super(menuTitle);
     this.userList = list;
   }
 
   @Override
-  public void execute(String menuName) {
+  protected String[] getMenus() {
+    return menus;
+  }
+
+  @Override
+  protected void processMenu(String menuName) {
     System.out.printf("[%s]\n", menuName);
     switch (menuName) {
       case "등록":

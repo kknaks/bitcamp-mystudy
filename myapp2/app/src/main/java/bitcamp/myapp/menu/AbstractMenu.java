@@ -1,4 +1,4 @@
-package bitcamp.menu;
+package bitcamp.myapp.menu;
 
 import java.util.Objects;
 
@@ -13,9 +13,8 @@ public abstract class AbstractMenu implements Menu {
   public boolean equals(Object object) {
     if (this == object)
       return true;
-    if (object == null || getClass() != object.getClass())
+    if (!(object instanceof AbstractMenu that))
       return false;
-    AbstractMenu that = (AbstractMenu) object;
     return Objects.equals(title, that.title);
   }
 

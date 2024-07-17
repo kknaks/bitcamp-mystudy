@@ -1,22 +1,27 @@
 package bitcamp.myapp.command;
 
+import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.Board;
-import bitcamp.util.Prompt;
-
 import java.util.Date;
 import java.util.List;
 
-public class BoardCommand implements Command {
+public class BoardCommand extends AbstractCommand {
 
   private List<Board> boardList;
   private String[] menus = {"등록", "목록", "조회", "변경", "삭제", "검색"};
 
-  public BoardCommand(List<Board> list) {
+  public BoardCommand(String menuTitle, List<Board> list) {
+    super(menuTitle);
     this.boardList = list;
   }
 
   @Override
-  public void execute(String menuName) {
+  protected String[] getMenus() {
+    return menus;
+  }
+
+  @Override
+  protected void processMenu(String menuName) {
     System.out.printf("[%s]\n", menuName);
     switch (menuName) {
       case "등록":
@@ -85,8 +90,8 @@ public class BoardCommand implements Command {
   private void listBoard() {
     System.out.println("번호 제목 작성일 조회수");
     for (Board board : boardList) {
-      System.out.printf("%d %s %tY-%3$tm-%3$td %d\n", board.getNo(), board.getTitle(),
-          board.getCreatedDate(), board.getViewCount());
+      System.out.printf("%d %s %tY-%3$tm-%3$td %d\n",
+          board.getNo(), board.getTitle(), board.getCreatedDate(), board.getViewCount());
     }
   }
 

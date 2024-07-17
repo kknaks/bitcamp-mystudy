@@ -1,4 +1,4 @@
-package bitcamp.menu;
+package bitcamp.myapp.menu;
 
 public interface Menu {
   void execute();

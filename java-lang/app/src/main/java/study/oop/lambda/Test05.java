@@ -1,47 +1,64 @@
 package study.oop.lambda;
 
 public class Test05 {
-  interface Intro {
-    void introduce(String s);
+  class MyCalculator {
+    public static int plus(int a, int b) {
+      return a + b;
+    }
+
+    public static int minus(int a, int b) {
+      return a - b;
+    }
+
+    public static int multiple(int a, int b) {
+      return a * b;
+    }
+
+    public static int divide(int a, int b) {
+      return a / b;
+    }
+  }
+
+  interface Calculator {
+    int compute(int x, int y);
   }
 
   public static void main(String[] args) {
-    // // 1.일반 클래스로 구현하
-    // class SelfIntro implements Intro {
+    class CalPlus implements Calculator {
+      @Override
+      public int compute(int x, int y) {
+        return MyCalculator.plus(x, y);
+      }
+    }
+    Calculator obj = new CalPlus();
+    System.out.println(obj.compute(100, 200));
+    // //2
+    // Calculator obj1 = new Calculator() {
     // @Override
-    // public void introduce(String s) {
-    // System.out.println(s);
-    // }
-    // }
-    // SelfIntro selfintro = new SelfIntro();
-    // selfintro.introduce("일반클래스입니다");
-
-    // 2.익명 클래스로 구현하기 - v1
-    // Intro anonymousIntro1 = new Intro() {
-    // @Override
-    // public void introduce(String s) {
-    // System.out.println(s);
+    // public int compute(int x, int y) {
+    // return MyCalculator.plus(x, y);
     // }
     // };
-    // anonymousIntro1.introduce("익명클래스1입니다");
+    // int result1 = obj1.compute(100, 200);
+    // System.out.println(result1);
     //
-    // // 2.익명 클래스로 구현하기 - v2
-    // new Intro() {
-    // @Override
-    // public void introduce(String s) {
-    // System.out.println(s);
-    // }
-    // }.introduce("익명클래스2입니다");
+    // //3
+    // Calculator obj2 = (int x, int y) -> {
+    // return MyCalculator.plus(x, y);
+    // };
+    //
+    // //4
+    // int result2 = obj2.compute(100, 200);
+    // System.out.println(result2);
+    //
+    // //5
+    // Calculator obj3 = (x, y) -> MyCalculator.plus(x, y);
+    // int result3 = obj3.compute(100, 200);
+    // System.out.println(result3);
 
-
-    // 3.람다식으로 구현하기 - v1
-    Intro lambdaIntro1 = (String s) -> {
-      System.out.println(s);
-    };
-    lambdaIntro1.introduce("람다1입니다");
-
-    // 3.람다식으로 구현하기 - v2
-    Intro lambdaIntro2 = s -> System.out.println(s);
-    lambdaIntro2.introduce("람다2입니다");
+    // 6
+    Calculator obj4 = MyCalculator::plus;
+    System.out.println(obj4.compute(100, 200));
   }
 }
+

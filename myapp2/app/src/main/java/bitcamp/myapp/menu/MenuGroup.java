@@ -1,6 +1,6 @@
-package bitcamp.menu;
+package bitcamp.myapp.menu;
 
-import bitcamp.util.Prompt;
+import bitcamp.myapp.util.Prompt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,32 +10,34 @@ public class MenuGroup extends AbstractMenu {
   private MenuGroup parent;
   private Stack<String> menuPath;
   private List<Menu> children = new ArrayList<>();
-  private String exitMenuTitle = "이전";
 
   public MenuGroup(String title) {
     super(title);
     this.menuPath = new Stack<>();
   }
 
+  public void setParent(MenuGroup parent) {
+    this.parent = parent;
+    this.menuPath = parent.menuPath;
+  }
+
   @Override
   public void execute() {
     menuPath.push(title);
-
     printMenus();
-
     while (true) {
-      String command = Prompt.input("%s>", getMenuPathTitle());
+      String command = Prompt.input("%s>", getMenuPathTitle(menuPath));
       if (command.equals("menu")) {
         printMenus();
         continue;
-      } else if (command.equals("0")) { // 이전 메뉴 선택
+      } else if (command.equals("9")) { // 이전 메뉴 선택
         menuPath.pop();
         return;
       }
 
       try {
         int menuNo = Integer.parseInt(command);
-        Menu menu = getMenu(menuNo - 1);
+        Menu menu = getMenu(menuNo);
         if (menu == null) {
           System.out.println("유효한 메뉴 번호가 아닙니다.");
           continue;
@@ -49,44 +51,33 @@ public class MenuGroup extends AbstractMenu {
     }
   }
 
-  public void setExitMenuTitle(String title) {
-    this.exitMenuTitle = title;
-
+  private void printMenus() {
+    System.out.printf("[%s]\n", title);
+    int i = 1;
+    for (Menu child : children) {
+      System.out.printf("%d. %s\n", i++, child.getTitle());
+    }
   }
 
-  private void setParent(MenuGroup parent) {
-    this.parent = parent;
-    this.menuPath = parent.menuPath;
-  }
-
-  private String getMenuPathTitle() {
+  private String getMenuPathTitle(Stack<String> menuPath) {
     StringBuilder strBuilder = new StringBuilder();
-    for (int i = 0; i < menuPath.size(); i++) {
-      if (strBuilder.length() > 0) {
+    for (String s : menuPath) {
+      if (!strBuilder.isEmpty()) {
         strBuilder.append("/");
       }
-      strBuilder.append(menuPath.get(i));
+      strBuilder.append(s);
     }
     return strBuilder.toString();
   }
 
-  private void printMenus() {
-    System.out.printf("[%s]\n", title);
-    int i = 1;
-    for (Menu menu : children) {
-      System.out.printf("%d. %s\n", i++, menu.getTitle());
-    }
-    System.out.printf("0. %s", exitMenuTitle);
-  }
-
-  public void add(Menu child) {
+  public void addMenu(Menu child) {
     if (child instanceof MenuGroup) {
-      ((MenuGroup) child).setParent(this);
+      ((MenuGroup) child).parent.setParent(this);
     }
     children.add(child);
   }
 
-  public void remove(Menu child) {
+  public void removeMenu(Menu child) {
     children.remove(child);
   }
 
@@ -97,7 +88,7 @@ public class MenuGroup extends AbstractMenu {
     return children.get(index);
   }
 
-  public int countMenus() {
+  public int countMenu() {
     return children.size();
   }
 }
