@@ -43,7 +43,6 @@ public interface Menu {
 <details>
 <summary> 코드 접기/펼치기</summary>
 
-
 ```java
 import java.util.Objects;
 
