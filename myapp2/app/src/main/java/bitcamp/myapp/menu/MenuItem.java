@@ -9,7 +9,8 @@ public class MenuItem extends AbstractMenu {
     super(title);
   }
 
-  public void setCommand(Command command) {
+  public MenuItem(String title, Command command) {
+    super(title);
     this.command = command;
   }
 

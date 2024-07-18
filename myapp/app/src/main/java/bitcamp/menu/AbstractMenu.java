@@ -23,6 +23,7 @@ public abstract class AbstractMenu implements Menu {
     return Objects.hashCode(title);
   }
 
+  @Override
   public String getTitle() {
     return title;
   }

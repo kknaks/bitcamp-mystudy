@@ -9,6 +9,9 @@ public class CraetRandom {
     RandomAction r1 = n -> random.nextInt(n);
 
     System.out.println(r1.randomDice(10));
+    RandomAction r2 = random::nextInt;
+    r2.randomDice(10);
+
   }
 
 

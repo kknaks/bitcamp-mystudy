@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class MenuGroup extends AbstractMenu {
+  private String exitMenuTitle = "이전";
   private MenuGroup parent;
   private Stack<String> menuPath;
   private List<Menu> children = new ArrayList<>();
@@ -21,6 +22,10 @@ public class MenuGroup extends AbstractMenu {
     this.menuPath = parent.menuPath;
   }
 
+  public void setExitMenuTitle(String title) {
+    exitMenuTitle = title;
+  }
+
   @Override
   public void execute() {
     menuPath.push(title);
@@ -30,14 +35,14 @@ public class MenuGroup extends AbstractMenu {
       if (command.equals("menu")) {
         printMenus();
         continue;
-      } else if (command.equals("9")) { // 이전 메뉴 선택
+      } else if (command.equals("0")) { // 이전 메뉴 선택
         menuPath.pop();
         return;
       }
 
       try {
         int menuNo = Integer.parseInt(command);
-        Menu menu = getMenu(menuNo);
+        Menu menu = getMenu(menuNo - 1);
         if (menu == null) {
           System.out.println("유효한 메뉴 번호가 아닙니다.");
           continue;
@@ -57,6 +62,7 @@ public class MenuGroup extends AbstractMenu {
     for (Menu child : children) {
       System.out.printf("%d. %s\n", i++, child.getTitle());
     }
+    System.out.printf("0. %s\n", exitMenuTitle);
   }
 
   private String getMenuPathTitle(Stack<String> menuPath) {
@@ -70,14 +76,14 @@ public class MenuGroup extends AbstractMenu {
     return strBuilder.toString();
   }
 
-  public void addMenu(Menu child) {
+  public void add(Menu child) {
     if (child instanceof MenuGroup) {
-      ((MenuGroup) child).parent.setParent(this);
+      ((MenuGroup) child).setParent(this);
     }
     children.add(child);
   }
 
-  public void removeMenu(Menu child) {
+  public void remove(Menu child) {
     children.remove(child);
   }
 
