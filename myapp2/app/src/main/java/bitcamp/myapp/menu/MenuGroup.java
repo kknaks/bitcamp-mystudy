@@ -14,12 +14,10 @@ public class MenuGroup extends AbstractMenu {
 
   public MenuGroup(String title) {
     super(title);
-    this.menuPath = new Stack<>();
   }
 
   public void setParent(MenuGroup parent) {
     this.parent = parent;
-    this.menuPath = parent.menuPath;
   }
 
   public void setExitMenuTitle(String title) {
@@ -65,13 +63,20 @@ public class MenuGroup extends AbstractMenu {
     System.out.printf("0. %s\n", exitMenuTitle);
   }
 
-  private String getMenuPathTitle(Stack<String> menuPath) {
+  private String getMenuPath() {
+    Stack<String> menuPath = new Stack<>();
+    MenuGroup menuGroup = this;
+    while (menuGroup != null) {
+      menuPath.push(menuGroup.title);
+      menuGroup = menuGroup.parent;
+    }
+
     StringBuilder strBuilder = new StringBuilder();
-    for (String s : menuPath) {
+    while (!menuPath.empty()) {
       if (!strBuilder.isEmpty()) {
         strBuilder.append("/");
       }
-      strBuilder.append(s);
+      strBuilder.append(menuPath.pop());
     }
     return strBuilder.toString();
   }
