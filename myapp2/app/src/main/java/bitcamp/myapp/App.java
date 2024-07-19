@@ -12,18 +12,20 @@ import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class App {
-  MenuGroup mainMenu = new MenuGroup("메인");
+  private MenuGroup mainMenu = new MenuGroup("메인");
+  private List<User> userList = new ArrayList<>();
+  private List<Project> projectList = new LinkedList<>();
+  private List<Board> boardList = new LinkedList<>();
 
   public App() {
-    List<User> userList = new ArrayList<>();
-    List<Project> projectList = new LinkedList<>();
-    List<Board> boardList = new LinkedList<>();
-
     MenuGroup userMenu = new MenuGroup("회원");
     userMenu.add(new MenuItem("등록", new UserAddCommand(userList)));
     userMenu.add(new MenuItem("목록", new UserListCommand(userList)));
@@ -60,14 +62,82 @@ public class App {
     new App().execute();
   }
 
+  private void loadData() {
+    loadUser();
+    loadProject();
+    loadBoard();
+  }
+
+  private void loadUser() {
+    try (FileInputStream in = new FileInputStream("user.data")) {
+      int userLength = in.read() << 8 | in.read();
+      int maxUserNum = 0;
+      for (int i = 0; i < userLength; i++) {
+        int len = (in.read() << 8) | in.read();
+        byte[] bytes = new byte[len];
+        in.read(bytes);
+
+        User user = User.valueOf(bytes);
+        userList.add(user);
+
+        maxUserNum = Math.max(maxUserNum, user.getNo());
+      }
+      User.initSeqNo(maxUserNum);
+    } catch (IOException e) {
+      System.out.println("회원 정보 로딩 중 오류 발생" + e.getMessage());
+    }
+  }
+
+  private void loadProject() {
+
+  }
+
+  private void loadBoard() {
+
+  }
+
+  private void saveData() {
+    saveUser();
+    saveProject();
+    saveBoard();
+  }
+
+  private void saveUser() {
+    try (FileOutputStream out = new FileOutputStream("user.data")) {
+      int userLength = userList.size();
+      out.write(userLength >> 8);
+      out.write(userLength);
+
+      for (User user : userList) {
+        byte[] bytes = user.getBytes();
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        out.write(bytes);
+      }
+    } catch (IOException e) {
+      System.out.println("회원 정보 저장 중 오류 발생" + e.getMessage());
+    }
+  }
+
+  private void saveProject() {
+  }
+
+  private void saveBoard() {
+  }
+
+
   void execute() {
     try {
+      loadData();
       mainMenu.execute();
     } catch (NumberFormatException ex) {
-      System.out.println("숫자로 메뉴 번호를 입력하세요.");
+      System.out.println("오류발생!.");
+    } finally {
+      saveData();
     }
 
     System.out.println("종료합니다.");
     Prompt.close();
   }
 }
+

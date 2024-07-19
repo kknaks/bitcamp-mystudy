@@ -26,15 +26,13 @@ public class MenuGroup extends AbstractMenu {
 
   @Override
   public void execute() {
-    menuPath.push(title);
     printMenus();
     while (true) {
-      String command = Prompt.input("%s>", getMenuPathTitle(menuPath));
+      String command = Prompt.input("%s>", getMenuPath());
       if (command.equals("menu")) {
         printMenus();
         continue;
       } else if (command.equals("0")) { // 이전 메뉴 선택
-        menuPath.pop();
         return;
       }
 

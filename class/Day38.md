@@ -123,6 +123,44 @@
 <li> 데이터의 구조에 따라 바이트의 할당규칙을 정해야 load과정에서 해당규칙을 통해 값을 읽을 수 있다.</li>
 
 ![image](https://github.com/user-attachments/assets/e11fcf04-17e0-4b12-8dae-4e084d615720)
+```java
+//유저정보를 바이트배열로 변환 
+public byte[] getBytes() throws IOException {
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      //회원번호 넣기
+      out.write(no >> 24);
+      out.write(no >> 16);
+      out.write(no >> 8);
+      out.write(no);
+
+      //이름 넣기
+      byte[] bytes = name.getBytes(StandardCharsets.UTF_8);
+      out.write(bytes.length >> 8);
+      out.write(bytes.length);
+      out.write(bytes);
+
+      //이메일 넣기
+      bytes = email.getBytes(StandardCharsets.UTF_8);
+      out.write(bytes.length >> 8);
+      out.write(bytes.length);
+      out.write(bytes);
+
+      //password
+      bytes = password.getBytes(StandardCharsets.UTF_8);
+      out.write(bytes.length >> 8);
+      out.write(bytes.length);
+      out.write(bytes);
+
+      //tel
+      bytes = tel.getBytes(StandardCharsets.UTF_8);
+      out.write(bytes.length >> 8);
+      out.write(bytes.length);
+      out.write(bytes);
+
+      return out.toByteArray();
+    }
+  }
+```
 </ul>
 <h3 style="margin-left: 20px;"> 5) 파일로 출력</h3>
 <ul>
@@ -130,12 +168,81 @@
 <li> FileOutputStream에 바이트의 배열들 개수를 넣고 저장한 바이트 배열들을 넣는다. </li>
 
 ![image](https://github.com/user-attachments/assets/2f897cc4-b7b7-4242-bd02-10ec8e4501df)
+```java
+//바이트배열로 변환된 유저정보를 파일로 출력
+private void saveUser() {
+    try (FileOutputStream out = new FileOutputStream("user.data")) {
+      int userLength = userList.size();
+      out.write(userLength >> 8);
+      out.write(userLength);
+
+      for (User user : userList) {
+        byte[] bytes = user.getBytes();
+        out.write(bytes.length >> 8);
+        out.write(bytes.length);
+        out.write(bytes);
+      }
+    } catch (IOException e) {
+      System.out.println("회원 정보 저장 중 오류 발생" + e.getMessage());
+    }
+  }
+```
 </ul>
 <h3 style="margin-left: 20px;"> 6) 파일로 입력</h3>
 <ul>
 <li> 입력은 출력과정의 역순으로 진행한다.</li>
 
 ![image](https://github.com/user-attachments/assets/4cbd2d51-9a64-4f10-a28f-bceea9c786c7)
+
+```java
+//파일을 테이터 배열로 전환
+ private void loadUser() {
+    try (FileInputStream in = new FileInputStream("user.data")) {
+      int userLength = in.read() << 8 | in.read();
+      int maxUserNum = 0;
+      for (int i = 0; i < userLength; i++) {
+        int len = (in.read() << 8) | in.read();
+        byte[] bytes = new byte[len];
+        in.read(bytes);
+
+        User user = User.valueOf(bytes);
+        userList.add(user);
+
+        maxUserNum = Math.max(maxUserNum, user.getNo());
+      }
+      User.initSeqNo(maxUserNum);
+    } catch (IOException e) {
+      System.out.println("회원 정보 로딩 중 오류 발생" + e.getMessage());
+    }
+  }
+
+// 데이터 배열을 유저 객체로 전환
+public static User valueOf(byte[] bytes) throws IOException {
+    try (ByteArrayInputStream in = new ByteArrayInputStream(bytes)) {
+      User user = new User();
+      user.setNo(in.read() << 24 | in.read() << 16 | in.read() << 8 | in.read());
+
+      byte[] buffer = new byte[10000];
+      int len = in.read() << 8 | in.read();
+      in.read(buffer, 0, len);
+      user.setName(new String(buffer, 0, len, StandardCharsets.UTF_8));
+
+      len = in.read() << 8 | in.read();
+      in.read(buffer, 0, len);
+      user.setEmail(new String(buffer, 0, len, StandardCharsets.UTF_8));
+
+      len = in.read() << 8 | in.read();
+      in.read(buffer, 0, len);
+      user.setPassword(new String(buffer, 0, len, StandardCharsets.UTF_8));
+
+      len = in.read() << 8 | in.read();
+      in.read(buffer, 0, len);
+      user.setTel(new String(buffer, 0, len, StandardCharsets.UTF_8));
+      return user;
+    }
+  }
+
+```
 </ul>
 
 
