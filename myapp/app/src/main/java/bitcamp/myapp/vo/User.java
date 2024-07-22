@@ -1,13 +1,10 @@
 package bitcamp.myapp.vo;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.io.Serializable;
 import java.util.Objects;
 
 // 메모리 설계도
-public class User {
+public class User implements Serializable {
 
   private static int seqNo;
 
@@ -36,65 +33,25 @@ public class User {
     return seqNo;
   }
 
-
-  public static User valueOf(byte[] bytes) throws IOException {
-
-    try (ByteArrayInputStream in = new ByteArrayInputStream(bytes)) {
-      User user = new User();
-      user.setNo(in.read() << 24 | in.read() << 16 | in.read() << 8 | in.read());
-
-      byte[] buf = new byte[1000];
-
-      int len = in.read() << 8 | in.read();
-      in.read(buf, 0, len);
-      user.setName(new String(buf, 0, len, StandardCharsets.UTF_8));
-
-      len = in.read() << 8 | in.read();
-      in.read(buf, 0, len);
-      user.setEmail(new String(buf, 0, len, StandardCharsets.UTF_8));
-
-      len = in.read() << 8 | in.read();
-      in.read(buf, 0, len);
-      user.setPassword(new String(buf, 0, len, StandardCharsets.UTF_8));
-
-      len = in.read() << 8 | in.read();
-      in.read(buf, 0, len);
-      user.setTel(new String(buf, 0, len, StandardCharsets.UTF_8));
-
-
-      return user;
-    }
+  public static User valueOf(String csv) {
+    String[] values = csv.split(",");
+    User user = new User();
+    user.setNo(Integer.valueOf(values[0]));
+    user.setName(values[1]);
+    user.setEmail(values[2]);
+    user.setPassword(values[3]);
+    user.setTel(values[4]);
+    return user;
   }
 
-  public byte[] getBytes() throws IOException {
-    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
-      out.write(no >> 24);
-      out.write(no >> 16);
-      out.write(no >> 8);
-      out.write(no);
+  @Override
+  public String toString() {
+    return "User{" + "no=" + no + ", name='" + name + '\'' + ", email='" + email + '\'' + ", password='" + password + '\'' + ", tel='" + tel + '\'' + '}';
+  }
 
-      byte[] bytes = name.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      bytes = email.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      bytes = password.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      bytes = tel.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      return out.toByteArray();
-    }
+  public String toCsvString() {
+    return new StringBuilder().append(no).append(",").append(name).append(",").append(email)
+        .append(",").append(password).append(",").append(tel).toString();
   }
 
   @Override

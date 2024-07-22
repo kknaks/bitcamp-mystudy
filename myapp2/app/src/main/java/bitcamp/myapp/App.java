@@ -12,16 +12,14 @@ import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class App {
   private MenuGroup mainMenu = new MenuGroup("메인");
-  private List<User> userList = new ArrayList<>();
+  private List<User> userList;
   private List<Project> projectList = new LinkedList<>();
   private List<Board> boardList = new LinkedList<>();
 
@@ -69,22 +67,17 @@ public class App {
   }
 
   private void loadUser() {
-    try (FileInputStream in = new FileInputStream("user.data")) {
-      int userLength = in.read() << 8 | in.read();
+    try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("user.data"))) {
+
+      userList = (List<User>) in.readObject();
       int maxUserNum = 0;
-      for (int i = 0; i < userLength; i++) {
-        int len = (in.read() << 8) | in.read();
-        byte[] bytes = new byte[len];
-        in.read(bytes);
-
-        User user = User.valueOf(bytes);
-        userList.add(user);
-
+      for (User user : userList) {
         maxUserNum = Math.max(maxUserNum, user.getNo());
       }
       User.initSeqNo(maxUserNum);
-    } catch (IOException e) {
+    } catch (IOException | ClassNotFoundException e) {
       System.out.println("회원 정보 로딩 중 오류 발생" + e.getMessage());
+      userList = new ArrayList<>();
     }
   }
 
@@ -103,17 +96,8 @@ public class App {
   }
 
   private void saveUser() {
-    try (FileOutputStream out = new FileOutputStream("user.data")) {
-      int userLength = userList.size();
-      out.write(userLength >> 8);
-      out.write(userLength);
-
-      for (User user : userList) {
-        byte[] bytes = user.getBytes();
-        out.write(bytes.length >> 8);
-        out.write(bytes.length);
-        out.write(bytes);
-      }
+    try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("user.data"))) {
+      out.writeObject(userList);
     } catch (IOException e) {
       System.out.println("회원 정보 저장 중 오류 발생" + e.getMessage());
     }
