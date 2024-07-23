@@ -3,7 +3,6 @@ package bitcamp.myapp.command.project;
 import bitcamp.myapp.command.Command;
 import bitcamp.myapp.vo.Project;
 import bitcamp.util.Prompt;
-
 import java.util.List;
 
 public class ProjectDeleteCommand implements Command {

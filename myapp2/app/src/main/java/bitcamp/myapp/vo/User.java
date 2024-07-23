@@ -1,6 +1,5 @@
 package bitcamp.myapp.vo;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -32,30 +31,20 @@ public class User {
     seqNo = maxUserNo;
   }
 
+  public static User valueOf(String csv) {
+    String[] values = csv.split(","); // csv: "1,홍길동,hong@test.com,1111,010-1111-2222"
+    User user = new User();
+    user.setNo(Integer.parseInt(values[0]));
+    user.setName(values[1]);
+    user.setEmail(values[2]);
+    user.setPassword(values[3]);
+    user.setTel(values[4]);
+    return user;
+  }
 
-  public static User valueOf(byte[] bytes) throws IOException {
-    try (ByteArrayInputStream in = new ByteArrayInputStream(bytes)) {
-      User user = new User();
-      user.setNo(in.read() << 24 | in.read() << 16 | in.read() << 8 | in.read());
-
-      byte[] buffer = new byte[10000];
-      int len = in.read() << 8 | in.read();
-      in.read(buffer, 0, len);
-      user.setName(new String(buffer, 0, len, StandardCharsets.UTF_8));
-
-      len = in.read() << 8 | in.read();
-      in.read(buffer, 0, len);
-      user.setEmail(new String(buffer, 0, len, StandardCharsets.UTF_8));
-
-      len = in.read() << 8 | in.read();
-      in.read(buffer, 0, len);
-      user.setPassword(new String(buffer, 0, len, StandardCharsets.UTF_8));
-
-      len = in.read() << 8 | in.read();
-      in.read(buffer, 0, len);
-      user.setTel(new String(buffer, 0, len, StandardCharsets.UTF_8));
-      return user;
-    }
+  public String toCsvString() {
+    return new StringBuilder().append(no).append(",").append(name).append(",").append(email)
+        .append(",").append(password).append(",").append(tel).toString();
   }
 
   @Override

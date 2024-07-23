@@ -25,6 +25,10 @@ public class Board {
     return ++seqNo;
   }
 
+  public static void initSeqNo(int maxBoardNo) {
+    seqNo = maxBoardNo;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {

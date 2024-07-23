@@ -1,7 +1,6 @@
 package bitcamp.menu;
 
 import bitcamp.util.Prompt;
-
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -11,14 +10,17 @@ public class MenuGroup extends AbstractMenu {
   private ArrayList<Menu> children = new ArrayList<>();
   private String exitMenuTitle = "이전";
 
-  public MenuGroup(String menuName) {
-    super(menuName);
+  public MenuGroup(String title) {
+    super(title);
   }
 
   @Override
   public void execute() {
+
     String menuPath = getMenuPath();
+
     printMenus();
+
     while (true) {
       String command = Prompt.input("%s>", menuPath);
       if (command.equals("menu")) {
@@ -35,6 +37,7 @@ public class MenuGroup extends AbstractMenu {
           System.out.println("유효한 메뉴 번호가 아닙니다.");
           continue;
         }
+
         menu.execute();
 
       } catch (NumberFormatException ex) {
@@ -57,6 +60,7 @@ public class MenuGroup extends AbstractMenu {
   }
 
   private String getMenuPath() {
+    // 현재 메뉴그룹에서 상위 메뉴그룹으로 따라 올라가면서 메뉴이름을 스택에 담는다.
     Stack<String> menuPathStack = new Stack<>();
     MenuGroup menuGroup = this;
     while (menuGroup != null) {
@@ -64,13 +68,15 @@ public class MenuGroup extends AbstractMenu {
       menuGroup = menuGroup.parent;
     }
 
+    // 스택에 담겨 있는 메뉴이름을 꺼내서 메뉴 경로를 만든다.
     StringBuilder strBuilder = new StringBuilder();
     while (!menuPathStack.isEmpty()) {
-      if (!strBuilder.isEmpty()) {
+      if (strBuilder.length() > 0) {
         strBuilder.append("/");
       }
       strBuilder.append(menuPathStack.pop());
     }
+
     return strBuilder.toString();
   }
 
@@ -96,7 +102,7 @@ public class MenuGroup extends AbstractMenu {
     return children.get(index);
   }
 
-  public int countMenu() {
+  public int countMenus() {
     return children.size();
   }
 }

@@ -11,19 +11,30 @@ import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class App {
-  private MenuGroup mainMenu = new MenuGroup("메인");
-  private List<User> userList;
-  private List<Project> projectList = new LinkedList<>();
-  private List<Board> boardList = new LinkedList<>();
+
+
+  MenuGroup mainMenu = new MenuGroup("메인");
+
+  List<User> userList = new ArrayList<>();
+  List<Project> projectList = new LinkedList<>();
+  List<Board> boardList = new LinkedList<>();
 
   public App() {
+
+    loadData();
+
     MenuGroup userMenu = new MenuGroup("회원");
     userMenu.add(new MenuItem("등록", new UserAddCommand(userList)));
     userMenu.add(new MenuItem("목록", new UserListCommand(userList)));
@@ -60,68 +71,61 @@ public class App {
     new App().execute();
   }
 
-  private void loadData() {
-    loadUser();
-    loadProject();
-    loadBoard();
-  }
-
-  private void loadUser() {
-    try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("user.data"))) {
-
-      userList = (List<User>) in.readObject();
-      int maxUserNum = 0;
-      for (User user : userList) {
-        maxUserNum = Math.max(maxUserNum, user.getNo());
-      }
-      User.initSeqNo(maxUserNum);
-    } catch (IOException | ClassNotFoundException e) {
-      System.out.println("회원 정보 로딩 중 오류 발생" + e.getMessage());
-      userList = new ArrayList<>();
-    }
-  }
-
-  private void loadProject() {
-
-  }
-
-  private void loadBoard() {
-
-  }
-
-  private void saveData() {
-    saveUser();
-    saveProject();
-    saveBoard();
-  }
-
-  private void saveUser() {
-    try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("user.data"))) {
-      out.writeObject(userList);
-    } catch (IOException e) {
-      System.out.println("회원 정보 저장 중 오류 발생" + e.getMessage());
-    }
-  }
-
-  private void saveProject() {
-  }
-
-  private void saveBoard() {
-  }
-
-
   void execute() {
+    String appTitle = "[프로젝트 관리 시스템]";
+    String line = "----------------------------------";
+
     try {
-      loadData();
       mainMenu.execute();
-    } catch (NumberFormatException ex) {
-      System.out.println("오류발생!.");
+
+    } catch (Exception ex) {
+      System.out.println("실행 오류!");
+      ex.printStackTrace();
+
     } finally {
       saveData();
     }
 
     System.out.println("종료합니다.");
+
     Prompt.close();
   }
-}
 
+  private void loadData() {
+    loadJson(boardList, "board.json", Board.class);
+    System.out.println("데이터를 로딩 했습니다.");
+  }
+
+  private <E> void loadJson(List<E> list, String filename, Class<E> elementType) {
+    try (BufferedReader in = new BufferedReader(new FileReader(filename))) {
+
+      StringBuilder strBuilder = new StringBuilder();
+      String line;
+      while ((line = in.readLine()) != null) {
+        strBuilder.append(line);
+      }
+
+      list.addAll((List<E>) new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create()
+          .fromJson(strBuilder.toString(),
+              TypeToken.getParameterized(List.class, elementType).getType()));
+
+    } catch (Exception e) {
+      System.out.printf("%s 정보 로딩 중 오류 발생!\n", filename);
+      e.printStackTrace();
+    }
+  }
+
+
+  private void saveData() {
+    saveJson(boardList, "board.json");
+    System.out.println("데이터를 저장 했습니다.");
+  }
+
+  private <E> void saveJson(List<E> list, String filename) {
+    try (FileWriter out = new FileWriter(filename)) {
+      out.write(new GsonBuilder().setDateFormat("yyyy-mm-dd HH:mm:ss").create().toJson(list));
+    } catch (IOException e) {
+      System.out.printf("%s 저장 중 오류발생!", filename);
+    }
+  }
+}

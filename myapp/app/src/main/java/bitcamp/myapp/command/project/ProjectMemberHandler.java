@@ -3,11 +3,11 @@ package bitcamp.myapp.command.project;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
 import bitcamp.util.Prompt;
-
 import java.util.List;
 
 public class ProjectMemberHandler {
-  List<User> userList;
+
+  private List<User> userList;
 
   public ProjectMemberHandler(List<User> userList) {
     this.userList = userList;

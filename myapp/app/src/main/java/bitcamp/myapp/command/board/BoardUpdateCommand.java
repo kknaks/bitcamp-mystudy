@@ -3,7 +3,6 @@ package bitcamp.myapp.command.board;
 import bitcamp.myapp.command.Command;
 import bitcamp.myapp.vo.Board;
 import bitcamp.util.Prompt;
-
 import java.util.List;
 
 public class BoardUpdateCommand implements Command {
@@ -16,6 +15,7 @@ public class BoardUpdateCommand implements Command {
 
   @Override
   public void execute(String menuName) {
+    System.out.printf("[%s]\n", menuName);
     int boardNo = Prompt.inputInt("게시글 번호?");
     int index = boardList.indexOf(new Board(boardNo));
     if (index == -1) {

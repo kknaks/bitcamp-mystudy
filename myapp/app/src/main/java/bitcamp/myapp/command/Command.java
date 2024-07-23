@@ -2,5 +2,5 @@ package bitcamp.myapp.command;
 
 public interface Command {
 
-  void execute(String menuTitle);
+  void execute(String menuName);
 }

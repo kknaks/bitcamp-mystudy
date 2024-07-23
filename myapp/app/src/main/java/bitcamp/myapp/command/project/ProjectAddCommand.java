@@ -3,7 +3,6 @@ package bitcamp.myapp.command.project;
 import bitcamp.myapp.command.Command;
 import bitcamp.myapp.vo.Project;
 import bitcamp.util.Prompt;
-
 import java.util.List;
 
 public class ProjectAddCommand implements Command {
@@ -19,6 +18,7 @@ public class ProjectAddCommand implements Command {
   @Override
   public void execute(String menuName) {
     System.out.printf("[%s]\n", menuName);
+
     Project project = new Project();
     project.setTitle(Prompt.input("프로젝트명?"));
     project.setDescription(Prompt.input("설명?"));
@@ -34,5 +34,4 @@ public class ProjectAddCommand implements Command {
 
     System.out.println("등록했습니다.");
   }
-
 }
