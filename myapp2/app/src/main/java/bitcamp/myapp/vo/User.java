@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 // 메모리 설계도
-public class User {
+public class User implements InitSeqNo {
 
   private static int seqNo;
 
@@ -27,10 +27,6 @@ public class User {
     return ++seqNo;
   }
 
-  public static void initSeqNo(int maxUserNo) {
-    seqNo = maxUserNo;
-  }
-
   public static User valueOf(String csv) {
     String[] values = csv.split(","); // csv: "1,홍길동,hong@test.com,1111,010-1111-2222"
     User user = new User();
@@ -40,6 +36,10 @@ public class User {
     user.setPassword(values[3]);
     user.setTel(values[4]);
     return user;
+  }
+
+  public void initSeqNo(int maxUserNo) {
+    seqNo = maxUserNo;
   }
 
   public String toCsvString() {

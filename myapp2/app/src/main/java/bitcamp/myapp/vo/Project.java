@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Project {
+public class Project implements InitSeqNo {
 
   private static int seqNo;
 
@@ -28,6 +28,10 @@ public class Project {
 
   public static int getNextSeqNo() {
     return ++seqNo;
+  }
+
+  public void initSeqNo(int maxBoardNo) {
+    seqNo = maxBoardNo;
   }
 
   @Override

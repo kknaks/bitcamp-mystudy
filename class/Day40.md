@@ -42,39 +42,39 @@
 
 ```java
 private void loadBoards() {
-try (BufferedReader in = new BufferedReader(new FileReader("board.json"))) {
-StringBuilder strBuilder = new StringBuilder();
-String line;
-while ((line = in.readLine()) != null) {
-strBuilder.append(line);
-}
-boardList.addAll(new Gson().fromJson(strBuilder.toString(), new TypeToken<List<Board>>() {
-}));
-
-int maxBoardNo = 0;
-for (Board board : boardList) {
-if (board.getNo() > maxBoardNo) {
-maxBoardNo = board.getNo();
-}
-}
-
-Board.initSeqNo(maxBoardNo);
-
-} catch (IOException e) {
-System.out.println("게시글 정보 로딩 중 오류 발생!");
-// e.printStackTrace();
-}
-}
-
-private void saveBoards() {
-try (FileWriter out = new FileWriter("board.json")) {
-Gson gson = new Gson();
-out.write(gson.toJson(boardList));
-
-} catch (IOException e) {
-System.out.println("게시글 정보 저장 중 오류 발생!");
-//      e.printStackTrace();
-}
+    try (BufferedReader in = new BufferedReader(new FileReader("board.json"))) {
+        StringBuilder strBuilder = new StringBuilder();
+        String line;
+        while ((line = in.readLine()) != null) {
+            strBuilder.append(line);
+            }
+        boardList.addAll(new Gson().fromJson(strBuilder.toString(), new TypeToken<List<Board>>() {
+        }));
+        
+        int maxBoardNo = 0;
+        for (Board board : boardList) {
+        if (board.getNo() > maxBoardNo) {
+          maxBoardNo = board.getNo();
+          }
+        }
+    
+    Board.initSeqNo(maxBoardNo);
+    
+    } catch (IOException e) {
+        System.out.println("게시글 정보 로딩 중 오류 발생!");
+        // e.printStackTrace();
+        }
+    }
+    
+    private void saveBoards() {
+        try (FileWriter out = new FileWriter("board.json")) {
+        Gson gson = new Gson();
+        out.write(gson.toJson(boardList));
+        
+    } catch (IOException e) {
+        System.out.println("게시글 정보 저장 중 오류 발생!");
+        //      e.printStackTrace();
+    }
 }
 ```
 </ul></div>
@@ -92,38 +92,38 @@ new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create()
 
 ```java
 private void loadBoards() {
-try (BufferedReader in = new BufferedReader(new FileReader("board.json"))) {
-StringBuilder strBuilder = new StringBuilder();
-String line;
-while ((line = in.readLine()) != null) {
-strBuilder.append(line);
-}
-boardList.addAll(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().fromJson(strBuilder.toString(), new TypeToken<List<Board>>() {
-}));
-
-int maxBoardNo = 0;
-for (Board board : boardList) {
-if (board.getNo() > maxBoardNo) {
-maxBoardNo = board.getNo();
-}
-}
-
-Board.initSeqNo(maxBoardNo);
-
-} catch (IOException e) {
-System.out.println("게시글 정보 로딩 중 오류 발생!");
-// e.printStackTrace();
-}
-}
-
-private void saveBoards() {
-try (FileWriter out = new FileWriter("board.json")) {
-out.write(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(boardList));
-
-} catch (IOException e) {
-System.out.println("게시글 정보 저장 중 오류 발생!");
-//      e.printStackTrace();
-}
+    try (BufferedReader in = new BufferedReader(new FileReader("board.json"))) {
+            StringBuilder strBuilder = new StringBuilder();
+            String line;
+            while ((line = in.readLine()) != null) {
+                strBuilder.append(line);
+            }
+                boardList.addAll(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().fromJson(strBuilder.toString(), new TypeToken<List<Board>>() {
+            }));
+            
+            int maxBoardNo = 0;
+            for (Board board : boardList) {
+            if (board.getNo() > maxBoardNo) {
+                maxBoardNo = board.getNo();
+                }
+            }
+        
+        Board.initSeqNo(maxBoardNo);
+        
+        } catch (IOException e) {
+            System.out.println("게시글 정보 로딩 중 오류 발생!");
+            // e.printStackTrace();
+        }
+    }
+    
+    private void saveBoards() {
+        try (FileWriter out = new FileWriter("board.json")) {
+          out.write(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(boardList));
+        
+        } catch (IOException e) {
+          System.out.println("게시글 정보 저장 중 오류 발생!");
+        //      e.printStackTrace();
+    }
 }
 ```
 </ul>
@@ -415,5 +415,76 @@ public class Test {
     list1.add(new StringBuffer());
 ```
 </ul>
-</div>>
+</div>
+
+<h2>5. myApp에 적용하기</h2>
+<div style="margin-left: 10px;">
+<ul>
+<li> 유저리스트, 보드리스트, 프로젝트리스트는 모두 동일한 코드를 사용한다.</li>
+<li> 메서드에 넘기는 매개변수만 차이를 보인다.</li>
+
+```java
+  private <E> void loadJson(List<E> list, String filename, Class<E> elementType) {
+    try (BufferedReader in = new BufferedReader(new FileReader(filename))) {
+
+      StringBuilder strBuilder = new StringBuilder();
+      String line;
+      while ((line = in.readLine()) != null) {
+        strBuilder.append(line);
+      }
+
+      list.addAll((List<E>) new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create()
+          .fromJson(strBuilder.toString(),
+              TypeToken.getParameterized(List.class, elementType).getType()));
+
+      for (Class<?> type : elementType.getInterfaces()) {
+        if (type.equals(InitSeqNo.class)) {
+          intintSeqNo(list, elementType);
+        }
+      }
+
+    } catch (Exception e) {
+      System.out.printf("%s 정보 로딩 중 오류 발생!\n", filename);
+      e.printStackTrace();
+    }
+  }
+
+  private <E> void intintSeqNo(List<E> list, Class<E> elemnetType) throws Exception {
+    int maxSeqNo = 0;
+    for (Object element : list) {
+      InitSeqNo seqNo = (InitSeqNo) element;
+      maxSeqNo = Math.max(seqNo.getNo(), maxSeqNo);
+    }
+    Method method = elemnetType.getMethod("initSeqNo", int.class);
+    method.invoke(null, maxSeqNo);
+  }
+
+  private <E> void saveJson(List<E> list, String filename) {
+    try (FileWriter out = new FileWriter(filename)) {
+      out.write(new GsonBuilder().setDateFormat("yyyy-mm-dd HH:mm:ss").create().toJson(list));
+    } catch (IOException e) {
+      System.out.printf("%s 저장 중 오류발생!", filename);
+    }
+  }
+```
+<li> saveJson과 loadJson 메서드를 호출은 다음과 같다.</li>
+
+```java
+  private void loadData() {
+    loadJson(userList, "user.json", User.class);
+    loadJson(projectList, "porject.json", Project.class);
+    loadJson(boardList, "board.json", Board.class);
+    System.out.println("데이터를 로딩 했습니다.");
+  }
+
+
+  private void saveData() {
+    saveJson(userList, "user.json");
+    saveJson(projectList, "porject.json");
+    saveJson(boardList, "board.json");
+    System.out.println("데이터를 저장 했습니다.");
+  }
+```
+</ul>
+</div>
 </div>

@@ -7,7 +7,7 @@ public class Exam0514 {
 
   public static void main(String[] args) throws Exception {
 
-    String str = new String("AB가각");
+    String str = new String("AB가각똘똠똥");
 
     // String 객체의 데이터를 출력하려면
     // 문자열을 담은 byte[] 배열을 리턴 받아야 한다.

@@ -17,7 +17,6 @@ public class Exam0210 {
     // write(byte[], 시작인덱스, 출력개수) : 시작 위치부터 지정된 개수를 출력한다.
     //
     out.write(bytes); // 바이트 배열 전체를 출력한다.
-
     out.close();
 
     System.out.println("데이터 출력 완료!");

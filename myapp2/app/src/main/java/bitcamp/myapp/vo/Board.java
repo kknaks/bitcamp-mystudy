@@ -3,7 +3,7 @@ package bitcamp.myapp.vo;
 import java.util.Date;
 import java.util.Objects;
 
-public class Board {
+public class Board implements InitSeqNo {
 
   private static int seqNo;
 
@@ -25,7 +25,7 @@ public class Board {
     return ++seqNo;
   }
 
-  public static void initSeqNo(int maxBoardNo) {
+  public void initSeqNo(int maxBoardNo) {
     seqNo = maxBoardNo;
   }
 

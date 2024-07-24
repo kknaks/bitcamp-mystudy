@@ -9,6 +9,7 @@ import bitcamp.myapp.menu.MenuGroup;
 import bitcamp.myapp.menu.MenuItem;
 import bitcamp.myapp.util.Prompt;
 import bitcamp.myapp.vo.Board;
+import bitcamp.myapp.vo.InitSeqNo;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
 import com.google.gson.GsonBuilder;
@@ -18,6 +19,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -92,6 +94,8 @@ public class App {
   }
 
   private void loadData() {
+    loadJson(userList, "user.json", User.class);
+    loadJson(projectList, "porject.json", Project.class);
     loadJson(boardList, "board.json", Board.class);
     System.out.println("데이터를 로딩 했습니다.");
   }
@@ -101,13 +105,18 @@ public class App {
 
       StringBuilder strBuilder = new StringBuilder();
       String line;
+      int maxSeq = 0;
       while ((line = in.readLine()) != null) {
         strBuilder.append(line);
       }
 
       list.addAll((List<E>) new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create()
-          .fromJson(strBuilder.toString(),
-              TypeToken.getParameterized(List.class, elementType).getType()));
+          .fromJson(strBuilder.toString(), TypeToken.getParameterized(List.class, elementType)));
+      for (Class<?> type : elementType.getInterfaces()) {
+        if (type.equals(InitSeqNo.class)) {
+          intintSeqNo(list, elementType);
+        }
+      }
 
     } catch (Exception e) {
       System.out.printf("%s 정보 로딩 중 오류 발생!\n", filename);
@@ -115,8 +124,19 @@ public class App {
     }
   }
 
+  private <E> void intintSeqNo(List<E> list, Class<E> elemnetType) throws Exception {
+    int maxSeqNo = 0;
+    for (Object element : list) {
+      InitSeqNo seqNo = (InitSeqNo) element;
+      maxSeqNo = Math.max(seqNo.getNo(), maxSeqNo);
+    }
+    Method method = elemnetType.getMethod("initSeqNo", int.class);
+    method.invoke(null, maxSeqNo);
+  }
 
   private void saveData() {
+    saveJson(userList, "user.json");
+    saveJson(projectList, "porject.json");
     saveJson(boardList, "board.json");
     System.out.println("데이터를 저장 했습니다.");
   }
