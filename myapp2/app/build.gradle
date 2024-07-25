@@ -16,6 +16,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.apache.poi:poi-ooxml:5.3.0'
     implementation 'com.google.code.gson:gson:2.11.0'
     // Use JUnit Jupiter for testing.
     testImplementation libs.junit.jupiter

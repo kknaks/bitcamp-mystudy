@@ -38,7 +38,7 @@ public class User implements InitSeqNo {
     return user;
   }
 
-  public void initSeqNo(int maxUserNo) {
+  public static void initSeqNo(int maxUserNo) {
     seqNo = maxUserNo;
   }
 

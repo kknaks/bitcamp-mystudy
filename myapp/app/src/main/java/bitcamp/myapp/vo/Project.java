@@ -39,46 +39,6 @@ public class Project implements Serializable, SequenceNo {
     return seqNo;
   }
 
-  public static Project valueOf(String csv) {
-    String[] values = csv.split(",");
-
-    Project project = new Project();
-    project.setNo(Integer.parseInt(values[0]));
-    project.setTitle(values[1]);
-    project.setDescription(values[2]);
-    project.setStartDate(values[3]);
-    project.setEndDate(values[4]);
-
-    String[] members = values[5].split("#");
-    for (String member : members) {
-      String[] items = member.split("_");
-      User user = new User();
-      user.setNo(Integer.parseInt(items[0]));
-      user.setName(items[1]);
-      user.setEmail(items[2]);
-      user.setPassword(items[3]);
-      user.setTel(items[4]);
-      project.getMembers().add(user);
-    }
-
-    return project;
-  }
-
-  public String toCsvString() {
-
-    StringBuilder membersBuilder = new StringBuilder();
-    for (User member : members) {
-      if (membersBuilder.length() > 0) {
-        membersBuilder.append("#");
-      }
-      membersBuilder.append(member.toCsvString().replaceAll(",", "_"));
-    }
-
-    return new StringBuilder().append(no).append(",").append(title).append(",").append(description)
-        .append(",").append(startDate).append(",").append(endDate).append(",")
-        .append(membersBuilder.toString()).toString();
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {

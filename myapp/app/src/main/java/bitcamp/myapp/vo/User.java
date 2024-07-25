@@ -64,13 +64,24 @@ public class User implements Serializable, SequenceNo {
   }
 
   public String toCsvString() {
-    return new StringBuilder().append(no).append(",").append(name).append(",").append(email)
-        .append(",").append(password).append(",").append(tel).toString();
+    return new StringBuilder()
+        .append(no).append(",")
+        .append(name).append(",")
+        .append(email).append(",")
+        .append(password).append(",")
+        .append(tel)
+        .toString();
   }
 
   @Override
   public String toString() {
-    return "User{" + "no=" + no + ", name='" + name + '\'' + ", email='" + email + '\'' + ", password='" + password + '\'' + ", tel='" + tel + '\'' + '}';
+    return "User{" +
+        "no=" + no +
+        ", name='" + name + '\'' +
+        ", email='" + email + '\'' +
+        ", password='" + password + '\'' +
+        ", tel='" + tel + '\'' +
+        '}';
   }
 
   @Override

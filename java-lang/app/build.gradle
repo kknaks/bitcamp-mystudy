@@ -20,6 +20,8 @@ repositories {
 }
 
 dependencies {
+implementation 'org.apache.poi:poi-ooxml:5.3.0'
+
     implementation 'com.drewnoakes:metadata-extractor:2.19.0'
     testImplementation libs.junit.jupiter
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

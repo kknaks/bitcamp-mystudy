@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3ec23e9-19d1-42b4-b72b-db95561817a0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/InitSeqNo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../class/Day40.md" beforeDir="false" afterPath="$PROJECT_DIR$/../class/Day40.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myapp/app/data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../class/Day41.md" beforeDir="false" afterPath="$PROJECT_DIR$/../class/Day41.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-lang/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0510.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0510.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0512.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0512.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0513.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0513.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0514.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0514.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0521.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-lang/app/src/main/java/study/io/ex02/Exam0521.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/board.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/board.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/board.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/board.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/project.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/project.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/project0.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/SequenceNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/SequenceNo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app/src/main/java/bitcamp/myapp/vo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/user.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app/user.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/board.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/InitSeqNo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/InitSeqNo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/vo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/user.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +90,9 @@
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
+  <component name="PerforceDirect.Settings">
+    <option name="CHARSET" value="없음" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -100,7 +116,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;/Users/keonhak/git/bitcamp-mystudy/myapp2/app/src/main/java/bitcamp/myapp2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/keonhak/git/bitcamp-mystudy/myapp2/settings.gradle&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/keonhak/git/bitcamp-mystudy/myapp2/app&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -114,6 +130,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="bitcamp.myapp2.command.ProjectList" />
       <recent name="bitcamp.myapp2.command.BoardList" />
@@ -273,6 +292,8 @@
       <workItem from="1721346246904" duration="4366000" />
       <workItem from="1721547758059" duration="6188000" />
       <workItem from="1721635151286" duration="19058000" />
+      <workItem from="1721822017965" duration="4060000" />
+      <workItem from="1721864607122" duration="2403000" />
     </task>
     <servers />
   </component>

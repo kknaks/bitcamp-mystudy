@@ -33,25 +33,15 @@ public class Board implements Serializable, SequenceNo {
     return seqNo;
   }
 
-  public static Board valueOf(String csv) {
-    String[] values = csv.split(",");
-    Board board = new Board();
-    board.setNo(Integer.parseInt(values[0]));
-    board.setTitle(values[1]);
-    board.setContent(values[2]);
-    board.setCreatedDate(new Date(Long.parseLong(values[3])));
-    board.setViewCount(Integer.parseInt(values[4]));
-    return board;
-  }
-
-  public String toCsvString() {
-    return new StringBuilder().append(no).append(",").append(title).append(",").append(content)
-        .append(",").append(createdDate.getTime()).append(",").append(viewCount).toString();
-  }
-
   @Override
   public String toString() {
-    return "Board{" + "no=" + no + ", title='" + title + '\'' + ", content='" + content + '\'' + ", createdDate=" + createdDate + ", viewCount=" + viewCount + '}';
+    return "Board{" +
+        "no=" + no +
+        ", title='" + title + '\'' +
+        ", content='" + content + '\'' +
+        ", createdDate=" + createdDate +
+        ", viewCount=" + viewCount +
+        '}';
   }
 
   @Override

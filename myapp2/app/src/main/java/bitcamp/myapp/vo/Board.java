@@ -25,7 +25,7 @@ public class Board implements InitSeqNo {
     return ++seqNo;
   }
 
-  public void initSeqNo(int maxBoardNo) {
+  public static void initSeqNo(int maxBoardNo) {
     seqNo = maxBoardNo;
   }
 
