@@ -218,27 +218,57 @@ Cell cell = row.createCell(int a);
 // row행 a열을 만든다.
 ```
 </ul>
-<div style="margin-left: 10px;">=
+<div style="margin-left: 10px;">
 </div>
 </div>
 
 <h2> 4. Java에서 Excel 파일 만들기</h2>
 <div style="margin-left: 10px;">
-<h3> Microsoft Excel (.xlsx) 파일을 생성, 수정, 읽기 및 쓰기에 사용되는 Java API </h3>
+<h3> Excel파일 만들고 저장하기 </h3>
+<div style="margin-left: 10px;">
+<ol type="1">
+<li> WorkBook을 만든다.</li>
+<li> Sheet를 만든다.</li>
+<li> Row를 선택한다.</li>
+<li> Cell을 선택한다.</li>
+<li> Cell값에 SetValue를 한다.</li>
+<li> 파일을 내보낸다.</li>
+</ol>
+</div>
+<h3> Excel파일 불러오기 </h3>
+<div style="margin-left: 10px;">
+<ol type="1">
+<li> 파일명을 가진 WorkBook을 만든다.</li>
+<li> Sheet를 선택한다.</li>
+<li> Row를 선택한다.</li>
+<li> Cell을 선택한다.</li>
+<li> Cell값에 getValue를 한다.</li>
+</ol>
+</div>
+</div>
+
+<h2> 5. 실습프로젝트에 적용하기</h2>
+<div style="margin-left: 10px;">
+<h3> Excel파일 만들고 저장하기 </h3>
 <div style="margin-left: 10px;">
 <ul>
-<li> 엑셀 파일 생성: 새로운 .xlsx 파일을 생성할 수 있다. </li>
-<li> 엑셀 파일 읽기: 기존 .xlsx 파일을 읽어서 데이터를 추출할 수 있다.</li>
-<li> 엑셀 파일 수정: 셀, 행, 시트 등을 추가하거나 수정할 수 있다.</li>
-<li> 2007이하버전(.xls)은 HSSF라이브러리를 사용한다.</li>
-<li> 주요클래스</li>
-<ol style="padding-left: 10px", type="1">
-<li> XSSFWorkbook: 엑셀 워크북을 나타내는 클래스입니다.</li>
-<li> XSSFSheet: 엑셀 시트를 나타내는 클래스입니다.</li>
-<li> XSSFRow: 엑셀 행을 나타내는 클래스입니다.</li>
-<li> XSSFCell: 엑셀 셀을 나타내는 클래스입니다.</li>
-</ol>
+
+```java
+private void saveData(){
+  
+}
+```
 </ul>
+</div>
+<h3> Excel파일 불러오기 </h3>
+<div style="margin-left: 10px;">
+<ol type="1">
+<li> 파일명을 가진 WorkBook을 만든다.</li>
+<li> Sheet를 선택한다.</li>
+<li> Row를 선택한다.</li>
+<li> Cell을 선택한다.</li>
+<li> Cell값에 getValue를 한다.</li>
+</ol>
 </div>
 </div>
 </div>

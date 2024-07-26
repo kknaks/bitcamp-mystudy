@@ -1,6 +1,7 @@
 package study.library.apache_poi;
 
 import java.io.FileOutputStream;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -12,6 +13,7 @@ public class Test03 {
 
     for (int i = 1; i <= sheet.getLastRowNum(); i++) {
       Row row = sheet.getRow(i);
+      Cell cell = row.getCell(i);
       System.out.printf("%s %s %s %s %s \n", row.getCell(0).getNumericCellValue(),
           row.getCell(1).getNumericCellValue(), row.getCell(2).getNumericCellValue(),
           row.getCell(3).getNumericCellValue(), row.getCell(4).getNumericCellValue());
