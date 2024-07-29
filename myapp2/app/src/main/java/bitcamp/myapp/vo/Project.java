@@ -1,10 +1,11 @@
 package bitcamp.myapp.vo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Project implements InitSeqNo {
+public class Project implements Serializable {
 
   private static int seqNo;
 
@@ -24,14 +25,6 @@ public class Project implements InitSeqNo {
 
   public Project(int no) {
     this.no = no;
-  }
-
-  public static int getNextSeqNo() {
-    return ++seqNo;
-  }
-
-  public static void initSeqNo(int maxBoardNo) {
-    seqNo = maxBoardNo;
   }
 
   @Override

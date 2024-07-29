@@ -1,14 +1,13 @@
 package bitcamp.myapp.vo;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.io.Serializable;
 import java.util.Objects;
 
-// 메모리 설계도
-public class User implements InitSeqNo {
-
-  private static int seqNo;
+// Serializable 인터페이스
+// - 추상 메서드가 없다.
+// - 직렬화/역직렬화를 승인한다는 표시로 사용한다.
+// - 유사한 예) Cloneable 인터페이스
+public class User implements Serializable {
 
   private int no;
   private String name;
@@ -23,10 +22,6 @@ public class User implements InitSeqNo {
     this.no = no;
   }
 
-  public static int getNextSeqNo() {
-    return ++seqNo;
-  }
-
   public static User valueOf(String csv) {
     String[] values = csv.split(","); // csv: "1,홍길동,hong@test.com,1111,010-1111-2222"
     User user = new User();
@@ -38,13 +33,30 @@ public class User implements InitSeqNo {
     return user;
   }
 
-  public static void initSeqNo(int maxUserNo) {
-    seqNo = maxUserNo;
+  public static void main(String[] args) {
+    User user = new User();
+    user.setNo(100);
+    user.setName("홍길동");
+    user.setEmail("hong@test.com");
+    user.setPassword("1111");
+    user.setTel("010-1111-2222");
+
+    String csv = user.toCsvString();
+    System.out.println(csv);
+
+    User user2 = User.valueOf(csv);
+    System.out.println(user2);
+
   }
 
   public String toCsvString() {
     return new StringBuilder().append(no).append(",").append(name).append(",").append(email)
         .append(",").append(password).append(",").append(tel).toString();
+  }
+
+  @Override
+  public String toString() {
+    return "User{" + "no=" + no + ", name='" + name + '\'' + ", email='" + email + '\'' + ", password='" + password + '\'' + ", tel='" + tel + '\'' + '}';
   }
 
   @Override
@@ -102,41 +114,5 @@ public class User implements InitSeqNo {
 
   public void setTel(String tel) {
     this.tel = tel;
-  }
-
-  public byte[] getBytes() throws IOException {
-    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
-      //회원번호 넣기
-      out.write(no >> 24);
-      out.write(no >> 16);
-      out.write(no >> 8);
-      out.write(no);
-
-      //이름 넣기
-      byte[] bytes = name.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      //이메일 넣기
-      bytes = email.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      //password
-      bytes = password.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      //tel
-      bytes = tel.getBytes(StandardCharsets.UTF_8);
-      out.write(bytes.length >> 8);
-      out.write(bytes.length);
-      out.write(bytes);
-
-      return out.toByteArray();
-    }
   }
 }

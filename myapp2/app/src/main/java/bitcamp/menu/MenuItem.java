@@ -1,8 +1,9 @@
-package bitcamp.myapp.menu;
+package bitcamp.menu;
 
 import bitcamp.myapp.command.Command;
 
 public class MenuItem extends AbstractMenu {
+
   Command command;
 
   public MenuItem(String title) {
@@ -11,6 +12,10 @@ public class MenuItem extends AbstractMenu {
 
   public MenuItem(String title, Command command) {
     super(title);
+    this.command = command;
+  }
+
+  public void setCommand(Command command) {
     this.command = command;
   }
 

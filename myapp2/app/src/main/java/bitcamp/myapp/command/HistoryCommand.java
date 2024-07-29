@@ -1,6 +1,6 @@
 package bitcamp.myapp.command;
 
-import bitcamp.myapp.util.Prompt;
+import bitcamp.util.Prompt;
 
 public class HistoryCommand implements Command {
 

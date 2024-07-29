@@ -1,32 +1,36 @@
 package bitcamp.myapp.command.user;
 
 import bitcamp.myapp.command.Command;
-import bitcamp.myapp.util.Prompt;
+import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-
-import java.util.List;
+import bitcamp.util.Prompt;
 
 public class UserViewCommand implements Command {
 
-  private List<User> userList;
+  UserDao userDao;
 
-  public UserViewCommand(List<User> list) {
-    this.userList = list;
+  public UserViewCommand(UserDao userDao) {
+    this.userDao = userDao;
   }
 
   @Override
   public void execute(String menuName) {
-    int userNo = Prompt.inputInt("회원번호?");
-    int index = userList.indexOf(new User(userNo));
-    if (index == -1) {
-      System.out.println("없는 회원입니다.");
-      return;
+    System.out.printf("[%s]\n", menuName);
+    try {
+      int userNo = Prompt.inputInt("회원번호?");
+
+      User user = userDao.findBy(userNo);
+      if (user == null) {
+        System.out.println("없는 회원입니다.");
+        return;
+      }
+
+      System.out.printf("이름: %s\n", user.getName());
+      System.out.printf("이메일: %s\n", user.getEmail());
+      System.out.printf("연락처: %s\n", user.getTel());
+      
+    } catch (Exception e) {
+      System.out.println("회원 조회 중 오류 발생");
     }
-
-    User user = userList.get(index);
-
-    System.out.printf("이름: %s\n", user.getName());
-    System.out.printf("이메일: %s\n", user.getEmail());
-    System.out.printf("연락처: %s\n", user.getTel());
   }
 }

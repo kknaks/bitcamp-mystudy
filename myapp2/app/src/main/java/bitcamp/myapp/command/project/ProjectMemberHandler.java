@@ -1,32 +1,31 @@
 package bitcamp.myapp.command.project;
 
-import bitcamp.myapp.util.Prompt;
+import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
-
-import java.util.List;
+import bitcamp.util.Prompt;
 
 public class ProjectMemberHandler {
-  private List<User> userList;
 
-  public ProjectMemberHandler(List<User> usersList) {
-    this.userList = userList;
+  private UserDao userDao;
+
+  public ProjectMemberHandler(UserDao userDao) {
+    this.userDao = userDao;
   }
 
-  public void addMembers(Project project) {
+  public void addMembers(Project project) throws Exception {
     while (true) {
       int userNo = Prompt.inputInt("추가할 팀원 번호?(종료: 0)");
       if (userNo == 0) {
         break;
       }
 
-      int index = userList.indexOf(new User(userNo));
-      if (index == -1) {
+      User user = userDao.findBy(userNo);
+      if (user == null) {
         System.out.println("없는 팀원입니다.");
         continue;
       }
 
-      User user = userList.get(index);
       if (project.getMembers().contains(user)) {
         System.out.printf("'%s'은 현재 팀원입니다.\n", user.getName());
         continue;

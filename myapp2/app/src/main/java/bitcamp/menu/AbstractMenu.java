@@ -1,8 +1,9 @@
-package bitcamp.myapp.menu;
+package bitcamp.menu;
 
 import java.util.Objects;
 
 public abstract class AbstractMenu implements Menu {
+
   protected String title;
 
   public AbstractMenu(String title) {
@@ -10,12 +11,14 @@ public abstract class AbstractMenu implements Menu {
   }
 
   @Override
-  public boolean equals(Object object) {
-    if (this == object)
+  public boolean equals(Object o) {
+    if (this == o) {
       return true;
-    if (!(object instanceof AbstractMenu that))
+    }
+    if (!(o instanceof AbstractMenu menuItem)) {
       return false;
-    return Objects.equals(title, that.title);
+    }
+    return Objects.equals(title, menuItem.title);
   }
 
   @Override

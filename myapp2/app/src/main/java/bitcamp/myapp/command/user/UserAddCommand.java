@@ -1,27 +1,31 @@
 package bitcamp.myapp.command.user;
 
 import bitcamp.myapp.command.Command;
-import bitcamp.myapp.util.Prompt;
+import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
-
-import java.util.List;
+import bitcamp.util.Prompt;
 
 public class UserAddCommand implements Command {
 
-  private List<User> userList;
+  UserDao userDao;
 
-  public UserAddCommand(List<User> list) {
-    this.userList = list;
+  public UserAddCommand(UserDao userDao) {
+    this.userDao = userDao;
   }
 
   @Override
   public void execute(String menuName) {
-    User user = new User();
-    user.setName(Prompt.input("이름?"));
-    user.setEmail(Prompt.input("이메일?"));
-    user.setPassword(Prompt.input("암호?"));
-    user.setTel(Prompt.input("연락처?"));
-    user.setNo(User.getNextSeqNo());
-    userList.add(user);
+    System.out.printf("[%s]\n", menuName);
+    try {
+      User user = new User();
+      user.setName(Prompt.input("이름?"));
+      user.setEmail(Prompt.input("이메일?"));
+      user.setPassword(Prompt.input("암호?"));
+      user.setTel(Prompt.input("연락처?"));
+
+      userDao.insert(user);
+    } catch (Exception e) {
+      System.out.println("회원 등록 중 오류 발생");
+    }
   }
 }
