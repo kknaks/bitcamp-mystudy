@@ -1,7 +1,6 @@
 package bitcamp.myapp.dao;
 
 import bitcamp.myapp.vo.Project;
-
 import java.util.List;
 
 public interface ProjectDao {

@@ -1,15 +1,17 @@
 package bitcamp.myapp.dao.skel;
 
+import static bitcamp.net.ResponseStatus.ERROR;
+import static bitcamp.net.ResponseStatus.FAILURE;
+import static bitcamp.net.ResponseStatus.SUCCESS;
+
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.vo.Board;
-
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
-import static bitcamp.net.ResponseStatus.*;
-
 public class BoardDaoSkel {
+
   private BoardDao boardDao;
 
   public BoardDaoSkel(BoardDao boardDao) {
@@ -18,8 +20,10 @@ public class BoardDaoSkel {
 
   public void service(ObjectInputStream in, ObjectOutputStream out) throws Exception {
     String command = in.readUTF();
+
     Board board = null;
     int no = 0;
+
     switch (command) {
       case "insert":
         board = (Board) in.readObject();
@@ -64,4 +68,5 @@ public class BoardDaoSkel {
 
     out.flush();
   }
+
 }

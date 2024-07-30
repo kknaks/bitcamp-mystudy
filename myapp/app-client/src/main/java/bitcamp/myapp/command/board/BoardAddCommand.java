@@ -4,7 +4,6 @@ import bitcamp.command.Command;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.vo.Board;
 import bitcamp.util.Prompt;
-
 import java.util.Date;
 
 public class BoardAddCommand implements Command {

@@ -10,7 +10,6 @@ public class ProjectViewCommand implements Command {
 
   private ProjectDao projectDao;
 
-
   public ProjectViewCommand(ProjectDao projectDao) {
     this.projectDao = projectDao;
   }

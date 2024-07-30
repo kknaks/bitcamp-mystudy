@@ -118,7 +118,7 @@ public class ListProjectDao implements ProjectDao {
 
   @Override
   public List<Project> list() throws Exception {
-    return projectList;
+    return projectList.stream().toList();
   }
 
   @Override

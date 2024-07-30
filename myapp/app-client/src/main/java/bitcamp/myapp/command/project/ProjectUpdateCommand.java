@@ -10,7 +10,8 @@ public class ProjectUpdateCommand implements Command {
   private ProjectDao projectDao;
   private ProjectMemberHandler memberHandler;
 
-  public ProjectUpdateCommand(ProjectDao projectDao, ProjectMemberHandler memberHandler) {
+  public ProjectUpdateCommand(ProjectDao projectDao,
+      ProjectMemberHandler memberHandler) {
     this.projectDao = projectDao;
     this.memberHandler = memberHandler;
   }

@@ -1,12 +1,16 @@
-# 36. 애플리케이션 시작/종료 상태일 때 알림 받기 : GoF의 Observer 패턴 적용
+# 37. 애플리케이션 간에 데이터 공유하기 : Client/Server 아키텍처로 전환
 
 ## 학습목표
 
-- GoF의 Observer 설계 패턴을 이해하고 적용할 수 있다.
+- 네트워킹 API 를 이용하여 애플리케이션 간에 통신을 수행할 수 있다.
+- 클라이언트/서버 아키텍처의 특징을 설명하고 구현할 수 있다.
+- GoF의 Proxy 설계 패턴을 이해하고 적용할 수 있다.
 
 ## 요구사항
 
-- 애플리케이션이 시작되거나 종료될 때 초기화 작업이나 자원 해제 작업을 할 수 있도록 설계를 개선하라.
+- 애플리케이션 간에 데이터를 공유할 수 있도록 데이터 처리 기능을 별도의 애플리케이션으로 분리하라.
+- 클라이언트/서버 구조로 애플리케이션을 변경하라.
+- 클라이언트/서버의 공통 코드는 별도의 프로젝트로 분리하라.
 
 ## 실행 결과
 
@@ -14,18 +18,7 @@
 
 ## 작업
 
-- Observer 객체의 사용 규칙을 정의
-  - ApplicationListener 인터페이스 추가
-- Observer 객체 구현
-  - InitApplicationListener 클래스 추가
-- 애플리케이션 환경 정보를 다룰 객체 정의 
-  - ApplicationContext 클래스 추가
-- App 클래스 변경
-  - Observer를 등록하고 실행하도록 변경
+- 메인 프로젝트 app을 app-client와 app-server로 나눈다.
+- 공통 코드를 별도의 라이브러리 프로젝트(app-common)로 나눈다. 
   
 ## 소스 파일
-
-- App.java
-- ApplicationListener.java
-- InitApplicationListener.java
-- ApplicationContext.java

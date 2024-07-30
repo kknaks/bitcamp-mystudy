@@ -1,15 +1,17 @@
 package bitcamp.myapp.dao.skel;
 
+import static bitcamp.net.ResponseStatus.ERROR;
+import static bitcamp.net.ResponseStatus.FAILURE;
+import static bitcamp.net.ResponseStatus.SUCCESS;
+
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.vo.Project;
-
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
-import static bitcamp.net.ResponseStatus.*;
-
 public class ProjectDaoSkel {
+
   private ProjectDao projectDao;
 
   public ProjectDaoSkel(ProjectDao projectDao) {
@@ -18,8 +20,10 @@ public class ProjectDaoSkel {
 
   public void service(ObjectInputStream in, ObjectOutputStream out) throws Exception {
     String command = in.readUTF();
+
     Project project = null;
     int no = 0;
+
     switch (command) {
       case "insert":
         project = (Project) in.readObject();
@@ -64,4 +68,5 @@ public class ProjectDaoSkel {
 
     out.flush();
   }
+
 }
