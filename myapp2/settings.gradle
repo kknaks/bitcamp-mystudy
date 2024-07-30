@@ -11,4 +11,5 @@ plugins {
 }
 
 rootProject.name = 'myapp2'
-include('app')
+include('app-client')
+include('app-server')
