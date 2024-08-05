@@ -1,4 +1,4 @@
-# 네트워크 패턴
+# 네트워크
 <div style="margin-left: 20px;">
 <h2> 네트워크 입출력</h2>
 

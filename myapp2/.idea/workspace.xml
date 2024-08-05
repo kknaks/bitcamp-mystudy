@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3ec23e9-19d1-42b4-b72b-db95561817a0" name="변경" comment="" />
+    <list default="true" id="c3ec23e9-19d1-42b4-b72b-db95561817a0" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../class/Day46.md" beforeDir="false" afterPath="$PROJECT_DIR$/../class/Day46.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app-server/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app-server/data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/ServerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/dao/skel/UserDaoSkel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/dao/skel/UserDaoSkel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -369,6 +375,8 @@
       <workItem from="1721950923128" duration="20000" />
       <workItem from="1722135096008" duration="16335000" />
       <workItem from="1722301303879" duration="402000" />
+      <workItem from="1722303225044" duration="12572000" />
+      <workItem from="1722498904502" duration="5000" />
     </task>
     <servers />
   </component>

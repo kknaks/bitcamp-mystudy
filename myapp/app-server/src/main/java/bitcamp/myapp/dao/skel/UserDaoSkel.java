@@ -1,14 +1,13 @@
 package bitcamp.myapp.dao.skel;
 
-import static bitcamp.net.ResponseStatus.ERROR;
-import static bitcamp.net.ResponseStatus.FAILURE;
-import static bitcamp.net.ResponseStatus.SUCCESS;
-
 import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
+
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
+
+import static bitcamp.net.ResponseStatus.*;
 
 public class UserDaoSkel {
 
@@ -31,6 +30,7 @@ public class UserDaoSkel {
         out.writeUTF(SUCCESS);
         break;
       case "list":
+        Thread.sleep(30000);
         List<User> list = userDao.list();
         out.writeUTF(SUCCESS);
         out.writeObject(list);

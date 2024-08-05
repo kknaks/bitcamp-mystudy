@@ -17,12 +17,12 @@ import java.util.List;
 
 public class ServerApp {
 
-  List<ApplicationListener> listeners = new ArrayList<>();
-  ApplicationContext appCtx = new ApplicationContext();
-
   UserDaoSkel userDaoSkel;
   BoardDaoSkel boardDaoSkel;
   ProjectDaoSkel projectDaoSkel;
+
+  List<ApplicationListener> listeners = new ArrayList<>();
+  ApplicationContext appCtx = new ApplicationContext();
 
   public static void main(String[] args) {
     ServerApp app = new ServerApp();
@@ -52,7 +52,6 @@ public class ServerApp {
       }
     }
 
-    // 서버에서 사용할 Dao Skeloton 객체를 준비한다.
     userDaoSkel = (UserDaoSkel) appCtx.getAttribute("userDaoSkel");
     boardDaoSkel = (BoardDaoSkel) appCtx.getAttribute("boardDaoSkel");
     projectDaoSkel = (ProjectDaoSkel) appCtx.getAttribute("projectDaoSkel");
@@ -63,7 +62,14 @@ public class ServerApp {
       System.out.println("서버 실행 중...");
 
       while (true) {
-        processRequest(serverSocket.accept());
+        Socket socket = serverSocket.accept();
+        
+        new Thread() {
+          @Override
+          public void run() {
+            processRequest(socket);
+          }
+        }.start();
       }
 
     } catch (Exception e) {
@@ -83,12 +89,13 @@ public class ServerApp {
     }
   }
 
-  void processRequest(Socket s) {
+  void processRequest(Socket socket) {
+
     String remoteHost = null;
     int port = 0;
-    try (Socket socket = s) {
+    try (Socket s = socket) {
 
-      InetSocketAddress addr = (InetSocketAddress) s.getRemoteSocketAddress();
+      InetSocketAddress addr = (InetSocketAddress) socket.getRemoteSocketAddress();
       remoteHost = addr.getHostString();
       port = addr.getPort();
 
@@ -117,4 +124,5 @@ public class ServerApp {
       System.out.printf("%s:%d클라이언트 요청 처리 중 오류 발생!", remoteHost, port);
     }
   }
+
 }
