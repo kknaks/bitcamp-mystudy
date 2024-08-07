@@ -235,4 +235,81 @@
 
 ### uk(unique key) 적용
 - primary key 만 적용하면 다른 칼럼들의 중복을 막을 수 없다. 
-- primay key는 아니지만 다른 값들이 중복되
+- primay key는 아니지만 다른 값들이 중복되면 안된느 컬럼을 지정 할 때 사용한다. 
+  ```java
+  create table test1(
+    no int,
+    name varchar(20),
+    age int,
+    kor int,
+    eng int,
+    math int,
+    constraint primary key(no),
+    constraint test1_uk unique (name, age)
+    );
+
+  insert into test1(no,name,age,kor,eng,math) values(1,'a',10,90,90,90);
+  insert into test1(no,name,age,kor,eng,math) values(2,'a',11,91,91,91);
+  insert into test1(no,name,age,kor,eng,math) values(3,'b',11,81,81,81);
+  insert into test1(no,name,age,kor,eng,math) values(4,'c',20,81,81,81);
+    
+    /* 번호가 중복되었기 때문에 입력 거절 */
+    //insert into test1(no,name,age,kor,eng,math) values(4,'d',21,81,81,81);
+    
+    /* 비록 번호가 중복되지 않더라도 name, age가 unique 컬럼으로 지정되었기
+    때문에 중복저장될 수 없다.*/
+    //insert into test1(no,name,age,kor,eng,math) values(5,'c',20,81,81,81);
+   ```
+  <img width="847" alt="image" src="https://github.com/user-attachments/assets/7460f70d-fecb-496f-83b7-bc73a02f277c">
+
+### index 적용
+ - 검색 조건으로 사용되는 컬럼인 경우 따로 정렬 해 두면 데이터를 빨리 찾을 수 있다.
+ - index를 설정하여 별도의 테이블로 관리하는 것이 데이터 조회에 유리하다.
+ - 인덱스로 지정된 컬럼의 값이 추가/변경/삭제 될 때 인덱스 정보도 갱신한다.
+ - 입력/변경/삭제 시에는 속도가 느려지지만, 조회에서는 속도가 빠르다.
+    ```java
+    create table test1(
+    no int ,
+    name varchar(20),
+    age int,
+    score int,
+    constraint primary key(no),
+    constraint test1_uk unique (name, age),
+    fulltext index test1_name_idx (name)
+    );
+    
+    insert into test1(no,name,age,kor,eng,math) values(1,'aaa',20,80,80,80);
+    insert into test1(no,name,age,kor,eng,math) values(2,'bbb',21,90,80,80);
+    insert into test1(no,name,age,kor,eng,math) values(3,'ccc',20,80,80,80);
+    insert into test1(no,name,age,kor,eng,math) values(4,'ddd',22,90,80,80);
+   ```
+   <img width="847" alt="image" src="https://github.com/user-attachments/assets/28bf6d9f-20a1-44fe-bdf0-12352ec9ac0c">
+
+### 컬럽 값 자동 증가
+- 숫자 타입의 PK 컬럼 또는 Unique 컬럼인 경우 값을 1씩 자동 증가시킬 수 있다.
+- 삭제를 통해 중간에 비어있는 번호는 다시 채우지 않는다.
+- 한 테이블 당 하나만 지정 가능하다.
+  <img width="847" alt="image" src="https://github.com/user-attachments/assets/59167873-31e3-481e-840c-c074798a4d55">
+
+
+### 테이블 변경
+
+#### 테이블 컬럼 추가
+ ```java
+  alter table 테이블명
+    add column 컬럼명 변수타입;  
+ ```
+
+#### pk,uk,idx 지정
+ ```java
+  alter table 테이블명
+    add constraint 키이름 primary key(컬럼명),  // 키이름 생략 가능
+    add constraint 키이름 unique(컬럼명),       // 키이름 생략 가능
+    add fulltext index 인덱스이름(컬럼명);       //문자열만 인덱스 가능
+ ```
+#### 옵션 변경
+ ```java
+ alter table 테이블명
+    modify column 컬럼명 변수명 (not null/null),
+    modify column 컬럼명 int not null auto_increment;
+ ```
