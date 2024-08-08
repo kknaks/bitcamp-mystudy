@@ -1,5 +1,4 @@
 # MySQL
-## DBMS의 개념
 ## MySQL 시작하기
 ### MySQL 서버에 접속하기 
   - 로컬 MySQL에 접속하기
