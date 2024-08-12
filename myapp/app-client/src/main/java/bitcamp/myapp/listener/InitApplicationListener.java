@@ -12,25 +12,30 @@ import bitcamp.myapp.command.user.*;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.dao.UserDao;
-import bitcamp.myapp.dao.stub.BoardDaoStub;
-import bitcamp.myapp.dao.stub.ProjectDaoStub;
-import bitcamp.myapp.dao.stub.UserDaoStub;
+import bitcamp.myapp.dao.mysql.BoardDaoImpl;
+import bitcamp.myapp.dao.mysql.ProjectDaoImpl;
+import bitcamp.myapp.dao.mysql.UserDaoImpl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class InitApplicationListener implements ApplicationListener {
-
   UserDao userDao;
   BoardDao boardDao;
   ProjectDao projectDao;
+  private Connection con;
 
   @Override
   public void onStart(ApplicationContext ctx) throws Exception {
+    String url = (String) ctx.getAttribute("url");
+    String username = (String) ctx.getAttribute("username");
+    String password = (String) ctx.getAttribute("password");
 
-    String host = (String) ctx.getAttribute("host");
-    int port = (int) ctx.getAttribute("port");
+    con = DriverManager.getConnection(url, username, password);
 
-    userDao = new UserDaoStub(host, port, "users");
-    boardDao = new BoardDaoStub(host, port, "boards");
-    projectDao = new ProjectDaoStub(host, port, "projects");
+    userDao = new UserDaoImpl(con);
+    boardDao = new BoardDaoImpl(con);
+    projectDao = new ProjectDaoImpl(con, userDao);
 
     MenuGroup mainMenu = ctx.getMainMenu();
 
@@ -63,5 +68,14 @@ public class InitApplicationListener implements ApplicationListener {
     mainMenu.add(new MenuItem("명령내역", new HistoryCommand()));
 
     mainMenu.setExitMenuTitle("종료");
+  }
+
+  @Override
+  public void onShutdown(ApplicationContext ctx) throws Exception {
+    try {
+      con.close();
+    } catch (Exception e) {
+
+    }
   }
 }
