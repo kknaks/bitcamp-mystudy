@@ -5,9 +5,6 @@ import bitcamp.listener.ApplicationListener;
 import bitcamp.myapp.listener.InitApplicationListener;
 import bitcamp.util.Prompt;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,13 +31,13 @@ public class ClientApp {
   }
 
   void execute() {
-    try (Socket socket = new Socket("127.0.0.1", 8888)) {
-      ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-      ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 
-      appCtx.addAttribute("outputStream", out);
-      appCtx.addAttribute("inputStream", in);
+    try {
+      appCtx.setAttribute("url", "jdbc:mysql://localhost/studydb");
+      appCtx.setAttribute("username", "study");
+      appCtx.setAttribute("password", "1111");
 
+      // 애플리케이션이 시작될 때 리스너에게 알린다.
       for (ApplicationListener listener : listeners) {
         try {
           listener.onStart(appCtx);
@@ -50,18 +47,25 @@ public class ClientApp {
       }
 
       System.out.println("[프로젝트 관리 시스템]");
+
       appCtx.getMainMenu().execute();
 
-      out.writeUTF("quit");
-      out.flush();
-
-    } catch (Exception e) {
-      System.out.println("실행 오류");
-      e.printStackTrace();
+    } catch (Exception ex) {
+      System.out.println("실행 오류!");
+      ex.printStackTrace();
     }
 
     System.out.println("종료합니다.");
 
     Prompt.close();
+
+    // 애플리케이션이 종료될 때 리스너에게 알린다.
+    for (ApplicationListener listener : listeners) {
+      try {
+        listener.onShutdown(appCtx);
+      } catch (Exception e) {
+        System.out.println("리스너 실행 중 오류 발생!");
+      }
+    }
   }
 }

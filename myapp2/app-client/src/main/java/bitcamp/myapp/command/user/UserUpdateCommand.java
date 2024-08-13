@@ -5,7 +5,6 @@ import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
 import bitcamp.util.Prompt;
 
-
 public class UserUpdateCommand implements Command {
 
   private UserDao userDao;
@@ -36,6 +35,7 @@ public class UserUpdateCommand implements Command {
 
     } catch (Exception e) {
       System.out.println("변경 중 오류 발생!");
+      e.printStackTrace();
     }
   }
 

@@ -6,6 +6,8 @@ import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
 import bitcamp.util.Prompt;
 
+import java.util.List;
+
 public class ProjectViewCommand implements Command {
 
   private ProjectDao projectDao;
@@ -30,8 +32,9 @@ public class ProjectViewCommand implements Command {
       System.out.printf("설명: %s\n", project.getDescription());
       System.out.printf("기간: %s ~ %s\n", project.getStartDate(), project.getEndDate());
 
+      List<User> members = projectDao.getMembers(projectNo);
       System.out.println("팀원:");
-      for (User user : project.getMembers()) {
+      for (User user : members) {
         System.out.printf("- %s\n", user.getName());
       }
     } catch (Exception e) {

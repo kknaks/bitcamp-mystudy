@@ -6,9 +6,9 @@ import bitcamp.myapp.dao.skel.BoardDaoSkel;
 import bitcamp.myapp.dao.skel.ProjectDaoSkel;
 import bitcamp.myapp.dao.skel.UserDaoSkel;
 import bitcamp.myapp.listener.InitApplicationListener;
-
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -19,12 +19,14 @@ public class ServerApp {
   List<ApplicationListener> listeners = new ArrayList<>();
   ApplicationContext appCtx = new ApplicationContext();
 
+  UserDaoSkel userDaoSkel;
+  BoardDaoSkel boardDaoSkel;
+  ProjectDaoSkel projectDaoSkel;
+
   public static void main(String[] args) {
     ServerApp app = new ServerApp();
-
     // 애플리케이션이 시작되거나 종료될 때 알림 받을 객체의 연락처를 등록한다.
     app.addApplicationListener(new InitApplicationListener());
-
     app.execute();
   }
 
@@ -47,43 +49,48 @@ public class ServerApp {
       }
     }
 
-    System.out.println("(프로젝트 관리 시스템");
+    // 클라이언트의 데이터 처리 요청을 수행할 Dao Skeloton 객체를 준비한다.
+    userDaoSkel = (UserDaoSkel) appCtx.getAttribute("userDaoSkel");
+    boardDaoSkel = (BoardDaoSkel) appCtx.getAttribute("boardDaoSkel");
+    projectDaoSkel = (ProjectDaoSkel) appCtx.getAttribute("projectDaoSkel");
 
-    UserDaoSkel userDaoSkel = (UserDaoSkel) appCtx.getAttribute("userDaoSkel");
-    BoardDaoSkel boardDaoSkel = (BoardDaoSkel) appCtx.getAttribute("boardDaoSkel");
-    ProjectDaoSkel projectDaoSkel = (ProjectDaoSkel) appCtx.getAttribute("projectDaoSkel");
+    System.out.println("서버 프로젝트 관리 시스템 시작!");
 
+    try (ServerSocket serverSocket = new ServerSocket(8888);) {
+      System.out.println("서버 실행 중...");
 
-    try (ServerSocket serverSocket = new ServerSocket(8888)) {
-      System.out.println("서버 실행중...");
+      while (true) {
+        Socket socket = serverSocket.accept();
+        Socket socket = serverSocket.accept();
+        // 0) 스레드의 로컬 서브 클래스를 만들어 실행시키기
+//        class RequestThread extends Thread {
+//          @Override
+//          public void run() {
+//            processRequest(socket);
+//          }
+//        }
+//        new RequestThread().start();
 
-      try (Socket socket = serverSocket.accept()) {
-        System.out.println("클라이언트와 연결됨");
-        ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-        ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+        // 1) 스레드의 익명 서브 클래스를 만들어 실행시키기
+//        new Thread() {
+//
+//          @Override
+//          public void run() {
+//            processRequest(socket);
+//          }
+//        }.start();
 
-        while (true) {
+        // 2) Runnable 구현체를 만들어 실행시키기
+//        new Thread(new Runnable() {
+//          public void run() {
+//            processRequest(socket);
+//          }
+//        }).start();
 
-          String dataName = in.readUTF();
-          if (dataName.equals("quit")) {
-            break;
-          }
-          System.out.println(dataName + "요청 처리합니다.");
-
-          switch (dataName) {
-            case "users":
-              userDaoSkel.service(in, out);
-              break;
-            case "projects":
-              projectDaoSkel.service(in, out);
-              break;
-            case "boards":
-              boardDaoSkel.service(in, out);
-              break;
-            default:
-          }
-        }
+        // 3) Lambda 문법으로 압축하기
+        new Thread(() -> processRequest(socket)).start();
       }
+
     } catch (Exception e) {
       System.out.println("통신 중 오류 발생!");
       e.printStackTrace();
@@ -100,4 +107,39 @@ public class ServerApp {
       }
     }
   }
+
+  void processRequest(Socket socket) {
+    String remoteHost = null;
+    int port = 0;
+
+    try (Socket s = socket) {
+
+      InetSocketAddress addr = (InetSocketAddress) socket.getRemoteSocketAddress();
+      remoteHost = addr.getHostString();
+      port = addr.getPort();
+
+      System.out.printf("%s:%d 클라이언트와 연결되었음!\n", remoteHost, port);
+
+      ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+      ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+
+      String dataName = in.readUTF();
+      switch (dataName) {
+        case "users":
+          userDaoSkel.service(in, out);
+          break;
+        case "projects":
+          projectDaoSkel.service(in, out);
+          break;
+        case "boards":
+          boardDaoSkel.service(in, out);
+          break;
+        default:
+      }
+    } catch (Exception e) {
+      System.out.printf("%s:%d 클라이언트 요청 처리 중 오류 발생!\n", remoteHost, port);
+      e.printStackTrace();
+    }
+  }
+
 }

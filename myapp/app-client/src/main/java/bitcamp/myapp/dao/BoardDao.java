@@ -15,4 +15,6 @@ public interface BoardDao {
   boolean update(Board board) throws Exception;
 
   boolean delete(int no) throws Exception;
+
+  void updateViewCount(int boardNo, int count) throws Exception;
 }

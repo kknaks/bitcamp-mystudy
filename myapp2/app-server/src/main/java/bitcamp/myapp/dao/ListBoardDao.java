@@ -108,7 +108,7 @@ public class ListBoardDao implements BoardDao {
 
   @Override
   public List<Board> list() throws Exception {
-    return boardList;
+    return boardList.stream().toList();
   }
 
   @Override

@@ -101,7 +101,7 @@ public class ListUserDao implements UserDao {
 
   @Override
   public List<User> list() throws Exception {
-    return userList;
+    return userList.stream().toList();
   }
 
   @Override

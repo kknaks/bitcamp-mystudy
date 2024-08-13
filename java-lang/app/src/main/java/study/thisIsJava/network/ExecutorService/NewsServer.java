@@ -68,6 +68,8 @@ public class NewsServer {
 
   public static void stopServer() {
     datagramSocket.close();
+    executorService.shutdown();
+
     System.out.println("[server] is Over");
   }
 }

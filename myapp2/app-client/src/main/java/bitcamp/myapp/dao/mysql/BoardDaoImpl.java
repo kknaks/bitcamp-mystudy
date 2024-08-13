@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BoardDaoImpl implements BoardDao {
-
   private Connection con;
 
   public BoardDaoImpl(Connection con) {
@@ -20,22 +19,25 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public boolean insert(Board board) throws Exception {
     try (Statement stmt = con.createStatement()) {
-      stmt.executeUpdate(
-          String.format("insert into myapp_boards(title, content)" + " values ('%s', '%s')",
-              board.getTitle(), board.getContent()));
-      return true;
+      stmt.executeUpdate(String.format("insert into myapp_boards(title, content)" +
+              "values('%s','%s')",
+          board.getTitle(),
+          board.getContent()));
     }
+    return true;
   }
 
   @Override
   public List<Board> list() throws Exception {
     try (Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("select * from myapp_boards order by board_id asc")) {
-      ArrayList<Board> list = new ArrayList<>();
+      List<Board> list = new ArrayList<>();
+
       while (rs.next()) {
         Board board = new Board();
         board.setNo(rs.getInt("board_id"));
         board.setTitle(rs.getString("title"));
+        board.setContent(rs.getString("content"));
         board.setCreatedDate(rs.getDate("created_date"));
         board.setViewCount(rs.getInt("view_count"));
         list.add(board);
@@ -47,7 +49,7 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public Board findBy(int no) throws Exception {
     try (Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from myapp_boards where board_id=" + no)) {
+        ResultSet rs = stmt.executeQuery("select * from myapp_boards where board_id = " + no)) {
       if (rs.next()) {
         Board board = new Board();
         board.setNo(rs.getInt("board_id"));
@@ -64,9 +66,13 @@ public class BoardDaoImpl implements BoardDao {
   @Override
   public boolean update(Board board) throws Exception {
     try (Statement stmt = con.createStatement()) {
-      int count = stmt.executeUpdate(String.format(
-          "update myapp_boards set" + " title='%s'," + " content='%s'" + " where board_id=%d",
-          board.getTitle(), board.getContent(), board.getNo()));
+      int count = stmt.executeUpdate(String.format("update myapp_boards set " +
+              " title ='%s'," +
+              " content = '%s'" +
+              " where board_id = %d",
+          board.getTitle(),
+          board.getContent(),
+          board.getNo()));
       return count > 0;
     }
   }
@@ -75,17 +81,19 @@ public class BoardDaoImpl implements BoardDao {
   public boolean delete(int no) throws Exception {
     try (Statement stmt = con.createStatement()) {
       int count =
-          stmt.executeUpdate(String.format("delete from myapp_boards where board_id=%d", no));
+          stmt.executeUpdate(String.format("delete from myapp_boards where board_id = %d", no));
       return count > 0;
     }
   }
 
-  @Override
-  public void updateViewCount(int boardNo, int count) throws Exception {
+  public void updateViewCount(int boardNo, int viewCount) throws Exception {
     try (Statement stmt = con.createStatement()) {
-      stmt.executeUpdate(
-          String.format("update myapp_boards set" + " view_count=%d" + " where board_id=%d", count,
-              boardNo));
+      stmt.executeUpdate(String.format(
+          "update myapp_boards set" +
+              " view_count = %d" +
+              " where board_id = %d",
+          viewCount,
+          boardNo));
     }
   }
 }

@@ -30,6 +30,7 @@ public class BoardDeleteCommand implements Command {
 
     } catch (Exception e) {
       System.out.println("삭제 중 오류 발생!");
+      e.printStackTrace();
     }
   }
 

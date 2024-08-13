@@ -10,8 +10,7 @@ public class ProjectUpdateCommand implements Command {
   private ProjectDao projectDao;
   private ProjectMemberHandler memberHandler;
 
-  public ProjectUpdateCommand(ProjectDao projectDao,
-      ProjectMemberHandler memberHandler) {
+  public ProjectUpdateCommand(ProjectDao projectDao, ProjectMemberHandler memberHandler) {
     this.projectDao = projectDao;
     this.memberHandler = memberHandler;
   }
@@ -30,14 +29,17 @@ public class ProjectUpdateCommand implements Command {
 
       project.setTitle(Prompt.input("프로젝트명(%s)?", project.getTitle()));
       project.setDescription(Prompt.input("설명(%s)?", project.getDescription()));
-      project.setStartDate(Prompt.input("시작일(%s)?", project.getStartDate()));
-      project.setEndDate(Prompt.input("종료일(%s)?", project.getEndDate()));
+      project.setStartDate(Prompt.inputDate("시작일(%s)?(예 : 2024-01-24)", project.getStartDate()));
+      project.setEndDate(Prompt.inputDate("종료일(%s)(예 : 2024-01-24)?", project.getEndDate()));
+      project.getMembers().addAll(projectDao.getMembers(projectNo));
 
       System.out.println("팀원:");
       memberHandler.deleteMembers(project);
       memberHandler.addMembers(project);
 
       projectDao.update(project);
+      projectDao.deleteMembers(projectNo);
+      projectDao.insertMembers(projectNo, project.getMembers());
       System.out.println("변경 했습니다.");
 
     } catch (Exception e) {

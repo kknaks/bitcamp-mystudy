@@ -12,27 +12,33 @@ import bitcamp.myapp.command.user.*;
 import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.dao.UserDao;
-import bitcamp.myapp.dao.stub.BoardDaoStub;
-import bitcamp.myapp.dao.stub.ProjectDaoStub;
-import bitcamp.myapp.dao.stub.UserDaoStub;
+import bitcamp.myapp.dao.mysql.BoardDaoImpl;
+import bitcamp.myapp.dao.mysql.ProjectDaoImpl;
+import bitcamp.myapp.dao.mysql.UserDaoImpl;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class InitApplicationListener implements ApplicationListener {
 
   UserDao userDao;
   BoardDao boardDao;
   ProjectDao projectDao;
+  private Connection con;
 
   @Override
   public void onStart(ApplicationContext ctx) throws Exception {
-    ObjectOutputStream out = (ObjectOutputStream) ctx.getAttribute("outputStream");
-    ObjectInputStream in = (ObjectInputStream) ctx.getAttribute("inputStream");
 
-    userDao = new UserDaoStub(out, in, "users");
-    boardDao = new BoardDaoStub(out, in, "boards");
-    projectDao = new ProjectDaoStub(out, in, "projects");
+    String url = (String) ctx.getAttribute("url");
+    String username = (String) ctx.getAttribute("username");
+    String password = (String) ctx.getAttribute("password");
+
+    con = DriverManager.getConnection(url, username, password);
+
+    System.out.println("---------log");
+    userDao = new UserDaoImpl(con);
+    boardDao = new BoardDaoImpl(con);
+    projectDao = new ProjectDaoImpl(con);
 
     MenuGroup mainMenu = ctx.getMainMenu();
 

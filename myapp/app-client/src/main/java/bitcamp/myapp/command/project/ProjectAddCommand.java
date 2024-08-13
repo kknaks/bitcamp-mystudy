@@ -23,18 +23,21 @@ public class ProjectAddCommand implements Command {
       Project project = new Project();
       project.setTitle(Prompt.input("프로젝트명?"));
       project.setDescription(Prompt.input("설명?"));
-      project.setStartDate(Prompt.input("시작일?"));
-      project.setEndDate(Prompt.input("종료일?"));
+      project.setStartDate(Prompt.inputDate("시작일(예 : 2024-01-24)?"));
+      project.setEndDate(Prompt.inputDate("종료일(예 : 2024-01-24)?"));
 
       System.out.println("팀원:");
       memberHandler.addMembers(project);
 
       projectDao.insert(project);
+      projectDao.insertMembers(project.getNo(), project.getMembers());
 
       System.out.println("등록했습니다.");
 
     } catch (Exception e) {
       System.out.println("등록 중 오류 발생!");
+      e.printStackTrace();
     }
   }
 }
+

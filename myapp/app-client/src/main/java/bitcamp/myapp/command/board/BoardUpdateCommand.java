@@ -24,8 +24,7 @@ public class BoardUpdateCommand implements Command {
         System.out.println("없는 게시글입니다.");
         return;
       }
-
-      //      board.setViewCount(board.getViewCount() + 1);
+      
       board.setTitle(Prompt.input("제목(%s)?", board.getTitle()));
       board.setContent(Prompt.input("내용(%s)?", board.getContent()));
 

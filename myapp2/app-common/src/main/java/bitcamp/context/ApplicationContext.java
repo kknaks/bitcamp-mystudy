@@ -14,13 +14,13 @@ public class ApplicationContext {
     return mainMenu;
   }
 
-  public void addAttribute(String name, Object value) {
+  public void setAttribute(String name, Object value) {
     objContainer.put(name, value);
   }
 
   public Object getAttribute(String name) {
     return objContainer.get(name);
   }
-  
+
 
 }

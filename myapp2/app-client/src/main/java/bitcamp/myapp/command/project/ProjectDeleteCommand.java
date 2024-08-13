@@ -24,7 +24,7 @@ public class ProjectDeleteCommand implements Command {
         System.out.println("없는 프로젝트입니다.");
         return;
       }
-
+      projectDao.deleteMembers(projectNo);
       projectDao.delete(projectNo);
       System.out.printf("%d번 프로젝트를 삭제 했습니다.\n", deletedProject.getNo());
 

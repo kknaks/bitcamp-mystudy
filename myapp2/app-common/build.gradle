@@ -26,5 +26,7 @@ tasks.named('test') {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = "UTF-8"
+    options.encoding = "UTF-8" // 소스 파일이 UTF-8로 인코딩 되어 있음을 알려준다.
+    // Gradle에서 컴파일 할 때 다음과 같이 옵션을 추가한다.
+    // $java -encoding UTF-8 ...
 }

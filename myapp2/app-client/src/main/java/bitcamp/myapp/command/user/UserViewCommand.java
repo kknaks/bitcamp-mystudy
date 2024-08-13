@@ -5,7 +5,6 @@ import bitcamp.myapp.dao.UserDao;
 import bitcamp.myapp.vo.User;
 import bitcamp.util.Prompt;
 
-
 public class UserViewCommand implements Command {
 
   private UserDao userDao;
