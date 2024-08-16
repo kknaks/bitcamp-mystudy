@@ -1,0 +1,309 @@
+<mxfile host="Electron" modified="2024-08-16T00:10:19.543Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="7HXXKX1DtqMH8Q_QnrO1" version="24.6.4" type="device">
+  <diagram name="페이지-1" id="52svJFiiW1MDonXjNhcR">
+    <mxGraphModel dx="1222" dy="1344" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="juK2xr58dno9ex2CHatZ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-7" target="juK2xr58dno9ex2CHatZ-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-2" value="2.사용" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-1">
+          <mxGeometry x="0.1167" y="-1" relative="1" as="geometry">
+            <mxPoint x="-8" y="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="937" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-4" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;1 .getConnetion()&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-3">
+          <mxGeometry x="-0.051" y="1" relative="1" as="geometry">
+            <mxPoint x="-23" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-7" target="juK2xr58dno9ex2CHatZ-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-6" value="3. 객체 리턴" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-5">
+          <mxGeometry x="-0.0294" y="1" relative="1" as="geometry">
+            <mxPoint x="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-7" value="DriverManger" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1077" y="65" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-8" value="MySQL JDBC Driver" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1297" y="65" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-11" target="juK2xr58dno9ex2CHatZ-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-10" value="5. 객체 리턴" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-9">
+          <mxGeometry x="-0.2297" relative="1" as="geometry">
+            <mxPoint x="35" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-11" value="Connection 구현체" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1067" y="140" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="937" y="155" as="targetPoint" />
+            <mxPoint x="1067" y="162.37" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="997" y="155" />
+              <mxPoint x="997" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-13" value="4. createStatement()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-12">
+          <mxGeometry x="0.101" relative="1" as="geometry">
+            <mxPoint y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startArrow=classic;startFill=1;endArrow=none;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="937" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-15" value="6. executeUpdate()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-14">
+          <mxGeometry x="0.417" relative="1" as="geometry">
+            <mxPoint x="19" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-18" target="juK2xr58dno9ex2CHatZ-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-17" value="9. 객체 리턴" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-16">
+          <mxGeometry x="0.1333" y="-1" relative="1" as="geometry">
+            <mxPoint x="36" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-18" value="Statement 구현체" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1067" y="215" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-19" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1297" y="178.25" width="120" height="103.5" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-20" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="juK2xr58dno9ex2CHatZ-19">
+          <mxGeometry width="120" height="32.68421052631579" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-21" value="MySQL" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;lid=0;" vertex="1" parent="juK2xr58dno9ex2CHatZ-19">
+          <mxGeometry y="16.342105263157894" width="120" height="87.1578947368421" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=27.5;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-18" target="juK2xr58dno9ex2CHatZ-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-23" value="7. SQL전송" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-22">
+          <mxGeometry x="-0.0406" y="1" relative="1" as="geometry">
+            <mxPoint y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-21" target="juK2xr58dno9ex2CHatZ-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-25" value="8. 리턴" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-24">
+          <mxGeometry x="-0.0411" y="-1" relative="1" as="geometry">
+            <mxPoint x="-6" y="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startArrow=classic;startFill=1;endArrow=none;endFill=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="937" y="297" as="targetPoint" />
+            <mxPoint x="1067" y="297.0120481927711" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-27" value="10. next()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-26">
+          <mxGeometry x="-0.1622" relative="1" as="geometry">
+            <mxPoint x="-45" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-28" value="ResultSet 구현체" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1067" y="290" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-29" value="statement 구현체" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="827" y="215" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.145;entryY=1;entryDx=0;entryDy=-4.35;entryPerimeter=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-28" target="juK2xr58dno9ex2CHatZ-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-31" value="11. 결과 레코드 1개 요청" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-30">
+          <mxGeometry x="0.0376" y="-1" relative="1" as="geometry">
+            <mxPoint x="-10" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.249;exitY=0.978;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-21" target="juK2xr58dno9ex2CHatZ-28">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1327" y="312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-33" value="12. 1개 레코드 리턴" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-32">
+          <mxGeometry x="0.3121" relative="1" as="geometry">
+            <mxPoint x="1" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-34" target="juK2xr58dno9ex2CHatZ-35">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1273" y="600" />
+              <mxPoint x="1273" y="515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-34" target="juK2xr58dno9ex2CHatZ-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-34" target="juK2xr58dno9ex2CHatZ-37">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1273" y="600" />
+              <mxPoint x="1273" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-50" value="2.Connect()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-40">
+          <mxGeometry x="-0.7646" relative="1" as="geometry">
+            <mxPoint x="14" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-57" value="3.call" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-40">
+          <mxGeometry x="0.7128" relative="1" as="geometry">
+            <mxPoint x="4" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-34" target="juK2xr58dno9ex2CHatZ-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-56" value="5. return&lt;div&gt;connectionImpl&lt;/div&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-55">
+          <mxGeometry x="-0.2872" y="-1" relative="1" as="geometry">
+            <mxPoint x="9" y="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-34" value="DriverManger" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="585" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-35" value="Oracle JDBC Driver" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1313" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-36" target="juK2xr58dno9ex2CHatZ-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-36" value="MS-SQL JDBC Driver" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1313" y="585" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-37" target="juK2xr58dno9ex2CHatZ-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-52" value="4.connect" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-49">
+          <mxGeometry x="-0.0057" relative="1" as="geometry">
+            <mxPoint x="-3" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-37" value="MySQL JDBC Driver" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1313" y="665" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-44" value="Oracle DBMS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1494" y="480" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-35" target="juK2xr58dno9ex2CHatZ-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-46" value="MS-SQL DBMS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1494" y="565" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.145;exitY=1;exitDx=0;exitDy=-4.35;exitPerimeter=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-48" target="juK2xr58dno9ex2CHatZ-51">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1508" y="725" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-54" value="5.ConnectionImpl" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-53">
+          <mxGeometry x="0.1502" y="1" relative="1" as="geometry">
+            <mxPoint y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.855;exitY=1;exitDx=0;exitDy=-4.35;exitPerimeter=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-48" target="juK2xr58dno9ex2CHatZ-61">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1579" y="825" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-71" value="10. return QueryOk" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-70">
+          <mxGeometry x="0.064" y="2" relative="1" as="geometry">
+            <mxPoint x="-68" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-48" value="MySQL DBMS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1494" y="645" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-51" target="juK2xr58dno9ex2CHatZ-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-63" value="7. return&lt;div&gt;statemetImpl&lt;/div&gt;" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-62">
+          <mxGeometry x="0.2667" y="1" relative="1" as="geometry">
+            <mxPoint x="7" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-51" value="ConnectionImpl" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="710" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="juK2xr58dno9ex2CHatZ-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="724.71" as="targetPoint" />
+            <mxPoint x="1110" y="724.71" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="962" y="725" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-60" value="6. createStatement()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-59">
+          <mxGeometry x="0.101" relative="1" as="geometry">
+            <mxPoint x="64" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-61" value="statementImpl" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="803" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-61" target="juK2xr58dno9ex2CHatZ-48">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1223" y="811" />
+              <mxPoint x="1544" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-67" value="9. Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-64">
+          <mxGeometry x="-0.2283" relative="1" as="geometry">
+            <mxPoint x="-17" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-61" target="juK2xr58dno9ex2CHatZ-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="810" as="targetPoint" />
+            <mxPoint x="1103" y="860" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="983" y="811" />
+              <mxPoint x="935" y="811" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-69" value="8. executeUpdate()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="juK2xr58dno9ex2CHatZ-68">
+          <mxGeometry x="0.101" relative="1" as="geometry">
+            <mxPoint x="95" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="juK2xr58dno9ex2CHatZ-73" target="juK2xr58dno9ex2CHatZ-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="juK2xr58dno9ex2CHatZ-73" value="App" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="572.5" width="90" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

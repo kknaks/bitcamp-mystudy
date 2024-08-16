@@ -11,6 +11,7 @@ public class Board implements Serializable {
   private int no;
   private String title;
   private String content;
+  private User writer;
   private Date createdDate;
   private int viewCount;
 
@@ -48,7 +49,7 @@ public class Board implements Serializable {
   public int hashCode() {
     return Objects.hashCode(no);
   }
-  
+
   public int getNo() {
     return no;
   }
@@ -87,5 +88,13 @@ public class Board implements Serializable {
 
   public void setViewCount(int viewCount) {
     this.viewCount = viewCount;
+  }
+
+  public User getWriter() {
+    return writer;
+  }
+
+  public void setWriter(User writer) {
+    this.writer = writer;
   }
 }

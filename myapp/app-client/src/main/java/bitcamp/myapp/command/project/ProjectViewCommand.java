@@ -39,6 +39,7 @@ public class ProjectViewCommand implements Command {
       }
     } catch (Exception e) {
       System.out.println("조회 중 오류 발생!");
+      e.printStackTrace();
     }
   }
 }

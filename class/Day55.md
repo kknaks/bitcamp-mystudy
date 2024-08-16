@@ -118,6 +118,7 @@ String members = rs.getString("members");
 <summary>코드 보기/숨기기</summary>
 
 ```java
+
   @Override
   public boolean insertMembers(int projectNo, List<User> members) throws Exception {
     try (Statement stmt = con.createStatement()) {
@@ -166,12 +167,16 @@ String members = rs.getString("members");
 </details>
 
 ## projectCommand 수정
+
 ### projectAddCommand
 - ```projectDao.insertMembers(project.getNo(), project.getMembers());``` 추가
+
 ### projectDeleteCommand 
 - ```projectDao.deleteMembers(projectNo);``` 추가
+
 ### projectUpdateCommand
   - ```projectDao.deleteMembers(projectNo);``` 추가
   - ```projectDao.insertMembers(projectNo, project.getMembers()); ``` 추가
+
 ### projectViewCommand
 - ```List<User> members = projectDao.getMembers(projectNo);```추가

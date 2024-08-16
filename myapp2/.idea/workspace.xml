@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3ec23e9-19d1-42b4-b72b-db95561817a0" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../class/Day46.md" beforeDir="false" afterPath="$PROJECT_DIR$/../class/Day46.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myapp/app-server/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app-server/data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/ServerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/dao/skel/UserDaoSkel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myapp/app-server/src/main/java/bitcamp/myapp/dao/skel/UserDaoSkel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backup/bitcamp-project4" beforeDir="false" afterPath="$PROJECT_DIR$/../backup/bitcamp-project4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../class/Day55.md" beforeDir="false" afterPath="$PROJECT_DIR$/../class/Day55.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +142,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;/Users/keonhak/git/bitcamp-mystudy/myapp2/app/src/main/java/bitcamp/myapp2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/keonhak/git/bitcamp-mystudy/myapp2/app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/keonhak/git/bitcamp-mystudy/myapp2/app-client/src/main/java/bitcamp/myapp&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -152,12 +151,18 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app-client/src/main/java/bitcamp/myapp" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/command/project" />
       <recent name="$PROJECT_DIR$/app/src/main/java/bitcamp/myapp/dao" />
@@ -377,6 +382,9 @@
       <workItem from="1722301303879" duration="402000" />
       <workItem from="1722303225044" duration="12572000" />
       <workItem from="1722498904502" duration="5000" />
+      <workItem from="1723543424644" duration="9252000" />
+      <workItem from="1723552709952" duration="599000" />
+      <workItem from="1723596684362" duration="18000" />
     </task>
     <servers />
   </component>
