@@ -1,5 +1,5 @@
 // Character Stream - String 출력하기
-package com.eomcs.io.ex03;
+package study.io.ex03;
 
 import java.io.FileWriter;
 

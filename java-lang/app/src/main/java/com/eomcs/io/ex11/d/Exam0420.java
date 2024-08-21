@@ -1,5 +1,5 @@
 // 인스턴스 입출력 - serialVersionUID의 사용법
-package com.eomcs.io.ex11.d;
+package study.io.ex11.d;
 
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -24,12 +24,13 @@ public class Exam0420 {
     in.close();
 
     System.out.println(member);
+    System.out.println(member.tel);
 
     // 결론!
     // - Member 객체를 serialize 한 후,
-    //   필드를 추가하거나 삭제하더라도
-    //   serialVersionUID 값만 같으면
-    //   JVM은 같은 형식으로 판단한다.
+    // 필드를 추가하거나 삭제하더라도
+    // serialVersionUID 값만 같으면
+    // JVM은 같은 형식으로 판단한다.
   }
 }
 

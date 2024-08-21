@@ -1,5 +1,5 @@
 // Character Stream - 문자 배열의 특정 부분을 출력하기 
-package com.eomcs.io.ex03;
+package study.io.ex03;
 
 import java.io.FileWriter;
 

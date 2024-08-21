@@ -1,5 +1,5 @@
 // 인스턴스 입출력 - ObjectOutputStream으로 인스턴스 출력하기
-package com.eomcs.io.ex11.b;
+package study.io.ex11.b;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;

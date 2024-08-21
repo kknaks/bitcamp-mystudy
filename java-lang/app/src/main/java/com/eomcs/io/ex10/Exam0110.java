@@ -1,5 +1,5 @@
 // Java I/O API 사용하기 - DataOutputStream
-package com.eomcs.io.ex10;
+package study.io.ex10;
 
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;

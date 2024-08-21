@@ -1,5 +1,5 @@
 // 인스턴스 입출력 - 직렬화 유효성 검사
-package com.eomcs.io.ex11.c;
+package study.io.ex11.c;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;

@@ -1,5 +1,5 @@
 // 인스턴스 입출력 - serialVersionUID의 사용법
-package com.eomcs.io.ex11.d;
+package study.io.ex11.d;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;

@@ -1,5 +1,5 @@
 // Character Stream - 읽은 데이터를 문자 배열의 특정 위치에 저장하기
-package com.eomcs.io.ex03;
+package study.io.ex03;
 
 import java.io.FileReader;
 

@@ -1,12 +1,14 @@
-# 39. 여러 클라이언트의 요청을 동시에 처리하기: Multi-thread 적용
+# 43. SQL 삽입 공격 차단하기
 
 ## 학습목표
 
-- 멀티 스레딩을 이해하고 적용할 수 있다.
+- SQL 삽입 공격을 이해하고 설명할 수 있다.
+- SQL 삽입 공격을 방어하는 코드를 작성할 수 있다.
+- 트랜잭션을 다룰 수 있다.
 
 ## 요구사항
 
-- 클라이언트 요청을 순차적으로 처리하지 말고 동시에 처리하라!
+- SQL 삽입 공격이 불가능하도록 JDBC 코드를 개선하라.
 
 ## 실행 결과
 
@@ -14,10 +16,11 @@
 
 ## 작업
 
-- 클라이언트 요청 처리를 별도의 실행 흐름에서 수행
-  - ServerApp 클래스 변경
-    - Thread의 서브 클래스를 execute() 메서드의 로컬 클래스로 정의
-  
+- SQL을 실행할 때 Statement 대신 PreparedStatement를 사용
+  - BoardDaoImpl, ProjectDaoImpl, UserDaoImpl 클래스 변경
+- 트랜잭션 제어
+  - ProjectAddCommand, ProjectUpdateCommand, ProjectDeleteCommand 클래스 변경
+  - InitApplicationListener 클래스 변경
+
 ## 소스 파일
 
-- ServerApp.java 

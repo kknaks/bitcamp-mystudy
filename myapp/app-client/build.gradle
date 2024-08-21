@@ -8,6 +8,8 @@ repositories {
 
 dependencies {
     implementation project(':app-common')
+    implementation 'org.mybatis:mybatis:3.5.16'
+
 
     //implementation 'com.google.code.gson:gson:2.11.0'
     implementation 'com.mysql:mysql-connector-j:8.4.0'

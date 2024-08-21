@@ -1,5 +1,5 @@
 // 인스턴스 입출력 - ObjectInputStream으로 인스턴스 읽기
-package com.eomcs.io.ex11.b;
+package study.io.ex11.b;
 
 import java.io.FileInputStream; // Data Sink Stream Class = Concrete Component
 import java.io.ObjectInputStream; // Data Processing Stream Class = Decorator

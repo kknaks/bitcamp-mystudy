@@ -6,15 +6,18 @@ import bitcamp.myapp.dao.BoardDao;
 import bitcamp.myapp.vo.Board;
 import bitcamp.myapp.vo.User;
 import bitcamp.util.Prompt;
+import org.apache.ibatis.session.SqlSession;
 
 public class BoardAddCommand implements Command {
 
   private BoardDao boardDao;
   private ApplicationContext ctx;
+  private SqlSession sqlSession;
 
-  public BoardAddCommand(BoardDao boardDao, ApplicationContext ctx) {
+  public BoardAddCommand(BoardDao boardDao, ApplicationContext ctx, SqlSession sqlSession) {
     this.boardDao = boardDao;
     this.ctx = ctx;
+    this.sqlSession = sqlSession;
   }
 
   @Override
@@ -27,8 +30,11 @@ public class BoardAddCommand implements Command {
       board.setWriter((User) ctx.getAttribute("loginUser"));
 
       boardDao.insert(board);
+      sqlSession.commit();
     } catch (Exception e) {
       System.out.println("등록 중 오류 발생!");
+      sqlSession.rollback();
+      e.printStackTrace();
     }
   }
 

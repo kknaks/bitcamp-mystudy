@@ -2,9 +2,9 @@ package bitcamp.myapp;
 
 import bitcamp.context.ApplicationContext;
 import bitcamp.listener.ApplicationListener;
+import bitcamp.myapp.listener.AuthApplicationListener;
 import bitcamp.myapp.listener.InitApplicationListener;
 import bitcamp.util.Prompt;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +18,7 @@ public class ClientApp {
 
     // 애플리케이션이 시작되거나 종료될 때 알림 받을 객체의 연락처를 등록한다.
     app.addApplicationListener(new InitApplicationListener());
+    app.addApplicationListener(new AuthApplicationListener());
 
     app.execute();
   }
@@ -33,14 +34,13 @@ public class ClientApp {
   void execute() {
 
     try {
-      appCtx.setAttribute("url", "jdbc:mysql://localhost/studydb");
-      appCtx.setAttribute("username", "study");
-      appCtx.setAttribute("password", "1111");
-
       // 애플리케이션이 시작될 때 리스너에게 알린다.
       for (ApplicationListener listener : listeners) {
         try {
-          listener.onStart(appCtx);
+          if (!listener.onStart(appCtx)) {
+            System.out.println("종료합니다.");
+            return;
+          }
         } catch (Exception e) {
           System.out.println("리스너 실행 중 오류 발생!");
         }

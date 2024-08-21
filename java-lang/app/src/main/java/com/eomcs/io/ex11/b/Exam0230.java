@@ -1,5 +1,5 @@
 // java.io.Serializable 처럼 사용되는 인터페이스 : java.lang.Cloneable 인터페이스
-package com.eomcs.io.ex11.b;
+package study.io.ex11.b;
 
 public class Exam0230 {
 

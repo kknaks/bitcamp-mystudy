@@ -1,5 +1,5 @@
 // Character Stream - 텍스트 읽기
-package com.eomcs.io.ex03;
+package study.io.ex03;
 
 import java.io.FileReader;
 import java.nio.CharBuffer;

@@ -1,4 +1,4 @@
-package com.eomcs.io.ex11.c;
+package study.io.ex11.c;
 
 public class Member implements java.io.Serializable {
 

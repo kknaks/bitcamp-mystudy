@@ -1,5 +1,5 @@
 // character stream - 문자 단위로 출력하기
-package com.eomcs.io.ex03;
+package study.io.ex03;
 
 import java.io.FileWriter;
 
