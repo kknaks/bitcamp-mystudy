@@ -28,7 +28,7 @@ public class Exam0320 {
     obj.minus(10, 20);
 
     // => 인스턴스 주소를 넘겨주지 않으면 NullPointerException 발생!
-    //    m.invoke(null, 10, 20);
+    // m.invoke(null, 10, 20);
 
   }
 

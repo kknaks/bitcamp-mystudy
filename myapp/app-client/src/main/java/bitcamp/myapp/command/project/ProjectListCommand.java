@@ -27,5 +27,4 @@ public class ProjectListCommand implements Command {
       e.printStackTrace();
     }
   }
-
 }

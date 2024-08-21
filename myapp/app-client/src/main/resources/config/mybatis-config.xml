@@ -4,7 +4,16 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!-- DBMS 접속정보 -->
-    <properties resource="jdbc.properties"/>
+    <properties resource="config/jdbc.properties"/>
+
+    <typeAliases>
+        <!--
+        <typeAlias type="bitcamp.myapp.vo.User" alias="user"/>
+        <typeAlias type="bitcamp.myapp.vo.Board" alias="board"/>
+        <typeAlias type="bitcamp.myapp.vo.Project" alias="project"/>
+        -->
+        <package name="bitcamp.myapp.vo"/>
+    </typeAliases>
 
     <!-- SQL문 파일 위치 -->
     <environments default="development-local">
@@ -23,7 +32,8 @@
     </environments>
 
     <mappers>
-        <mapper resource="UserDaoMapper.xml"/>
-        <mapper resource="BoardDaoMapper.xml"/>
+        <mapper resource="mappers/UserDaoMapper.xml"/>
+        <mapper resource="mappers/BoardDaoMapper.xml"/>
+        <mapper resource="mappers/ProjectDaoMapper.xml"/>
     </mappers>
 </configuration>

@@ -3,9 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserDao">
-    <select id="list" resultType="bitcamp.myapp.vo.User">
+    <resultMap id="UserMap" type="user">
+        <id column="user_id" property="no"/>
+        <result column="name" property="name"/>
+        <result column="email" property="email"/>
+        <result column="pwd" property="password"/>
+        <result column="tel" property="tel"/>
+    </resultMap>
+
+    <select id="list" resultMap="UserMap">
         select
-            user_id as no,
+            user_id,
             name,
             email
         from
@@ -14,14 +22,14 @@
             user_id asc
     </select>
 
-    <insert id="insert" parameterType="bitcamp.myapp.vo.User">
+    <insert id="insert" parameterType="user">
         insert into myapp_users(name, email, pwd, tel)
         values (#{name}, #{email}, sha1(#{password}), #{tel})
     </insert>
 
-    <select id="findBy" resultType="bitcamp.myapp.vo.User" parameterType="int">
+    <select id="findBy" resultMap="UserMap" parameterType="int">
             select
-                user_id as no,
+                user_id,
                 name,
                 email,
                 tel
@@ -31,9 +39,9 @@
                 user_id = #{ok}
     </select>
 
-    <select id="findByEmailAndPassword" resultType="bitcamp.myapp.vo.User" parameterType="map">
+    <select id="findByEmailAndPassword" resultMap="UserMap" parameterType="map">
         select
-            user_id as no,
+            user_id,
             name,
             email,
             tel
@@ -43,7 +51,7 @@
             email=#{email} and pwd=sha1(#{password})
     </select>
 
-    <update id="update" parameterType="bitcamp.myapp.vo.User">
+    <update id="update" parameterType="user">
         update myapp_users set
             name=#{name},
             email=#{email},

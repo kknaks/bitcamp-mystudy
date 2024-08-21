@@ -5,6 +5,8 @@ import bitcamp.myapp.vo.Project;
 import bitcamp.myapp.vo.User;
 import bitcamp.util.Prompt;
 
+import java.util.ArrayList;
+
 public class ProjectMemberHandler {
 
   private UserDao userDao;
@@ -14,6 +16,9 @@ public class ProjectMemberHandler {
   }
 
   public void addMembers(Project project) throws Exception {
+    if (project.getMembers() == null) {
+      project.setMembers(new ArrayList<>());
+    }
     while (true) {
       int userNo = Prompt.inputInt("추가할 팀원 번호?(종료: 0)");
       if (userNo == 0) {
@@ -37,6 +42,9 @@ public class ProjectMemberHandler {
   }
 
   public void deleteMembers(Project project) {
+    if (project.getMembers() == null || project.getMembers().size() == 0) {
+      return;
+    }
     Object[] members = project.getMembers().toArray();
     for (Object obj : members) {
       User member = (User) obj;
