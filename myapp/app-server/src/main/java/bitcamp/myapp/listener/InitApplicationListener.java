@@ -2,61 +2,78 @@ package bitcamp.myapp.listener;
 
 import bitcamp.context.ApplicationContext;
 import bitcamp.listener.ApplicationListener;
+import bitcamp.menu.MenuGroup;
+import bitcamp.menu.MenuItem;
+import bitcamp.myapp.command.HelpCommand;
+import bitcamp.myapp.command.board.*;
+import bitcamp.myapp.command.project.*;
+import bitcamp.myapp.command.user.*;
 import bitcamp.myapp.dao.BoardDao;
-import bitcamp.myapp.dao.ListBoardDao;
-import bitcamp.myapp.dao.ListProjectDao;
-import bitcamp.myapp.dao.ListUserDao;
+import bitcamp.myapp.dao.DaoFactory;
 import bitcamp.myapp.dao.ProjectDao;
 import bitcamp.myapp.dao.UserDao;
-import bitcamp.myapp.dao.skel.BoardDaoSkel;
-import bitcamp.myapp.dao.skel.ProjectDaoSkel;
-import bitcamp.myapp.dao.skel.UserDaoSkel;
+import bitcamp.mybatis.SqlSessionFactoryProxy;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import java.io.InputStream;
 
 public class InitApplicationListener implements ApplicationListener {
 
-  UserDao userDao;
-  BoardDao boardDao;
-  ProjectDao projectDao;
-
   @Override
-  public void onStart(ApplicationContext ctx) throws Exception {
-    userDao = new ListUserDao("data.xlsx");
-    boardDao = new ListBoardDao("data.xlsx");
-    projectDao = new ListProjectDao("data.xlsx", userDao);
+  public boolean onStart(ApplicationContext ctx) throws Exception {
+    InputStream inputStream = Resources.getResourceAsStream("config/mybatis-config.xml");
+    SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
+    SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBuilder.build(inputStream);
 
-    UserDaoSkel userDaoSkel = new UserDaoSkel(userDao);
-    BoardDaoSkel boardDaoSkel = new BoardDaoSkel(boardDao);
-    ProjectDaoSkel projectDaoSkel = new ProjectDaoSkel(projectDao);
+    SqlSessionFactoryProxy sqlSessionFactoryProxy = new SqlSessionFactoryProxy(sqlSessionFactory);
 
-    ctx.setAttribute("userDaoSkel", userDaoSkel);
-    ctx.setAttribute("boardDaoSkel", boardDaoSkel);
-    ctx.setAttribute("projectDaoSkel", projectDaoSkel);
-  }
+    DaoFactory daoFactory = new DaoFactory(sqlSessionFactoryProxy);
 
-  @Override
-  public void onShutdown(ApplicationContext ctx) throws Exception {
-    try {
-      ((ListUserDao) userDao).save();
-    } catch (Exception e) {
-      System.out.println("회원 데이터 저장 중 오류 발생!");
-      e.printStackTrace();
-      System.out.println();
-    }
+    UserDao userDao = daoFactory.createObject(UserDao.class);
+    BoardDao boardDao = daoFactory.createObject(BoardDao.class);
+    ProjectDao projectDao = daoFactory.createObject(ProjectDao.class);
 
-    try {
-      ((ListBoardDao) boardDao).save();
-    } catch (Exception e) {
-      System.out.println("게시글 데이터 저장 중 오류 발생!");
-      e.printStackTrace();
-      System.out.println();
-    }
+    ctx.setAttribute("userDao", userDao);
+    ctx.setAttribute("boardDao", boardDao);
+    ctx.setAttribute("projectDao", projectDao);
 
-    try {
-      ((ListProjectDao) projectDao).save();
-    } catch (Exception e) {
-      System.out.println("프로젝트 데이터 저장 중 오류 발생!");
-      e.printStackTrace();
-      System.out.println();
-    }
+    MenuGroup mainMenu = ctx.getMainMenu();
+
+    MenuGroup userMenu = new MenuGroup("회원");
+    userMenu.add(new MenuItem("등록", new UserAddCommand(userDao, sqlSessionFactoryProxy)));
+    userMenu.add(new MenuItem("목록", new UserListCommand(userDao)));
+    userMenu.add(new MenuItem("조회", new UserViewCommand(userDao)));
+    userMenu.add(new MenuItem("변경", new UserUpdateCommand(userDao, sqlSessionFactoryProxy)));
+    userMenu.add(new MenuItem("삭제", new UserDeleteCommand(userDao, sqlSessionFactoryProxy)));
+    mainMenu.add(userMenu);
+
+    MenuGroup projectMenu = new MenuGroup("프로젝트");
+    ProjectMemberHandler memberHandler = new ProjectMemberHandler(userDao);
+    projectMenu.add(
+        new MenuItem("등록",
+            new ProjectAddCommand(projectDao, memberHandler, sqlSessionFactoryProxy)));
+    projectMenu.add(new MenuItem("목록", new ProjectListCommand(projectDao)));
+    projectMenu.add(new MenuItem("조회", new ProjectViewCommand(projectDao)));
+    projectMenu.add(
+        new MenuItem("변경",
+            new ProjectUpdateCommand(projectDao, memberHandler, sqlSessionFactoryProxy)));
+    projectMenu.add(
+        new MenuItem("삭제", new ProjectDeleteCommand(projectDao, sqlSessionFactoryProxy)));
+    mainMenu.add(projectMenu);
+
+    MenuGroup boardMenu = new MenuGroup("게시판");
+    boardMenu.add(new MenuItem("등록", new BoardAddCommand(boardDao, sqlSessionFactoryProxy)));
+    boardMenu.add(new MenuItem("목록", new BoardListCommand(boardDao)));
+    boardMenu.add(new MenuItem("조회", new BoardViewCommand(boardDao, sqlSessionFactoryProxy)));
+    boardMenu.add(new MenuItem("변경", new BoardUpdateCommand(boardDao, sqlSessionFactoryProxy)));
+    boardMenu.add(new MenuItem("삭제", new BoardDeleteCommand(boardDao, sqlSessionFactoryProxy)));
+    mainMenu.add(boardMenu);
+
+    mainMenu.add(new MenuItem("도움말", new HelpCommand()));
+
+    mainMenu.setExitMenuTitle("종료");
+    return true;
   }
 }

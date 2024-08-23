@@ -1,0 +1,802 @@
+<mxfile host="Electron" modified="2024-08-22T00:51:31.194Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="frmd0qFPa9Z27xg22_rF" version="24.6.4" type="device">
+  <diagram name="페이지-1" id="t-L6nxJOiV_jAxhdLM9p">
+    <mxGraphModel dx="9560" dy="6273" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-211" value="&lt;b&gt;java&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="24.75" y="2990" width="440" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-215" value="&lt;b&gt;UserDaoImpl&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="39" y="3030" width="161" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-189" value="&lt;b&gt;mybatis&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="19.5" y="2016" width="440" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-191" value="&lt;b&gt;java&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="20" y="2190" width="440" height="57" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-164" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30.5" y="1680" width="440" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-187" value="&lt;b&gt;java&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry x="-10" y="-30" width="440" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-186" value="&lt;b&gt;mybatis&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry x="-10" y="54" width="440" height="196" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-152" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="lRXqn9QqGoIkYQe23TnY-164" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="121" y="16" as="sourcePoint" />
+            <mxPoint x="316" y="16" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-153" value="return" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-152" vertex="1" connectable="0">
+          <mxGeometry x="0.0137" y="1" relative="1" as="geometry">
+            <mxPoint x="-3" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-163" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="lRXqn9QqGoIkYQe23TnY-164" source="lRXqn9QqGoIkYQe23TnY-146" target="lRXqn9QqGoIkYQe23TnY-147" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="88.5" y="50" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-146" value="selectList(&quot;aaa.sql1&quot;)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry width="121" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-147" value="&amp;lt;mapper namespace=&quot;aaa&quot;&amp;gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&amp;lt;select id =&quot;sql1&quot; resultType =&quot;bitcamp.myapp.vo.User&quot;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;select&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;user_id as no&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;name,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;email&lt;/div&gt;&lt;div&gt;from&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;myapp_users&lt;/div&gt;&lt;div&gt;order by&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;user_id asc&lt;/div&gt;&lt;div&gt;&amp;lt;/select&amp;gt;&lt;/div&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry y="54" width="355.5" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-151" value="List&amp;lt;User&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry x="316" width="121" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-156" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="lRXqn9QqGoIkYQe23TnY-164" source="lRXqn9QqGoIkYQe23TnY-154" target="lRXqn9QqGoIkYQe23TnY-155" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-157" value="add()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-156" vertex="1" connectable="0">
+          <mxGeometry x="-0.2952" y="2" relative="1" as="geometry">
+            <mxPoint x="4" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-154" value="User 객체" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry x="218.5" y="117" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-161" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="lRXqn9QqGoIkYQe23TnY-164" source="lRXqn9QqGoIkYQe23TnY-155" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="376.5" y="52" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-155" value="List" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry x="348.5" y="117" width="57" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-160" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="lRXqn9QqGoIkYQe23TnY-164" source="lRXqn9QqGoIkYQe23TnY-159" target="lRXqn9QqGoIkYQe23TnY-154" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-159" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="lRXqn9QqGoIkYQe23TnY-164" vertex="1">
+          <mxGeometry x="154.5" y="112" width="20" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-188" value="&lt;b&gt;java&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="19" y="1962" width="440" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-1" value="&lt;span style=&quot;background-color: rgb(255, 255, 255); padding: 0px 0px 0px 2px; font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: D2Coding; font-size: 16px; white-space: pre;&quot;&gt;&lt;span style=&quot;color: rgb(127, 0, 85); font-weight: bold; font-size: 16px;&quot;&gt;public&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(127, 0, 85); font-weight: bold; font-size: 16px;&quot;&gt;static&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(127, 0, 85); font-weight: bold; font-size: 16px;&quot;&gt;final&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(127, 0, 85); font-weight: bold; font-size: 16px;&quot;&gt;float&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt; &lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 192); font-style: italic; font-weight: bold; font-size: 16px;&quot;&gt;PI&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 16px;&quot;&gt; = 3.14f;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="22" y="170" width="480" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-2" value="" style="childLayout=tableLayout;recursiveResize=0;shadow=0;fillColor=none;fontStyle=1;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="325" y="172" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-3" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;fillColor=none;strokeColor=inherit;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-2" vertex="1">
+          <mxGeometry width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-4" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-5" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry x="60" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-6" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry x="120" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-15" value="1" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry x="180" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-18" value="1" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry x="240" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-21" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry x="300" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-24" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry x="360" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-27" value="1" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-3" vertex="1">
+          <mxGeometry x="420" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-33" value="" style="childLayout=tableLayout;recursiveResize=0;shadow=0;fillColor=none;fontStyle=1;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="325" y="202" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-34" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;fillColor=none;strokeColor=inherit;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-33" vertex="1">
+          <mxGeometry width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-35" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-36" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry x="60" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-37" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry x="120" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-38" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry x="180" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-39" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry x="240" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-40" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry x="300" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-41" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry x="360" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-42" value="1" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-34" vertex="1">
+          <mxGeometry x="420" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-43" value="&lt;span style=&quot;background-color: rgb(255, 255, 255); padding: 0px 0px 0px 2px; font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: D2Coding; font-size: 16px; white-space: pre;&quot;&gt;&lt;span style=&quot;color: rgb(127, 0, 85); font-weight: bold; font-size: 16px;&quot;&gt;public&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="22" y="201" width="480" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-44" value="" style="childLayout=tableLayout;recursiveResize=0;shadow=0;fillColor=none;fontStyle=1;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="325" y="231" width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-45" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;dropTarget=0;collapsible=0;recursiveResize=0;expand=0;fontStyle=1;fillColor=none;strokeColor=inherit;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-44" vertex="1">
+          <mxGeometry width="480" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-46" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-47" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry x="60" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-48" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry x="120" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-49" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry x="180" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-50" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry x="240" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-51" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry x="300" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-52" value="0" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry x="360" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-53" value="1" style="connectable=0;recursiveResize=0;strokeColor=inherit;fillColor=none;align=center;whiteSpace=wrap;html=1;fontStyle=1;fontSize=17;" parent="lRXqn9QqGoIkYQe23TnY-45" vertex="1">
+          <mxGeometry x="420" width="60" height="20" as="geometry">
+            <mxRectangle width="60" height="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-54" value="&lt;span style=&quot;background-color: rgb(255, 255, 255); padding: 0px 0px 0px 2px; font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: D2Coding; font-size: 16px; white-space: pre;&quot;&gt;&lt;span style=&quot;color: rgb(127, 0, 85); font-weight: bold; font-size: 16px;&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="22" y="230" width="480" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-55" value="&lt;span style=&quot;background-color: rgb(255, 255, 255); padding: 0px 0px 0px 2px; font-size: 16px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: D2Coding; font-size: 16px; white-space: pre;&quot;&gt;&lt;span style=&quot;color: rgb(127, 0, 85); font-weight: bold; font-size: 16px;&quot;&gt;=&amp;gt; public&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="22" y="260" width="480" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-56" value="Java 코드&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;div&gt;+&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;JDBC API 사용&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;SQL&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="100" y="420" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-57" target="lRXqn9QqGoIkYQe23TnY-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-61" value="call" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-60" vertex="1" connectable="0">
+          <mxGeometry x="0.1962" relative="1" as="geometry">
+            <mxPoint x="10" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-57" value="Java 코드&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="340" y="420" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-58" value="" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="340" y="477" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-59" value="JDBC API사용" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="360" y="484.5" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-63" value="&lt;span style=&quot;font-weight: 700;&quot;&gt;SQL&lt;/span&gt;" style="shape=note;size=11;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="550" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-58" target="lRXqn9QqGoIkYQe23TnY-63" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-65" value="call" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-64" vertex="1" connectable="0">
+          <mxGeometry x="-0.6242" relative="1" as="geometry">
+            <mxPoint x="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-66" value="DAO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="130" y="390" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-67" value="DAO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="370" y="390" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-68" value="Mybatis" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="460" y="485" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-69" value="XML" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="460" y="550" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-74" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.39629629629629715;arrowSize=0.45555555555555594;" parent="1" vertex="1">
+          <mxGeometry x="250" y="469.5" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-75" value="구조 변경" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="250" y="529.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-76" target="lRXqn9QqGoIkYQe23TnY-77" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-76" value="Java 객체&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="250" y="670" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-77" target="lRXqn9QqGoIkYQe23TnY-79" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-77" value="SQL문" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="351" y="670" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-79" value="table" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="450.5" y="670" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-81" value="개발자가&lt;div style=&quot;font-size: 9px;&quot;&gt;직접작성&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF0000;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="361" y="640" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-83" target="lRXqn9QqGoIkYQe23TnY-85" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-83" value="Java 객체&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="249" y="800" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-85" target="lRXqn9QqGoIkYQe23TnY-86" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-85" value="SQL문" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="800" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-86" value="table" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="449.5" y="800" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-87" value="FramWork에서&lt;div&gt;자동생성&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF0000;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="360" y="770" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-88" value="SQL Mapper" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="180" y="670" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-89" value="OR&lt;div&gt;Mapper&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="180" y="800" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-90" target="lRXqn9QqGoIkYQe23TnY-88" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="725" />
+              <mxPoint x="140" y="685" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-90" target="lRXqn9QqGoIkYQe23TnY-89" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="725" />
+              <mxPoint x="140" y="815" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-90" value="Persistence&lt;div&gt;Framework&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="710" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-94" value="&lt;div&gt;&lt;ul style=&quot;padding-left: 0px;&quot;&gt;&lt;li&gt;&lt;font&gt;개발자가 직접코드 작성&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font&gt;속도가 빠르다&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;ex) Mybatis" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="180" y="706" width="110" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-97" value="&lt;div&gt;&lt;ul style=&quot;padding-left: 0px;&quot;&gt;&lt;li&gt;&lt;font&gt;SQL 자동작성&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font&gt;속도가 느리다&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;ex) JPA" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="180" y="843" width="110" height="34" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;pre style=&quot;font-family: D2Coding, monospace; font-size: 10px;&quot;&gt;&amp;lt;!&lt;u&gt;DOCTYPE&lt;/u&gt; &lt;u&gt;configuration&lt;/u&gt; &lt;u&gt;PUBLIC&lt;/u&gt; &quot;&lt;u&gt;-&lt;/u&gt;//&lt;u&gt;mybatis.org&lt;/u&gt;//&lt;u&gt;DTD Config 3.0&lt;/u&gt;//&lt;u&gt;EN&lt;/u&gt;&quot; &quot;&lt;u&gt;https://mybatis.org/dtd/mybatis-3-config.dtd&lt;/u&gt;&quot;&amp;gt;&lt;/pre&gt;&lt;/div&gt;" link="&lt;div style=&quot;background-color:#1e1f22;color:#bcbec4&quot;&gt;&lt;pre style=&quot;font-family:&#39;D2Coding&#39;,monospace;font-size:9.8pt;&quot;&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;&amp;lt;!DOCTYPE configuration&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;  PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;  &quot;https://mybatis.org/dtd/mybatis-3-config.dtd&quot;&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;" id="lRXqn9QqGoIkYQe23TnY-98">
+          <mxCell style="text;whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+            <mxGeometry x="37.49999999999998" y="1054" width="600" height="40" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-99" value="XML규칙선언&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="43.49999999999998" y="1083" width="44" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-100" value="root element&lt;div style=&quot;font-size: 7px;&quot;&gt;(tag)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="87.49999999999997" y="1083" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-101" value="PUBLIC : 공개&lt;div style=&quot;font-size: 7px;&quot;&gt;SYSTEM : 비공개&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="156.49999999999997" y="1083" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-102" value="-//&amp;nbsp; 사설규칙&lt;div&gt;+//&amp;nbsp; 국제공인규칙&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="197.49999999999997" y="1050" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-103" value="규칙을 관리하는 조직명&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="207.49999999999997" y="1083" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-104" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;규칙명" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="277.5" y="1050" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-105" value="규칙 작성언어&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="357.5" y="1083" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-106" value="&lt;b&gt;XML&lt;/b&gt;" style="shape=note;size=11;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="172.5" y="904" width="65.6" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-107" value="Documnet&lt;div&gt;Type&lt;/div&gt;&lt;div&gt;Definition&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="283.5" y="904" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-108" value="XML Schema" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="283.5" y="964" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-109" target="lRXqn9QqGoIkYQe23TnY-106" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-109" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="262.5" y="899" width="20" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-111" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=-180;" parent="1" vertex="1">
+          <mxGeometry x="363.5" y="899" width="20" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-112" value="태그 사용&lt;div&gt;규칙&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="382.5" y="934" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=open;endFill=0;fillColor=#f8cecc;strokeColor=#FF3333;" parent="1" source="lRXqn9QqGoIkYQe23TnY-113" target="lRXqn9QqGoIkYQe23TnY-108" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-113" value="&lt;font style=&quot;font-size: 7px;&quot; color=&quot;#ff3333&quot;&gt;DTD보다 정교하게&lt;/font&gt;&lt;div style=&quot;font-size: 7px;&quot;&gt;&lt;font style=&quot;font-size: 7px;&quot; color=&quot;#ff3333&quot;&gt;제어할 수 있는 문법&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="273" y="1014" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-118" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-115" target="lRXqn9QqGoIkYQe23TnY-106" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-115" value="XPath" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="37.5" y="904" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-119" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-116" target="lRXqn9QqGoIkYQe23TnY-106" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-116" value="XSL" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="37.5" y="964" width="80" height="30" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;div style=&quot;&quot;&gt;&lt;pre style=&quot;font-size: 11px; font-family: D2Coding, monospace;&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/pre&gt;&lt;pre style=&quot;font-family: D2Coding, monospace;&quot;&gt;&lt;pre style=&quot;font-family: D2Coding, monospace;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;  &amp;lt;properties resource=&quot;jdbc.properties&quot;/&amp;gt;&lt;/font&gt;&lt;/pre&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;  &amp;lt;environments default=&quot;development&quot;&amp;gt;&lt;br&gt;    &amp;lt;environment id=&quot;development&quot;&amp;gt;&lt;br&gt;      &amp;lt;transactionManager type=&quot;JDBC&quot;/&amp;gt;&lt;br&gt;      &amp;lt;dataSource type=&quot;POOLED&quot;&amp;gt;&lt;br&gt;        &amp;lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&amp;gt;&lt;br&gt;        &amp;lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&amp;gt;&lt;br&gt;        &amp;lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&amp;gt;&lt;br&gt;        &amp;lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&amp;gt;&lt;br&gt;      &amp;lt;/dataSource&amp;gt;&lt;br&gt;    &amp;lt;/environment&amp;gt;&lt;br&gt;  &amp;lt;/environments&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;pre style=&quot;font-size: 11px; font-family: D2Coding, monospace;&quot;&gt;&lt;br&gt;  &amp;lt;mappers&amp;gt;&lt;br&gt;    &amp;lt;mapper resource=&quot;org/mybatis/example/BlogMapper.xml&quot;/&amp;gt;&lt;br&gt;  &amp;lt;/mappers&amp;gt;&lt;br&gt;&amp;lt;/configuration&amp;gt;&lt;/pre&gt;&lt;/div&gt;" link="&lt;div style=&quot;background-color:#1e1f22;color:#bcbec4&quot;&gt;&lt;pre style=&quot;font-family:&#39;D2Coding&#39;,monospace;font-size:9.8pt;&quot;&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;&amp;lt;configuration&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;  &amp;lt;environments default=&quot;development&quot;&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;    &amp;lt;environment id=&quot;development&quot;&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;      &amp;lt;transactionManager type=&quot;JDBC&quot;/&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;      &amp;lt;dataSource type=&quot;POOLED&quot;&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;        &amp;lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;        &amp;lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;        &amp;lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;        &amp;lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;      &amp;lt;/dataSource&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;    &amp;lt;/environment&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;  &amp;lt;/environments&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;  &amp;lt;mappers&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;    &amp;lt;mapper resource=&quot;org/mybatis/example/BlogMapper.xml&quot;/&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;  &amp;lt;/mappers&amp;gt;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color:#6aab73;background-color:#293c40;&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;" id="lRXqn9QqGoIkYQe23TnY-120">
+          <mxCell style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+            <mxGeometry x="38.99999999999998" y="1100" width="420" height="300" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-135" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lRXqn9QqGoIkYQe23TnY-121" target="lRXqn9QqGoIkYQe23TnY-124" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-121" value="&lt;b&gt;Mybitis&lt;/b&gt;&lt;div&gt;&lt;b&gt;설정&lt;/b&gt;&lt;/div&gt;" style="shape=note;size=11;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="34.89999999999998" y="1434" width="104" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-126" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lRXqn9QqGoIkYQe23TnY-122" target="lRXqn9QqGoIkYQe23TnY-124" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-127" value="getResourceAsStream()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-126" vertex="1" connectable="0">
+          <mxGeometry x="0.28" relative="1" as="geometry">
+            <mxPoint x="60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-122" value="Resoureces" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="182.39" y="1434" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-136" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lRXqn9QqGoIkYQe23TnY-124" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="427.4" y="1509" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-124" value="InputStream" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="182.39" y="1494" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-128" target="lRXqn9QqGoIkYQe23TnY-132" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="429.9" y="1524" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-131" value="build()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-130" vertex="1" connectable="0">
+          <mxGeometry x="-0.241" relative="1" as="geometry">
+            <mxPoint x="27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-128" value="SqlSessionFactoryBuilder" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="344.9" y="1434" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-129" value="mybatis-config.xml" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="26.399999999999977" y="1584" width="121" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-138" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lRXqn9QqGoIkYQe23TnY-132" target="lRXqn9QqGoIkYQe23TnY-137" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-139" value="openSession(false)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-138" vertex="1" connectable="0">
+          <mxGeometry x="-0.2571" y="1" relative="1" as="geometry">
+            <mxPoint x="48" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-132" value="SqlSessionFactory" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="344.9" y="1524" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-137" value="SqlSession" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="392.4" y="1594" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-144" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="197.39999999999998" y="1594" width="78" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-143" value="&lt;b&gt;Mybitis&lt;/b&gt;&lt;div&gt;&lt;b&gt;설정&lt;/b&gt;&lt;/div&gt;" style="shape=note;size=11;whiteSpace=wrap;html=1;" parent="lRXqn9QqGoIkYQe23TnY-144" vertex="1">
+          <mxGeometry x="4.254545454545455" y="3.642857142857143" width="73.74545454545455" height="30.357142857142854" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-142" value="&lt;b&gt;Mybitis&lt;/b&gt;&lt;div&gt;&lt;b&gt;설정&lt;/b&gt;&lt;/div&gt;" style="shape=note;size=11;whiteSpace=wrap;html=1;" parent="lRXqn9QqGoIkYQe23TnY-144" vertex="1">
+          <mxGeometry x="2.1272727272727274" y="1.8214285714285714" width="73.74545454545455" height="30.357142857142854" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-140" value="&lt;b&gt;SQL문&lt;/b&gt;" style="shape=note;size=11;whiteSpace=wrap;html=1;" parent="lRXqn9QqGoIkYQe23TnY-144" vertex="1">
+          <mxGeometry width="73.74545454545455" height="30.357142857142854" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-145" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-140" target="lRXqn9QqGoIkYQe23TnY-137" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-170" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-165" target="lRXqn9QqGoIkYQe23TnY-166" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="148.5" y="2026" />
+              <mxPoint x="148.5" y="2026" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-165" value="insert(&quot;aaa.sql2&quot;,user);" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="60" y="1976" width="139.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-166" value="&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&amp;lt;insert id =&quot;sql2&quot; parameterType =&quot;bitcamp.myapp.vo.User&quot;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;insert into myapp_users(name,email,pwd,tel)&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;values(#{name},&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;#{&lt;/span&gt;email&lt;span style=&quot;background-color: initial;&quot;&gt;}, sha1(&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;#{&lt;/span&gt;password&lt;span style=&quot;background-color: initial;&quot;&gt;}),&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;#{&lt;/span&gt;tel&lt;span style=&quot;background-color: initial;&quot;&gt;})&lt;/span&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;span style=&quot;background-color: initial; font-size: 9px;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot; color=&quot;#ff3333&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;property name&lt;/font&gt;&lt;br&gt;&lt;/span&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="59.5" y="2036" width="355.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-168" value="property : getter &amp;amp; setter in java&lt;div style=&quot;font-size: 10px;&quot;&gt;property name : get&amp;amp;set을 지운 property&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="140.25" y="2096" width="274.75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-171" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="34.300000000000004" y="2210" width="437" height="286" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-190" value="&lt;b&gt;mybatis&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;" parent="lRXqn9QqGoIkYQe23TnY-171" vertex="1">
+          <mxGeometry x="-14.3" y="37" width="440" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-172" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="lRXqn9QqGoIkYQe23TnY-171" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145.7" y="16" as="sourcePoint" />
+            <mxPoint x="316" y="16" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-173" value="return" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-172" vertex="1" connectable="0">
+          <mxGeometry x="0.0137" y="1" relative="1" as="geometry">
+            <mxPoint x="-3" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-174" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="lRXqn9QqGoIkYQe23TnY-171" source="lRXqn9QqGoIkYQe23TnY-175" target="lRXqn9QqGoIkYQe23TnY-176" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="88.5" y="50" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-175" value="selectOne(&quot;aaa.sql3&quot;, no)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-171" vertex="1">
+          <mxGeometry width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-176" value="&amp;lt;mapper namespace=&quot;aaa&quot;&amp;gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&amp;lt;select id =&quot;sql3&quot; resultType =&quot;bitcamp.myapp.vo.User&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;parameterType=&quot;int&quot;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;select&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;user_id as no&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;name,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;email,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;tel&lt;br&gt;&lt;/div&gt;&lt;div&gt;from&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;myapp_users&lt;/div&gt;&lt;div&gt;where&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;user_id = #{ok}&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;lt;/select&amp;gt;&lt;/div&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-171" vertex="1">
+          <mxGeometry y="54" width="355.5" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-177" value="User" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-171" vertex="1">
+          <mxGeometry x="316" width="121" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-180" value="User 객체" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="lRXqn9QqGoIkYQe23TnY-171" vertex="1">
+          <mxGeometry x="336.5" y="121" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-181" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="lRXqn9QqGoIkYQe23TnY-171" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="376.5" y="52" as="targetPoint" />
+            <mxPoint x="376.50000000000017" y="117" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-183" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="lRXqn9QqGoIkYQe23TnY-171" source="lRXqn9QqGoIkYQe23TnY-184" target="lRXqn9QqGoIkYQe23TnY-180" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-184" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="lRXqn9QqGoIkYQe23TnY-171" vertex="1">
+          <mxGeometry x="154.5" y="112" width="20" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-194" value="&lt;b&gt;mybatis&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="20.5" y="2560" width="440" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-195" value="&lt;b&gt;java&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="20" y="2506" width="440" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-209" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.125;entryY=-0.005;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-197" target="lRXqn9QqGoIkYQe23TnY-198" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="2560" />
+              <mxPoint x="100" y="2560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-197" value="update(&quot;aaa.sql2&quot;,user);" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="61" y="2520" width="139.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-198" value="&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;lt;update id =&quot;sql2&quot; parameterType =&quot;bitcamp.myapp.vo.User&quot;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;pre style=&quot;font-family: D2Coding, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;update myapp_users set&lt;br&gt;        name=#{name},&lt;br&gt;        email=#{email},&lt;br&gt;        pwd=sha1(#{password}),&lt;br&gt;        tel= #{tel}&lt;br&gt;    where&lt;br&gt;        user_id=#{no}&lt;/font&gt;&lt;/pre&gt;&lt;pre style=&quot;font-family: D2Coding, monospace;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;lt;/update&amp;gt;&lt;/font&gt;&lt;/pre&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;br&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="55.5" y="2580" width="355.5" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-204" value="&lt;b&gt;mybatis&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="22.5" y="2847" width="440" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-205" value="&lt;b&gt;java&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="22" y="2793" width="440" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-206" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-207" target="lRXqn9QqGoIkYQe23TnY-208" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="146" y="2857" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-207" value="delete(&quot;aaa.sql2&quot;,no);" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="63" y="2807" width="139.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-208" value="&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;lt;delete id =&quot;sql2&quot; parameterType =&quot;int&quot;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;delete from myapp_users&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;where user_id=#{ok}&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;lt;/delete&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;br&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="57.5" y="2867" width="355.5" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-210" value="&lt;b&gt;mybatis&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="25.25" y="3174" width="264.75" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-222" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.045;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-213" target="lRXqn9QqGoIkYQe23TnY-214" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="3135" />
+              <mxPoint x="70" y="3135" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-213" value="delete(&quot;aaa.sql2&quot;,no);" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="50.5" y="3050.5" width="119.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-214" value="&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;lt;delete id =&quot;sql2&quot; parameterType =&quot;int&quot;&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;delete from myapp_users&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;where user_id=#{ok}&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;text-align: center; background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&amp;lt;/delete&amp;gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;br&gt;&lt;/blockquote&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="59.75" y="3189" width="220.25" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-216" value="&lt;b&gt;UserDeleteCommand&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="221.25" y="3030" width="234.75" height="130.25" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-221" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-217" target="lRXqn9QqGoIkYQe23TnY-213" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="3080" />
+              <mxPoint x="210" y="3065" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-217" value="try{&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;userDao.delete(&quot;aaa.sql2&quot;,no);&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;sqlSession.commit();&lt;br&gt;&lt;div&gt;}&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="231.8" y="3050.5" width="198.2" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-218" value="&lt;div&gt;&lt;div&gt;catch{&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;sqlSession.rollback();&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="231.8" y="3102.5" width="218.7" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-223" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3333FF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-214" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="233" y="3094" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="170" y="3094" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-228" value="&lt;font color=&quot;#3333ff&quot;&gt;success&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-223" vertex="1" connectable="0">
+          <mxGeometry x="0.3678" y="1" relative="1" as="geometry">
+            <mxPoint x="11" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-224" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF3333;exitX=0.621;exitY=-0.017;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-214" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="232" y="3130" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="196" y="3130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-229" value="&lt;font color=&quot;#ff3333&quot;&gt;fail&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="lRXqn9QqGoIkYQe23TnY-224" vertex="1" connectable="0">
+          <mxGeometry x="0.6484" relative="1" as="geometry">
+            <mxPoint x="-5" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-226" value="&lt;b&gt;MySQL&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="290" y="3174" width="174.75" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-227" value="server" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="320.5" y="3189" width="120" height="59" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-225" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#3333FF;" parent="1" target="lRXqn9QqGoIkYQe23TnY-227" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="3140" as="targetPoint" />
+            <mxPoint x="430" y="3090" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="451" y="3090" />
+              <mxPoint x="451" y="3218" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;mapper namespace=&quot;bitcamp.myapp.dao.BoardDao&quot;&gt;&#xa;    &lt;!-- Board와 User를 매핑하는 ResultMap --&gt;&#xa;    &lt;resultMap id=&quot;BoardResultMap&quot; type=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        &lt;id property=&quot;no&quot; column=&quot;board_id&quot; /&gt;&#xa;        &lt;result property=&quot;title&quot; column=&quot;title&quot; /&gt;&#xa;        &lt;result property=&quot;content&quot; column=&quot;content&quot; /&gt;&#xa;        &lt;result property=&quot;createdDate&quot; column=&quot;created_date&quot; /&gt;&#xa;        &lt;result property=&quot;viewCount&quot; column=&quot;view_count&quot; /&gt;&#xa;        &lt;association property=&quot;writer&quot; javaType=&quot;bitcamp.myapp.vo.User&quot;&gt;&#xa;            &lt;id property=&quot;no&quot; column=&quot;writer_no&quot; /&gt;&#xa;            &lt;result property=&quot;name&quot; column=&quot;writer_name&quot; /&gt;&#xa;            &lt;result property=&quot;email&quot; column=&quot;writer_email&quot; /&gt;&#xa;            &lt;result property=&quot;tel&quot; column=&quot;writer_tel&quot; /&gt;&#xa;        &lt;/association&gt;&#xa;    &lt;/resultMap&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 리스트 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoardList&quot; resultMap=&quot;BoardResultMap&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        order by&#xa;            b.board_id asc&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 단일 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoard&quot; resultMap=&quot;BoardResultMap&quot; parameterType=&quot;int&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        where&#xa;            b.board_id = #{no}&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삽입 --&gt;&#xa;    &lt;insert id=&quot;insertBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        insert into myapp_boards (title, content, user_id, created_date, view_count)&#xa;        values (#{title}, #{content}, #{writer.no}, #{createdDate}, #{viewCount})&#xa;    &lt;/insert&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 수정 --&gt;&#xa;    &lt;update id=&quot;updateBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        update myapp_boards&#xa;        set&#xa;            title = #{title},&#xa;            content = #{content},&#xa;            user_id = #{writer.no},&#xa;            created_date = #{createdDate},&#xa;            view_count = #{viewCount}&#xa;        where&#xa;            board_id = #{no}&#xa;    &lt;/update&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삭제 --&gt;&#xa;    &lt;delete id=&quot;deleteBoard&quot; parameterType=&quot;int&quot;&gt;&#xa;        delete from myapp_boards where board_id = #{no}&#xa;    &lt;/delete&gt;&#xa;&#xa;&#xa;&lt;/mapper&gt;" link="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&#xa;&lt;!DOCTYPE mapper&#xa;        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;&#xa;        &quot;https://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&#xa;&lt;mapper namespace=&quot;bitcamp.myapp.dao.BoardDao&quot;&gt;&#xa;&#xa;&#xa;    &lt;!-- Board와 User를 매핑하는 ResultMap --&gt;&#xa;    &lt;resultMap id=&quot;BoardResultMap&quot; type=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        &lt;id property=&quot;no&quot; column=&quot;board_id&quot; /&gt;&#xa;        &lt;result property=&quot;title&quot; column=&quot;title&quot; /&gt;&#xa;        &lt;result property=&quot;content&quot; column=&quot;content&quot; /&gt;&#xa;        &lt;result property=&quot;createdDate&quot; column=&quot;created_date&quot; /&gt;&#xa;        &lt;result property=&quot;viewCount&quot; column=&quot;view_count&quot; /&gt;&#xa;        &lt;association property=&quot;writer&quot; javaType=&quot;bitcamp.myapp.vo.User&quot;&gt;&#xa;            &lt;id property=&quot;no&quot; column=&quot;writer_no&quot; /&gt;&#xa;            &lt;result property=&quot;name&quot; column=&quot;writer_name&quot; /&gt;&#xa;            &lt;result property=&quot;email&quot; column=&quot;writer_email&quot; /&gt;&#xa;            &lt;result property=&quot;tel&quot; column=&quot;writer_tel&quot; /&gt;&#xa;        &lt;/association&gt;&#xa;    &lt;/resultMap&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 리스트 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoardList&quot; resultMap=&quot;BoardResultMap&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        order by&#xa;            b.board_id asc&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 단일 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoard&quot; resultMap=&quot;BoardResultMap&quot; parameterType=&quot;int&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        where&#xa;            b.board_id = #{no}&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삽입 --&gt;&#xa;    &lt;insert id=&quot;insertBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        insert into myapp_boards (title, content, user_id, created_date, view_count)&#xa;        values (#{title}, #{content}, #{writer.no}, #{createdDate}, #{viewCount})&#xa;    &lt;/insert&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 수정 --&gt;&#xa;    &lt;update id=&quot;updateBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        update myapp_boards&#xa;        set&#xa;            title = #{title},&#xa;            content = #{content},&#xa;            user_id = #{writer.no},&#xa;            created_date = #{createdDate},&#xa;            view_count = #{viewCount}&#xa;        where&#xa;            board_id = #{no}&#xa;    &lt;/update&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삭제 --&gt;&#xa;    &lt;delete id=&quot;deleteBoard&quot; parameterType=&quot;int&quot;&gt;&#xa;        delete from myapp_boards where board_id = #{no}&#xa;    &lt;/delete&gt;&#xa;&#xa;&#xa;&lt;/mapper&gt;" id="lRXqn9QqGoIkYQe23TnY-230">
+          <mxCell style="text;whiteSpace=wrap;" parent="1" vertex="1">
+            <mxGeometry x="285.5" y="3890" width="460" height="1420" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="&lt;mapper namespace=&quot;bitcamp.myapp.dao.BoardDao&quot;&gt;&#xa;    &lt;!-- Board와 User를 매핑하는 ResultMap --&gt;&#xa;    &lt;resultMap id=&quot;BoardResultMap&quot; type=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        &lt;id property=&quot;no&quot; column=&quot;board_id&quot; /&gt;&#xa;        &lt;result property=&quot;title&quot; column=&quot;title&quot; /&gt;&#xa;        &lt;result property=&quot;content&quot; column=&quot;content&quot; /&gt;&#xa;        &lt;result property=&quot;createdDate&quot; column=&quot;created_date&quot; /&gt;&#xa;        &lt;result property=&quot;viewCount&quot; column=&quot;view_count&quot; /&gt;&#xa;        &lt;association property=&quot;writer&quot; javaType=&quot;bitcamp.myapp.vo.User&quot;&gt;&#xa;            &lt;id property=&quot;no&quot; column=&quot;writer_no&quot; /&gt;&#xa;            &lt;result property=&quot;name&quot; column=&quot;writer_name&quot; /&gt;&#xa;        &lt;/association&gt;&#xa;    &lt;/resultMap&gt;" link="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&#xa;&lt;!DOCTYPE mapper&#xa;        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;&#xa;        &quot;https://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&#xa;&lt;mapper namespace=&quot;bitcamp.myapp.dao.BoardDao&quot;&gt;&#xa;&#xa;&#xa;    &lt;!-- Board와 User를 매핑하는 ResultMap --&gt;&#xa;    &lt;resultMap id=&quot;BoardResultMap&quot; type=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        &lt;id property=&quot;no&quot; column=&quot;board_id&quot; /&gt;&#xa;        &lt;result property=&quot;title&quot; column=&quot;title&quot; /&gt;&#xa;        &lt;result property=&quot;content&quot; column=&quot;content&quot; /&gt;&#xa;        &lt;result property=&quot;createdDate&quot; column=&quot;created_date&quot; /&gt;&#xa;        &lt;result property=&quot;viewCount&quot; column=&quot;view_count&quot; /&gt;&#xa;        &lt;association property=&quot;writer&quot; javaType=&quot;bitcamp.myapp.vo.User&quot;&gt;&#xa;            &lt;id property=&quot;no&quot; column=&quot;writer_no&quot; /&gt;&#xa;            &lt;result property=&quot;name&quot; column=&quot;writer_name&quot; /&gt;&#xa;            &lt;result property=&quot;email&quot; column=&quot;writer_email&quot; /&gt;&#xa;            &lt;result property=&quot;tel&quot; column=&quot;writer_tel&quot; /&gt;&#xa;        &lt;/association&gt;&#xa;    &lt;/resultMap&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 리스트 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoardList&quot; resultMap=&quot;BoardResultMap&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        order by&#xa;            b.board_id asc&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 단일 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoard&quot; resultMap=&quot;BoardResultMap&quot; parameterType=&quot;int&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        where&#xa;            b.board_id = #{no}&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삽입 --&gt;&#xa;    &lt;insert id=&quot;insertBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        insert into myapp_boards (title, content, user_id, created_date, view_count)&#xa;        values (#{title}, #{content}, #{writer.no}, #{createdDate}, #{viewCount})&#xa;    &lt;/insert&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 수정 --&gt;&#xa;    &lt;update id=&quot;updateBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        update myapp_boards&#xa;        set&#xa;            title = #{title},&#xa;            content = #{content},&#xa;            user_id = #{writer.no},&#xa;            created_date = #{createdDate},&#xa;            view_count = #{viewCount}&#xa;        where&#xa;            board_id = #{no}&#xa;    &lt;/update&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삭제 --&gt;&#xa;    &lt;delete id=&quot;deleteBoard&quot; parameterType=&quot;int&quot;&gt;&#xa;        delete from myapp_boards where board_id = #{no}&#xa;    &lt;/delete&gt;&#xa;&#xa;&#xa;&lt;/mapper&gt;" id="lRXqn9QqGoIkYQe23TnY-231">
+          <mxCell style="text;whiteSpace=wrap;spacing=2;" parent="1" vertex="1">
+            <mxGeometry x="380" y="3330" width="460" height="200" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-248" value="SQLTable" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;strokeColor=default;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="240" y="3570" width="413.5" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-249" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=13;" parent="lRXqn9QqGoIkYQe23TnY-248" vertex="1">
+          <mxGeometry y="30" width="413.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-250" value="board_id" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=13;" parent="lRXqn9QqGoIkYQe23TnY-249" vertex="1">
+          <mxGeometry width="69" height="40" as="geometry">
+            <mxRectangle width="69" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-251" value="title" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=13;" parent="lRXqn9QqGoIkYQe23TnY-249" vertex="1">
+          <mxGeometry x="69" width="51" height="40" as="geometry">
+            <mxRectangle width="51" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-252" value="created_date" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=13;" parent="lRXqn9QqGoIkYQe23TnY-249" vertex="1">
+          <mxGeometry x="120" width="93" height="40" as="geometry">
+            <mxRectangle width="93" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-261" value="view_count" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=13;" parent="lRXqn9QqGoIkYQe23TnY-249" vertex="1">
+          <mxGeometry x="213" width="81" height="40" as="geometry">
+            <mxRectangle width="81" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-262" value="user_id" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=13;" parent="lRXqn9QqGoIkYQe23TnY-249" vertex="1">
+          <mxGeometry x="294" width="69" height="40" as="geometry">
+            <mxRectangle width="69" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-263" value="name" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=13;" parent="lRXqn9QqGoIkYQe23TnY-249" vertex="1">
+          <mxGeometry x="363" width="51" height="40" as="geometry">
+            <mxRectangle width="51" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-265" value="Board" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="10" y="3650" width="230" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-300" value="+ setNo(int no): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;" parent="lRXqn9QqGoIkYQe23TnY-265" vertex="1">
+          <mxGeometry y="26" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-301" value="+ setTitle(String title): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;" parent="lRXqn9QqGoIkYQe23TnY-265" vertex="1">
+          <mxGeometry y="52" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-302" value="+ setContent(String content): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;" parent="lRXqn9QqGoIkYQe23TnY-265" vertex="1">
+          <mxGeometry y="78" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-303" value="+ setCreatedDate(Date createdDate): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;" parent="lRXqn9QqGoIkYQe23TnY-265" vertex="1">
+          <mxGeometry y="104" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-304" value="+ setViewCount(int viewCount): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;" parent="lRXqn9QqGoIkYQe23TnY-265" vertex="1">
+          <mxGeometry y="130" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-305" value="+ setWriter(User writer): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;" parent="lRXqn9QqGoIkYQe23TnY-265" vertex="1">
+          <mxGeometry y="156" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-269" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50.5" y="4020" width="160" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-270" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="lRXqn9QqGoIkYQe23TnY-269" vertex="1">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-271" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="lRXqn9QqGoIkYQe23TnY-269" vertex="1">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-272" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="lRXqn9QqGoIkYQe23TnY-269" vertex="1">
+          <mxGeometry y="60" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-308" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lRXqn9QqGoIkYQe23TnY-306" target="lRXqn9QqGoIkYQe23TnY-300" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="3730" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="406" y="3693" />
+              <mxPoint x="300" y="3693" />
+              <mxPoint x="300" y="3695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label=" &lt;id property=&quot;no&quot; column=&quot;board_id&quot; /&gt;" link="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;&#xa;&lt;!DOCTYPE mapper&#xa;        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;&#xa;        &quot;https://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&#xa;&lt;mapper namespace=&quot;bitcamp.myapp.dao.BoardDao&quot;&gt;&#xa;&#xa;&#xa;    &lt;!-- Board와 User를 매핑하는 ResultMap --&gt;&#xa;    &lt;resultMap id=&quot;BoardResultMap&quot; type=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        &lt;id property=&quot;no&quot; column=&quot;board_id&quot; /&gt;&#xa;        &lt;result property=&quot;title&quot; column=&quot;title&quot; /&gt;&#xa;        &lt;result property=&quot;content&quot; column=&quot;content&quot; /&gt;&#xa;        &lt;result property=&quot;createdDate&quot; column=&quot;created_date&quot; /&gt;&#xa;        &lt;result property=&quot;viewCount&quot; column=&quot;view_count&quot; /&gt;&#xa;        &lt;association property=&quot;writer&quot; javaType=&quot;bitcamp.myapp.vo.User&quot;&gt;&#xa;            &lt;id property=&quot;no&quot; column=&quot;writer_no&quot; /&gt;&#xa;            &lt;result property=&quot;name&quot; column=&quot;writer_name&quot; /&gt;&#xa;            &lt;result property=&quot;email&quot; column=&quot;writer_email&quot; /&gt;&#xa;            &lt;result property=&quot;tel&quot; column=&quot;writer_tel&quot; /&gt;&#xa;        &lt;/association&gt;&#xa;    &lt;/resultMap&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 리스트 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoardList&quot; resultMap=&quot;BoardResultMap&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        order by&#xa;            b.board_id asc&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 단일 조회 --&gt;&#xa;    &lt;select id=&quot;selectBoard&quot; resultMap=&quot;BoardResultMap&quot; parameterType=&quot;int&quot;&gt;&#xa;        select&#xa;            b.board_id as no,&#xa;            b.title,&#xa;            b.content,&#xa;            b.created_date as createdDate,&#xa;            b.view_count as viewCount,&#xa;            u.user_id as writer_no,&#xa;            u.name as writer_name,&#xa;            u.email as writer_email,&#xa;            u.tel as writer_tel&#xa;        from&#xa;            myapp_boards b&#xa;        inner join&#xa;            myapp_users u&#xa;        on&#xa;            b.user_id = u.user_id&#xa;        where&#xa;            b.board_id = #{no}&#xa;    &lt;/select&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삽입 --&gt;&#xa;    &lt;insert id=&quot;insertBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        insert into myapp_boards (title, content, user_id, created_date, view_count)&#xa;        values (#{title}, #{content}, #{writer.no}, #{createdDate}, #{viewCount})&#xa;    &lt;/insert&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 수정 --&gt;&#xa;    &lt;update id=&quot;updateBoard&quot; parameterType=&quot;bitcamp.myapp.vo.Board&quot;&gt;&#xa;        update myapp_boards&#xa;        set&#xa;            title = #{title},&#xa;            content = #{content},&#xa;            user_id = #{writer.no},&#xa;            created_date = #{createdDate},&#xa;            view_count = #{viewCount}&#xa;        where&#xa;            board_id = #{no}&#xa;    &lt;/update&gt;&#xa;&#xa;&#xa;    &lt;!-- 게시글 삭제 --&gt;&#xa;    &lt;delete id=&quot;deleteBoard&quot; parameterType=&quot;int&quot;&gt;&#xa;        delete from myapp_boards where board_id = #{no}&#xa;    &lt;/delete&gt;&#xa;&#xa;&#xa;&lt;/mapper&gt;" id="lRXqn9QqGoIkYQe23TnY-306">
+          <mxCell style="text;whiteSpace=wrap;spacing=2;" parent="1" vertex="1">
+            <mxGeometry x="350" y="3650" width="223.25" height="20" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-309" value="규칙을 정의한&amp;nbsp;&lt;div&gt;명세서의 URL&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="487.5" y="1083" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-311" value="root element XML 문서에는 한개만 존재해야한다." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="134.99999999999997" y="1114" width="187.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-312" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="377.5" y="1134" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-314" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="378.5" y="1174" width="20" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-315" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="378.5" y="1354" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-316" value="속성 설정" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="402.5" y="1134" width="187.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-317" value="환경 설정" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="402.5" y="1239" width="187.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-318" value="mapper 설정" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="402.5" y="1359" width="187.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-319" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="458" y="1124" width="20" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-320" value="1.&amp;nbsp; 설정의 순서는&amp;nbsp; DTD에 정의 되어있다.&lt;div style=&quot;font-size: 9px;&quot;&gt;2. 각 설정의 내용은 DTD에 정의되어있다.&lt;/div&gt;&lt;div style=&quot;font-size: 9px;&quot;&gt;3. DTD의 내용을 준수해야한다.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=9;" parent="1" vertex="1">
+          <mxGeometry x="487.5" y="1249" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-321" value="&lt;font color=&quot;#ff3333&quot;&gt;XML태그를 가르킬때&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#ff3333&quot;&gt;사용하는 문법&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="24.75" y="934" width="101" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lRXqn9QqGoIkYQe23TnY-322" value="&lt;font color=&quot;#ff3333&quot;&gt;XML태그의&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#ff3333&quot;&gt;스타일 제어문법&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=7;" parent="1" vertex="1">
+          <mxGeometry x="27" y="994" width="101" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
