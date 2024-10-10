@@ -12,6 +12,7 @@ public class User implements Serializable {
   private String email;
   private String password;
   private String tel;
+  private String photo;
 
   public User() {
   }
@@ -28,6 +29,7 @@ public class User implements Serializable {
         ", email='" + email + '\'' +
         ", password='" + password + '\'' +
         ", tel='" + tel + '\'' +
+        ", photo='" + photo + '\'' +
         '}';
   }
 
@@ -86,5 +88,13 @@ public class User implements Serializable {
 
   public void setTel(String tel) {
     this.tel = tel;
+  }
+
+  public String getPhoto() {
+    return photo;
+  }
+
+  public void setPhoto(String photo) {
+    this.photo = photo;
   }
 }

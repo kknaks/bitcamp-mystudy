@@ -1,0 +1,504 @@
+-- 수강신청
+DROP TABLE IF EXISTS MY_SCHEMA.edu_apply;
+
+-- 교육과정
+DROP TABLE IF EXISTS MY_SCHEMA.edu_lecture;
+
+-- 매니저
+DROP TABLE IF EXISTS MY_SCHEMA.edu_manager;
+
+-- 수강생
+DROP TABLE IF EXISTS MY_SCHEMA.edu_student;
+
+-- 강의장
+DROP TABLE IF EXISTS MY_SCHEMA.edu_room;
+
+-- 강사
+DROP TABLE IF EXISTS MY_SCHEMA.edu_teacher;
+
+-- 강의실사진
+DROP TABLE IF EXISTS MY_SCHEMA.edu_room_photo;
+
+-- 교육센터
+DROP TABLE IF EXISTS MY_SCHEMA.edu_center;
+
+-- 주소
+DROP TABLE IF EXISTS MY_SCHEMA.edu_juso;
+
+-- 강의
+DROP TABLE IF EXISTS MY_SCHEMA.edu_lecture_teacher;
+
+-- 회원
+DROP TABLE IF EXISTS MY_SCHEMA.edu_member;
+
+-- 수강신청
+CREATE TABLE MY_SCHEMA.edu_apply (
+	apply_id INTEGER NOT NULL,
+	member_id INTEGER NULL,
+	lecture_id INTEGER NULL,
+	created_date DATETIME DEFAULT 'NOW()'
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_apply', '*', '수강신청', systimestamp, CURRENT_USER);
+
+-- 수강신청
+ALTER TABLE MY_SCHEMA.edu_apply
+	ADD CONSTRAINT PK_edu_apply -- 수강신청 기본키
+	PRIMARY KEY (
+	apply_id -- 수강신청번호
+	);
+
+ALTER TABLE MY_SCHEMA.edu_apply
+	MODIFY COLUMN apply_id INTEGER NOT NULL AUTO_INCREMENT(1,1);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_apply', 'apply_id', '수강신청번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_apply', 'member_id', '수강생번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_apply', 'lecture_id', '교육과정번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_apply', 'created_date', '수강신청일', systimestamp, CURRENT_USER);
+
+-- 교육과정
+CREATE TABLE MY_SCHEMA.edu_lecture (
+	lecture_id INTEGER NOT NULL,
+	title VARCHAR(255) NULL,
+	content TEXT NULL,
+	quatity INTEGER NULL,
+	start_date DATE NULL,
+	end_date DATE NULL,
+	online TINYINT NULL,
+	room_id INTEGER NULL,
+	member_id INTEGER NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', '*', '교육과정', systimestamp, CURRENT_USER);
+
+-- 교육과정
+ALTER TABLE MY_SCHEMA.edu_lecture
+	ADD CONSTRAINT PK_edu_lecture -- 교육과정 기본키
+	PRIMARY KEY (
+	lecture_id -- 교육과정번호
+	);
+
+ALTER TABLE MY_SCHEMA.edu_lecture
+	MODIFY COLUMN lecture_id INTEGER NOT NULL AUTO_INCREMENT(1,1);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'lecture_id', '교육과정번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'title', '교육과정명', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'content', '교육과정설명', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'quatity', '모집인원', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'start_date', '시작일', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'end_date', '종료일', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'online', '비대면', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'room_id', '강의장번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture', 'member_id', '매니저번호', systimestamp, CURRENT_USER);
+
+-- 매니저
+CREATE TABLE MY_SCHEMA.edu_manager (
+	member_id INTEGER NOT NULL,
+	position VARCHAR(60) NULL,
+	department VARCHAR(60) NULL,
+	fax VARCHAR(30) NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_manager', '*', '매니저', systimestamp, CURRENT_USER);
+
+-- 매니저
+ALTER TABLE MY_SCHEMA.edu_manager
+	ADD CONSTRAINT PK_edu_manager -- 매니저 기본키
+	PRIMARY KEY (
+	member_id -- 회원번호
+	);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_manager', 'member_id', '회원번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_manager', 'position', '매니저직위', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_manager', 'department', '부서', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_manager', 'fax', '팩스', systimestamp, CURRENT_USER);
+
+-- 수강생
+CREATE TABLE MY_SCHEMA.edu_student (
+	member_id INTEGER NOT NULL,
+	working TINYINT NULL,
+	jumin VARCHAR(13) NULL,
+	juso_id INTEGER NULL,
+	detail_address VARCHAR(255) NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_student', '*', '수강생', systimestamp, CURRENT_USER);
+
+-- 수강생
+ALTER TABLE MY_SCHEMA.edu_student
+	ADD CONSTRAINT PK_edu_student -- 수강생 기본키
+	PRIMARY KEY (
+	member_id -- 회원번호
+	);
+
+-- 수강생 유니크 인덱스
+CREATE UNIQUE INDEX UIX_edu_student
+	ON MY_SCHEMA.edu_student ( -- 수강생
+				jumin ASC -- 주민번호
+	);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_student', 'member_id', '회원번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_student', 'working', '재직자', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_student', 'jumin', '주민번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_student', 'juso_id', '주소번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_student', 'detail_address', '상세주소', systimestamp, CURRENT_USER);
+
+-- 강의장
+CREATE TABLE MY_SCHEMA.edu_room (
+	room_id INTEGER NOT NULL,
+	center_id INTEGER NULL,
+	name VARCHAR(60) NULL,
+	quantity INTEGER NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room', '*', '강의장', systimestamp, CURRENT_USER);
+
+-- 강의장
+ALTER TABLE MY_SCHEMA.edu_room
+	ADD CONSTRAINT PK_edu_room -- 강의장 기본키
+	PRIMARY KEY (
+	room_id -- 강의장번호
+	);
+
+-- 강의장 인덱스
+CREATE INDEX IX_edu_room
+	ON MY_SCHEMA.edu_room( -- 강의장
+				name ASC -- 교실명
+	);
+
+ALTER TABLE MY_SCHEMA.edu_room
+	MODIFY COLUMN room_id INTEGER NOT NULL AUTO_INCREMENT(1,1);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room', 'room_id', '강의장번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room', 'center_id', '교육센터번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room', 'name', '교실명', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room', 'quantity', '수용가능인원', systimestamp, CURRENT_USER);
+
+-- 강사
+CREATE TABLE MY_SCHEMA.edu_teacher (
+	member_id INTEGER NOT NULL,
+	photo VARCHAR(255) NULL,
+	major VARCHAR(60) NULL,
+	wage INTEGER NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_teacher', '*', '강사', systimestamp, CURRENT_USER);
+
+-- 강사
+ALTER TABLE MY_SCHEMA.edu_teacher
+	ADD CONSTRAINT PK_edu_teacher -- 강사 기본키
+	PRIMARY KEY (
+	member_id -- 강사번호
+	);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_teacher', 'member_id', '강사번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_teacher', 'photo', '사진', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_teacher', 'major', '전공', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_teacher', 'wage', '시급', systimestamp, CURRENT_USER);
+
+-- 강의실사진
+CREATE TABLE MY_SCHEMA.edu_room_photo (
+	romm_photo_id INTEGER NOT NULL,
+	filepath VARCHAR(255) NULL,
+	room_id INTEGER NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room_photo', '*', '강의실사진', systimestamp, CURRENT_USER);
+
+-- 강의실사진
+ALTER TABLE MY_SCHEMA.edu_room_photo
+	ADD CONSTRAINT PK_edu_room_photo -- 강의실사진 기본키
+	PRIMARY KEY (
+	romm_photo_id -- 강의실사진번호
+	);
+
+ALTER TABLE MY_SCHEMA.edu_room_photo
+	MODIFY COLUMN romm_photo_id INTEGER NOT NULL AUTO_INCREMENT(1,1);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room_photo', 'romm_photo_id', '강의실사진번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room_photo', 'filepath', '사진경로', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_room_photo', 'room_id', '강의장번호', systimestamp, CURRENT_USER);
+
+-- 교육센터
+CREATE TABLE MY_SCHEMA.edu_center (
+	center_id INTEGER NOT NULL,
+	name VARCHAR(60) NULL,
+	tel VARCHAR(30) NULL,
+	fax VARCHAR(30) NULL,
+	juso_id INTEGER NULL,
+	detail_address VARCHAR(255) NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_center', '*', '교육센터', systimestamp, CURRENT_USER);
+
+-- 교육센터
+ALTER TABLE MY_SCHEMA.edu_center
+	ADD CONSTRAINT PK_edu_center -- 교육센터 기본키
+	PRIMARY KEY (
+	center_id -- 교육센터번호
+	);
+
+ALTER TABLE MY_SCHEMA.edu_center
+	MODIFY COLUMN center_id INTEGER NOT NULL AUTO_INCREMENT(1,1);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_center', 'center_id', '교육센터번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_center', 'name', '지점명', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_center', 'tel', '전화', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_center', 'fax', '팩스', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_center', 'juso_id', '주소번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_center', 'detail_address', '상세주소', systimestamp, CURRENT_USER);
+
+-- 주소
+CREATE TABLE MY_SCHEMA.edu_juso (
+	juso_id INTEGER NOT NULL,
+	post_no CHAR(5) NULL,
+	basic_address VARCHAR(255) NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_juso', '*', '주소', systimestamp, CURRENT_USER);
+
+-- 주소
+ALTER TABLE MY_SCHEMA.edu_juso
+	ADD CONSTRAINT PK_edu_juso -- 주소 기본키
+	PRIMARY KEY (
+	juso_id -- 주소번호
+	);
+
+ALTER TABLE MY_SCHEMA.edu_juso
+	MODIFY COLUMN juso_id INTEGER NOT NULL AUTO_INCREMENT(1,1);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_juso', 'juso_id', '주소번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_juso', 'post_no', '우편번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_juso', 'basic_address', '기본주소', systimestamp, CURRENT_USER);
+
+-- 강의
+CREATE TABLE MY_SCHEMA.edu_lecture_teacher (
+	lecture_id INTEGER NOT NULL,
+	member_id INTEGER NOT NULL
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture_teacher', '*', '강의', systimestamp, CURRENT_USER);
+
+-- 강의
+ALTER TABLE MY_SCHEMA.edu_lecture_teacher
+	ADD CONSTRAINT PK_edu_lecture_teacher -- 강의 기본키
+	PRIMARY KEY (
+	lecture_id, -- 교육과정번호
+	member_id   -- 강사번호
+	);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture_teacher', 'lecture_id', '교육과정번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_lecture_teacher', 'member_id', '강사번호', systimestamp, CURRENT_USER);
+
+-- 회원
+CREATE TABLE MY_SCHEMA.edu_member (
+	member_id INTEGER NOT NULL,
+	name VARCHAR(60) NULL,
+	email VARCHAR(40) NULL,
+	tel VARCHAR(30) NULL,
+	created_date DATETIME DEFAULT 'current_date()'
+);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_member', '*', '회원', systimestamp, CURRENT_USER);
+
+-- 회원
+ALTER TABLE MY_SCHEMA.edu_member
+	ADD CONSTRAINT PK_edu_member -- 회원 기본키
+	PRIMARY KEY (
+	member_id -- 회원번호
+	);
+
+-- 회원 유니크 인덱스
+CREATE UNIQUE INDEX UIX_edu_member
+	ON MY_SCHEMA.edu_member ( -- 회원
+				email ASC -- 이메일
+	);
+
+-- 회원 인덱스
+CREATE INDEX IX_edu_member
+	ON MY_SCHEMA.edu_member( -- 회원
+				name ASC -- 이름
+	);
+
+-- 회원 인덱스2
+CREATE INDEX IX_edu_member2
+	ON MY_SCHEMA.edu_member( -- 회원
+				tel ASC -- 연락처
+	);
+
+ALTER TABLE MY_SCHEMA.edu_member
+	MODIFY COLUMN member_id INTEGER NOT NULL AUTO_INCREMENT(1,1);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_member', 'member_id', '회원번호', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_member', 'name', '이름', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_member', 'email', '이메일', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_member', 'tel', '연락처', systimestamp, CURRENT_USER);
+
+INSERT INTO _cub_schema_comments (table_name, column_name, description, last_updated, last_updated_user) VALUES ('MY_SCHEMA.edu_member', 'created_date', '가입일', systimestamp, CURRENT_USER);
+
+-- 수강신청
+ALTER TABLE MY_SCHEMA.edu_apply
+	ADD CONSTRAINT FK_edu_lecture_TO_edu_apply -- 교육과정 -> 수강신청
+	FOREIGN KEY (
+	lecture_id -- 교육과정번호
+	)
+	REFERENCES MY_SCHEMA.edu_lecture ( -- 교육과정
+	lecture_id -- 교육과정번호
+	);
+
+-- 수강신청
+ALTER TABLE MY_SCHEMA.edu_apply
+	ADD CONSTRAINT FK_edu_student_TO_edu_apply -- 수강생 -> 수강신청
+	FOREIGN KEY (
+	member_id -- 수강생번호
+	)
+	REFERENCES MY_SCHEMA.edu_student ( -- 수강생
+	member_id -- 회원번호
+	);
+
+-- 교육과정
+ALTER TABLE MY_SCHEMA.edu_lecture
+	ADD CONSTRAINT FK_edu_manager_TO_edu_lecture -- 매니저 -> 교육과정
+	FOREIGN KEY (
+	member_id -- 매니저번호
+	)
+	REFERENCES MY_SCHEMA.edu_manager ( -- 매니저
+	member_id -- 회원번호
+	);
+
+-- 교육과정
+ALTER TABLE MY_SCHEMA.edu_lecture
+	ADD CONSTRAINT FK_edu_room_TO_edu_lecture -- 강의장 -> 교육과정
+	FOREIGN KEY (
+	room_id -- 강의장번호
+	)
+	REFERENCES MY_SCHEMA.edu_room ( -- 강의장
+	room_id -- 강의장번호
+	);
+
+-- 매니저
+ALTER TABLE MY_SCHEMA.edu_manager
+	ADD CONSTRAINT FK_edu_member_TO_edu_manager -- 회원 -> 매니저
+	FOREIGN KEY (
+	member_id -- 회원번호
+	)
+	REFERENCES MY_SCHEMA.edu_member ( -- 회원
+	member_id -- 회원번호
+	);
+
+-- 수강생
+ALTER TABLE MY_SCHEMA.edu_student
+	ADD CONSTRAINT FK_edu_juso_TO_edu_student -- 주소 -> 수강생
+	FOREIGN KEY (
+	juso_id -- 주소번호
+	)
+	REFERENCES MY_SCHEMA.edu_juso ( -- 주소
+	juso_id -- 주소번호
+	);
+
+-- 수강생
+ALTER TABLE MY_SCHEMA.edu_student
+	ADD CONSTRAINT FK_edu_member_TO_edu_student -- 회원 -> 수강생
+	FOREIGN KEY (
+	member_id -- 회원번호
+	)
+	REFERENCES MY_SCHEMA.edu_member ( -- 회원
+	member_id -- 회원번호
+	);
+
+-- 강의장
+ALTER TABLE MY_SCHEMA.edu_room
+	ADD CONSTRAINT FK_edu_center_TO_edu_room -- 교육센터 -> 강의장
+	FOREIGN KEY (
+	center_id -- 교육센터번호
+	)
+	REFERENCES MY_SCHEMA.edu_center ( -- 교육센터
+	center_id -- 교육센터번호
+	);
+
+-- 강사
+ALTER TABLE MY_SCHEMA.edu_teacher
+	ADD CONSTRAINT FK_edu_member_TO_edu_teacher -- 회원 -> 강사
+	FOREIGN KEY (
+	member_id -- 강사번호
+	)
+	REFERENCES MY_SCHEMA.edu_member ( -- 회원
+	member_id -- 회원번호
+	);
+
+-- 강의실사진
+ALTER TABLE MY_SCHEMA.edu_room_photo
+	ADD CONSTRAINT FK_edu_room_TO_edu_room_photo -- 강의장 -> 강의실사진
+	FOREIGN KEY (
+	room_id -- 강의장번호
+	)
+	REFERENCES MY_SCHEMA.edu_room ( -- 강의장
+	room_id -- 강의장번호
+	);
+
+-- 교육센터
+ALTER TABLE MY_SCHEMA.edu_center
+	ADD CONSTRAINT FK_edu_juso_TO_edu_center -- 주소 -> 교육센터
+	FOREIGN KEY (
+	juso_id -- 주소번호
+	)
+	REFERENCES MY_SCHEMA.edu_juso ( -- 주소
+	juso_id -- 주소번호
+	);
+
+-- 강의
+ALTER TABLE MY_SCHEMA.edu_lecture_teacher
+	ADD CONSTRAINT FK_edu_lecture_TO_edu_lecture_teacher -- 교육과정 -> 강의
+	FOREIGN KEY (
+	lecture_id -- 교육과정번호
+	)
+	REFERENCES MY_SCHEMA.edu_lecture ( -- 교육과정
+	lecture_id -- 교육과정번호
+	);
+
+-- 강의
+ALTER TABLE MY_SCHEMA.edu_lecture_teacher
+	ADD CONSTRAINT FK_edu_teacher_TO_edu_lecture_teacher -- 강사 -> 강의
+	FOREIGN KEY (
+	member_id -- 강사번호
+	)
+	REFERENCES MY_SCHEMA.edu_teacher ( -- 강사
+	member_id -- 강사번호
+	);

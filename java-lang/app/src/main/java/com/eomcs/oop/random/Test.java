@@ -1,4 +1,4 @@
-package study.oop.random;
+package com.eomcs.oop.random;
 
 import java.util.Random;
 import study.oop.random.CraetRandom.RandomAction;

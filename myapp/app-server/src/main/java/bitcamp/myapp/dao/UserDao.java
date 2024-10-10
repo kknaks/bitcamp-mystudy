@@ -1,6 +1,7 @@
 package bitcamp.myapp.dao;
 
 import bitcamp.myapp.vo.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

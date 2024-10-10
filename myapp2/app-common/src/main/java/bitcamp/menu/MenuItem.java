@@ -26,7 +26,7 @@ public class MenuItem extends AbstractMenu {
     if (command != null) {
       command.execute(title, prompt);
     } else {
-      System.out.println(title);
+      prompt.println(title);
     }
   }
 }

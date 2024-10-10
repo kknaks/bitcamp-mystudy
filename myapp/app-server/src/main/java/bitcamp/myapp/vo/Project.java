@@ -15,7 +15,6 @@ public class Project implements Serializable {
   private Date startDate;
   private Date endDate;
   private List<User> members;
-  ;
 
   public Project() {
   }

@@ -1,12 +1,12 @@
-# 44. JDBC 코드를 캡슐화하기
+# 57. Front Controller 디자인 패턴 도입하기
 
 ## 학습목표
 
-- Reflection API를 사용할 수 있다.
+- 프론트 컨트롤러의 역할을 이해하고 구현할 수 있다.
 
 ## 요구사항
 
-- 반복적인 패턴의 JDBC 코드를 캡슐화하여 DB 프로그래밍을 간결하라 만들라.
+- 모든 요청의 진입점을 프론트 컨트롤러로 변경하라.
 
 ## 실행 결과
 
@@ -14,10 +14,12 @@
 
 ## 작업
 
-- JDBC 코드를 캡슐화 하기
-  - SqlSession 클래스 정의 
-- BoardDaoImpl, UserDaoImpl, ProjectDaoImpl 클래스 변경
-- InitApplicationListener 클래스 변경
+- 프론트 컨트롤러 추가
+  - DispatcherServlet 클래스 생성
+- 기존 서블릿 변경
+  - 프론트 컨트롤러의 역할에 맞춰 변경
+- 기존 JSP 변경
+  - 요청 경로 변경
 
 ## 소스 파일
 
